@@ -1,1 +1,1 @@
-# studio-fr
+# studio
