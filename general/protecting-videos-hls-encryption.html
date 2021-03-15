@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="fr">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -489,8 +497,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">Gérer les canaux de diffusion dans le cloud <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">Vue d'ensemble : Lecture dans le cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Créer un canal de diffusion cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">Utilisation des actions de canal</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">Monétisation de la diffusion dans le cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">Génération du code d'intégration de canal</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Affichage de la sortie et des analyses de canal</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">Gérer les joueurs <strong>+</strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">Ajout de la recherche de vignettes</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">Configuration d'une superposition de lecteur</a></li>
@@ -698,6 +741,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">Révision des événements de joueur dans Google Analytics</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">Référence du rapport Tendances maintenant</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +777,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">Création de profils d'ingest hérités</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">Meilleures pratiques d'ingest Profils</a></li>
                   
                 
@@ -763,10 +806,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Profils d'ingestion standard (DD &amp; CAE)</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">Profils d'ingestion standard (hérités)</a></li>
                   
                 
                   
@@ -885,7 +924,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Lors de l'utilisation du chiffrement HTTP Live Streaming (HLSe), le contenu est chiffré avec la norme AES 128 et le manifeste contient un lien vers une clé qui permet le déchiffrement du contenu HLS. Cela seul ne fournit pas une sécurité complète, car une fois la clé obtenue, le contenu peut être facilement déchiffré et redistribué. Il existe peu de mécanismes en place qui permettent la protection de la clé, comme la servir via HTTP ou différents modèles d'authentification par jeton. HLSe sécurise le contenu contre la plupart des utilisateurs standard qui tentent d'obtenir le contenu, mais n'est pas considéré comme une protection de contenu au niveau DRM. Video Cloud prend en charge le cryptage HLS dans les lecteurs Brightcove. Pour plus d'informations sur la prise en charge par les lecteurs Brightcove, consultez la rubrique <a href="https://player.support.brightcove.com/references/brightcove-player-system-requirements.html">Configuration système requise pour le lecteur Brightcove</a>. Consultez également le <a href="#limitations">limites</a> section ci-dessous.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="how">Comment Video Cloud protège-t-il le contenu avec le cryptage HLS ?</h2>
+    <h2 id="how">Comment Video Cloud Enterprise protège-t-il votre contenu à l'aide du cryptage HLS?</h2>
     <p>L'Apple HTTP Live Streaming (HLS) est indépendant du cryptage. C'est un protocole de diffusion de vidéos à différents débits. Video Cloud prend en charge la création de plusieurs rendus qui basculent intelligemment entre les rendus lorsque la bande passante du réseau change et que le service fluctue. HLS divise essentiellement une vidéo en une séquence de petits téléchargements de fichiers, chacun chargeant un court morceau, ou segment, de la vidéo à la fois via HTTP.</p>
     <aside class="bcls-aside bcls-aside--information">Remarque : le HLS est obligatoire pour les vidéos longues, c'est-à-dire les vidéos qui dépassent 5 Mo ou 10 minutes. Cryptage ou non, vous devez créer des rendus HLS pour pouvoir diffuser des vidéos de plus de 10 minutes sur les dispositifs iOS.</aside>
     <p>Video Cloud prend en charge le cryptage des rendus vidéo pour Apple HLS. Ainsi, les éditeurs peuvent protéger leur contenu vidéo long format sur les divers dispositifs existants. Le cryptage HLS Video Cloud protège le contenu en ajoutant l'AES à notre solution HLS standard. Lorsque vous cryptez l'Apple HLS, Video Cloud crypte chacun des petits segments de fichier de la vidéo et diffuse de façon sécurisée les fichiers qui gèrent la sélection des rendus.</p>
@@ -957,7 +996,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  Dernière mise à jour de la page le 20 décembre 2020
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1019,7 +1065,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">Confidentialité</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Termes et conditions</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1030,8 +1076,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({

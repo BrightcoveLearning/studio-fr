@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="fr">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -489,8 +497,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">Gérer les canaux de diffusion dans le cloud <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">Vue d'ensemble : Lecture dans le cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Créer un canal de diffusion cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">Utilisation des actions de canal</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">Monétisation de la diffusion dans le cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">Génération du code d'intégration de canal</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Affichage de la sortie et des analyses de canal</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">Gérer les joueurs <strong>+</strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">Ajout de la recherche de vignettes</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">Configuration d'une superposition de lecteur</a></li>
@@ -698,6 +741,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">Révision des événements de joueur dans Google Analytics</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">Référence du rapport Tendances maintenant</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +777,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">Création de profils d'ingest hérités</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">Meilleures pratiques d'ingest Profils</a></li>
                   
                 
@@ -763,10 +806,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Profils d'ingestion standard (DD &amp; CAE)</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">Profils d'ingestion standard (hérités)</a></li>
                   
                 
                   
@@ -1015,11 +1054,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <li><strong>Ne soyez pas radin avec la taille du fichier.</strong> Video Cloud est conçu pour gérer les téléchargements de fichiers volumineux. Si vous avez l'habitude de compresser des fichiers pour des téléchargements réussis, ne le faites pas. Veillez à télécharger un fichier source de haute qualité.</li>
         <li><strong>Obtenir un fichier de haute qualité. </strong>Nous recommandons une source avec 2 à 3 fois le débit binaire du meilleur rendu que vous prévoyez de générer. Ainsi, si vous prévoyez d'avoir un rendu supérieur avec un débit vidéo de 3 Mbit/s, vous pouvez être amené à télécharger une vidéo source avec un débit de 6 à 9 Mbit/s. Souvenez-vous que parfois, les vidéos avec un débit trop haut ne se lisent pas correctement via HTTP. Une vidéo de qualité excessive peut provoquer une mise en mémoire tampon.<br/>
           <!-- <p>
-      Video Cloud Express customers have access to fixed renditions and need not exceed the bit rate for their fastest rendition when considering data compression rates. Video Cloud Pro and Enterprise customers should consider the bit rate of their current fastest rendition as well as any rendition they might opt to create in the future when re-encoding existing videos with new transcoding settings.
+      Video Cloud Express customers have access to fixed renditions and need not exceed the bit rate for their fastest rendition when considering data compression rates. Video Cloud Enterprise customers should consider the bit rate of their current fastest rendition as well as any rendition they might opt to create in the future when re-encoding existing videos with new transcoding settings.
     </p> --></li>
         <li><strong>Restez cohérent avec la fréquence d'images</strong>. Exportez avec le nombre d'images par seconde utilisé lors de l'enregistrement de la vidéo pour éviter les sursauts d'image. Aussi, si le nombre d'images par seconde de l'exportation est différent de celui de la source, vous risquez d'obtenir une désynchronisation du son et de l'image.</li>
         <li><strong>Conservez une copie de votre fichier natif</strong>: Il est conseillé de conserver vos fichiers sources, car vous pourriez avoir besoin de les éditer, les recompresser ou les recoder. Utilisez un profil du <a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-legacy-transcoding.html">liste des profils d'ingestion standard</a> qui correspond à votre public cible, ou créez votre propre profil d'ingestion. <!-- <p>
-        <a href="node/3412">Re-encoding existing videos</a> is available only to Video Cloud Pro and Enterprise publishers. You may find after publication that your video would benefit by making changes to the exporting settings. Video Cloud does provide a way to <a href="node/3412#newsource">re-encode your video from a higher quality source</a> file, which allows you to keep all the metadata assigned to a title but to upload a video in the latest most flexible encoding format.
+        <a href="node/3412">Re-encoding existing videos</a> is available only to Video Cloud Enterprise publishers. You may find after publication that your video would benefit by making changes to the exporting settings. Video Cloud does provide a way to <a href="node/3412#newsource">re-encode your video from a higher quality source</a> file, which allows you to keep all the metadata assigned to a title but to upload a video in the latest most flexible encoding format.
       </p> --></li>
         <li><strong>Prenez en considération le taux de mouvements et la taille lors de l'exportation à haute résolution</strong>. Les vidéos à haute résolution bénéficient tout particulièrement de l'utilisation de débits minimaux lors de la lecture de vidéos de bonne qualité. Consultez la rubrique <a href="video-source-file-specifications-and-recommendations.html#highres">Recommandations pour l’encodage en haute résolution</a> pour les débits minimums par rapport à la taille de la vidéo, son format et le taux de mouvements dans la vidéo.</li>
         <li><strong>Adoptez une stratégie mobile</strong>. Si vous voulez diffuser vos vidéos sur des appareils mobiles en plus des ordinateurs de bureau, encodez vos vidéos en H.264 et envisagez d'autres formats d'encodage. <!-- <p>
@@ -1080,7 +1119,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  Dernière mise à jour de la page le 08 déc.2020
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1142,7 +1188,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">Confidentialité</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Termes et conditions</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1153,8 +1199,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({

@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="fr">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -489,8 +497,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">Gérer les canaux de diffusion dans le cloud <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">Vue d'ensemble : Lecture dans le cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Créer un canal de diffusion cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">Utilisation des actions de canal</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">Monétisation de la diffusion dans le cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">Génération du code d'intégration de canal</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Affichage de la sortie et des analyses de canal</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">Gérer les joueurs <strong>+</strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">Ajout de la recherche de vignettes</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">Configuration d'une superposition de lecteur</a></li>
@@ -698,6 +741,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">Révision des événements de joueur dans Google Analytics</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">Référence du rapport Tendances maintenant</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +777,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">Création de profils d'ingest hérités</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">Meilleures pratiques d'ingest Profils</a></li>
                   
                 
@@ -763,10 +806,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Profils d'ingestion standard (DD &amp; CAE)</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">Profils d'ingestion standard (hérités)</a></li>
                   
                 
                   
@@ -950,14 +989,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Dans cette tâche, vous allez modifier les propriétés de la vidéo.</p>
     <ol class="bcls-tasklist-restart">
       <li>Dans Video Cloud Studio, cliquez sur <strong>Media</strong> pour ouvrir le module Médias.</li>
-      <li>Cliquez sur le titre du <strong>Pélican brun</strong> vidéo, localisez le <strong>Information vidéo</strong> section puis cliquez sur <strong>Éditer</strong>. Met le <strong>brève description</strong> à <code translate="No">Pelican on the rocks</code>.
+      <li>Cliquez sur le titre du <strong>Pélican brun</strong> vidéo, localisez le <strong>Information vidéo</strong> section puis cliquez sur <strong>Éditer</strong>. Met le <strong>brève description</strong> à <code translate="No">Pelican on the rocks</code>.</li>
+      <li>Ajouter un <strong>Étiqueter</strong> de <code translate="No">birds</code>.
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node18825-pelican-properties.png"/></figure>
       </li>
-      <li>Cliquez sur <strong>Save</strong>.</li>
-      <li>dans le <strong>Catégorisation</strong> section, ajoutez une <strong>Marque</strong> de <code translate="No">birds</code>.
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node18825-pelican-tags.png"/></figure>
-      <p>Cliquez sur <strong>Retour aux vidéos</strong> pour revenir à la liste des vidéos.</p>
-      </li>
+      <li>Cliquez sur <strong>Retour aux vidéos</strong> pour revenir à la liste des vidéos.</li>
       <li>Cliquez sur le titre du <strong>http://learning-services-media.brightcove.com/vc-quick-start/oystercatcher.mp4</strong> vidéo, localisez le <strong>Information vidéo</strong> section puis cliquez sur <strong>Éditer</strong>. Définissez les propriétés suivantes :
         <ul>
           <li><strong>Nom:</strong> <code translate="No">Oystercatcher</code></li>
@@ -967,10 +1003,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <p>Cliquez sur <strong>sauver</strong> une fois terminé, puis cliquez sur <strong>Retour aux vidéos</strong> pour revenir à la liste des vidéos.</p>
       </li>
       <li>Modifiez les <strong>Mésange</strong> et le <strong>Pivert</strong> vidéos. Marquer les vidéos avec <code translate="No">birds</code>.</li>
-      <br/>
-      <li>Confirmez que les vidéos mises à jour apparaissent comme suit.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node18825-updated-videos.png"/></figure>
-      </li>
       <li>(Facultatif) Modifiez certaines des vidéos d'animaux et marquez les vidéos avec <code translate="No">animals</code>.</li>
     </ol>
   </section>
@@ -1004,10 +1036,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <h3>Publication d'une seule vidéo</h3>
       <ol class="bcls-tasklist-restart">
         <li>Dans Video Cloud Studio, cliquez sur <strong>Media</strong> pour ouvrir le module Médias.</li>
-        <li>Cochez la case en regard de <strong>Pélican brun</strong> vidéo, puis cliquez sur <strong>Publier et incorporer&gt; Lecteur Web</strong>.
-          <aside class="bcls-aside bcls-aside--information">Remarque : Pour plus d'informations sur les autres options de publication, consultez le document correspondant :
+        <li>Cochez la case en regard de <strong>Pélican brun</strong> vidéo, puis cliquez sur <strong>Publier et incorporer&gt; Publier sur le Web</strong>.
+          <aside class="bcls-aside bcls-aside--information">Note : Pour plus d'informations sur les autres options de publication, consultez le document correspondant :
             <ul>
-              <li><strong>Email</strong> - <a href="/publish/publishing-video-email.html">Publication d'une vidéo par e-mail</a></li>
+              <li><strong>Page de destination de l'e-mail</strong> - <a href="/publish/publishing-video-email.html">Publication d'une vidéo par e-mail</a></li>
               <li><strong>Réseaux sociaux</strong> - <a href="https://social.support.brightcove.com/general/publishing-videos-social-media-platforms.html">Publication de vidéos sur des plateformes de médias sociaux</a></li>
               <li><strong>Expérience de la galerie sur la page</strong> - <a href="/publish/publishing-videos-page-experience.html">Publication de vidéos dans une expérience sur la page</a></li>
             </ul>
@@ -1047,7 +1079,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <ol class="bcls-tasklist-restart">
       <li>Cliquez sur <strong>All Videos</strong> dans le volet de navigation latéral pour afficher toutes les vidéos du compte.</li>
       <li>Cochez les cases correspondantes aux vidéos à ajouter à la sélection.</li>
-      <li>Cliquez sur <strong>Ajouter à&gt; Ajouter à la liste de lecture</strong>.</li>
+      <li>Cliquez sur <strong>Plus&gt; Ajouter à la playlist</strong>.</li>
       <li>Sélectionnez le <strong>Favoris</strong> playlist, puis cliquez sur <strong>Ajouter</strong>.
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node18825-select-playlist.png"/></figure>
       </li>
@@ -1094,7 +1126,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Cliquez sur <strong>Media</strong> pour ouvrir le module Médias.</li>
       <li>Cliquez sur <strong>All Playlists</strong> dans le volet de navigation latéral pour afficher toutes les sélections.</li>
       <li>Cochez la case correspondante à la sélection <strong>Birds</strong>.</li>
-      <li>Cliquez sur<strong> Publier et incorporer&gt; Lecteur Web</strong>.</li>
+      <li>Cliquez sur<strong> Publier et incorporer&gt; Publier sur le Web</strong>.</li>
       <li>Sélectionnez le <strong>lecteur de la sélection</strong>.</li>
       <li>Cliquez sur le lien <strong>URL</strong>. Le lecteur se lancera dans une nouvelle fenêtre de navigateur. Vérifiez que le lecteur de liste de lecture s'affiche et que les vidéos de la liste de lecture peuvent être lues.
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node18825-published-playlist.png"/></figure>
@@ -1120,7 +1152,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  Dernière mise à jour de la page le 03 Fév 2021
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1182,7 +1221,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">Confidentialité</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Termes et conditions</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1193,8 +1232,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({

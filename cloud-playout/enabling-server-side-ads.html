@@ -1,12 +1,12 @@
 ﻿<!doctype html>
-<html lang="fr">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="Dans cette rubrique, vous apprendrez comment une collection de vidéos VOD et d'événements en direct peut être diffusée comme un canal linéaire en direct.">
   
-  <title>Création de profils d'ingest hérités</title>
+  <title>Monétisation de la diffusion dans le cloud</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -129,9 +137,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/admin/">Administration des comptes</a></li>
+      <li class="breadcrumb-item"><a href="/cloud-playout/">Lecture dans le cloud</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">Création de profils d'ingest hérités</li>
+      <li class="breadcrumb-item active" aria-current="page">Monétisation de la diffusion dans le cloud</li>
     </ol>
   </nav>
 </header>
@@ -489,8 +497,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">Gérer les canaux de diffusion dans le cloud <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">Vue d'ensemble : Lecture dans le cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Créer un canal de diffusion cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">Utilisation des actions de canal</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">Monétisation de la diffusion dans le cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">Génération du code d'intégration de canal</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Affichage de la sortie et des analyses de canal</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">Gérer les joueurs <strong>+</strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">Ajout de la recherche de vignettes</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">Configuration d'une superposition de lecteur</a></li>
@@ -698,6 +741,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">Révision des événements de joueur dans Google Analytics</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">Référence du rapport Tendances maintenant</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +777,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">Création de profils d'ingest hérités</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">Meilleures pratiques d'ingest Profils</a></li>
                   
                 
@@ -763,10 +806,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Profils d'ingestion standard (DD &amp; CAE)</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">Profils d'ingestion standard (hérités)</a></li>
                   
                 
                   
@@ -877,78 +916,75 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
+<h1>Monétisation de la diffusion dans le cloud</h1>
 <article class="bcls-article">
-  <h1>Création de profils d'ingest hérités</h1>
-  <summary>Cette rubrique fournit une vue d'ensemble de la création de profils d'acquisition personnalisés à utiliser avec le transcodage hérité.</summary>
+  <summary>Dans cette rubrique, vous apprendrez comment une collection de vidéos VOD et d'événements en direct peut être diffusée comme un canal linéaire en direct.</summary>
   <section class="bcls-section">
-    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="4413807549001">&nbsp;</div>
-    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
-    <p>La page d'administration des profils d'acquisition peut être utilisée pour créer de nouveaux profils d'acquisition hérités. Les profils d'ingest sont définis à l'aide de JSON. Lors de la création d'un nouveau profil hérité, il est utile de consulter le <a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-legacy-transcoding.html">Profils d'ingestion standard pour le transcodage hérité</a> document et recherchez un profil similaire à celui dont vous avez besoin. Ensuite, dans Studio, vous pouvez facilement dupliquer le profil, puis le modifier avec vos modifications.</p>
-    <p >Remarque : Pour plus d'informations sur la création de profils d'ingestion utilisant DRM, consultez le <a href="https://general.support.brightcove.com/general/mpeg-dash-video.html">Vidéo MPEG-DASH</a> document du développeur.</p>
-    <p >Remarque : Chaque profil peut créer un maximum de 25 formats associés. &nbsp;Les images d'affiche et de vignettes comptent pour un maximum de 25.&nbsp;</p>
-    <p>Pour créer un nouveau profil d'acquisition hérité:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Cliquez sur le lien <strong>ADMIN</strong> dans l'en-tête Studio.</li>
-      <li>Cliquez sur le lien <strong>Ingérer les profils</strong> .</li>
-      <li>Recherchez un profil hérité à dupliquer. Cliquez sur le nom du profil pour ouvrir l'éditeur de profils.</li>
-      <li>Cliquez sur <strong>Profil en double</strong>. L'éditeur de profil s'ouvrira avec le nouveau profil.</li>
-      <li>Faites défiler la page vers le haut du profil. Modifiez l' <code translate="No"><strong>name</strong></code> élément pour donner au profil un nom significatif. Ce nom s'affichera dans Video Cloud Studio.</li>
-      <li>Modifiez l' <code translate="No"><strong>description</strong></code> élément pour donner au profil une description significative.
-        <figure class="bcls-figure"><img alt="" src="/assets/images/admin/node18503-edit-profile-name.png"/></figure>
+    <h2 id="requirements">Exigences</h2>
+    <p>Pour utiliser l'insertion d'annonces côté serveur (SSAI) avec Cloud Playout, les éléments suivants sont requis:</p>
+    <ul>
+      <li>Le compte doit être activé pour Brightcove Live et Live avec SSAI.</li>
+      <li>Brightcove Live et / ou S3 doivent être utilisés comme destination du canal.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="ads">Activation des annonces côté serveur</h2>
+    <p>Il est possible de configurer un canal de sorte que les annonces côté serveur soient affichées à l'aide de la technologie d'insertion d'annonces côté serveur de Brightcove. </p>
+    <aside class="bcls-aside bcls-aside--information">Remarques : 
+      <ul>
+        <li>Lorsque vous utilisez l'insertion d'annonces, la chaîne ne peut être sortie que dans un événement Brightcove Live Event.</li>
+        <li>Si vous activez l'insertion d'annonces, les entrées dynamiques ne peuvent pas être utilisées dans le canal.</li>
+      </ul>
+      </aside>
+    <h3>Configuration des balises publicitaires et des ardoises de remplissage</h3>
+    <p>Assurez-vous que les balises publicitaires et les ardoises de remplissage sont configurées dans le cadre de l'administration de votre compte. Pour plus d'informations sur la configuration des tags d'emplacement publicitaire, consultez <a href="/admin/configuring-server-side-ad-settings.html">Configuration des paramètres d'annonce côté serveur</a>. Les ardoises de remplissage sont du contenu qui peut être diffusé lorsqu'il y a des lacunes dans un saut de diffusion en direct. Pour plus d'informations sur la création d'ardoises de remplissage, voir <a href="https://live.support.brightcove.com/admin/managing-live-settings.html">Gérer les paramètres en direct</a>.</p>
+    <p>
+      <aside class="bcls-aside bcls-aside--information">Remarque : Cloud Playout utilisera la liste d'annonces par défaut configurée dans le cadre de la <a href="https://live.support.brightcove.com/admin/managing-live-settings.html">Paramètres en direct</a>.</aside>
+    </p>
+    <h3>Création de vidéos de saut publicitaire d'espace réservé</h3>
+    <p>Vous devez indiquer quelle (s) vidéo (s) doit (s) être utilisée (s) comme vidéos « espace réservé ». Les vidéos « Espace réservé » seront insérées dans la liste des programmes pour indiquer qu'une annonce doit être diffusée et la durée de l'annonce. Cela doit être fait car lorsque vous utilisez l'insertion d'annonces côté serveur avec Brightcove Live, la vidéo « espace réservé » sera remplacée par du contenu publicitaire. Si vous n'insérez pas de vidéo « réservé » d'annonce, certaines parties de la vidéo réelle seront remplacées par du contenu publicitaire. Si la durée de l'annonce est plus courte que celle renvoyée, SSAI affichera l'ardoise publicitaire. Si la durée de l'annonce est plus longue que les annonces retournées, elles seront affichées suivies de l'ardoise. </p>
+    <p>Il se peut que vous deviez créer/télécharger des fichiers source vidéo dont la longueur vidéo est égale à la durée de pause que vous souhaitez avoir (c.-à-d. 2 minutes, 4 minutes, etc.). Le contenu de ces vidéos n'a pas d'importance car elles ne seront pas réellement jouées dans le cadre d'un programme. </p>
+    <p>Pour marquer une vidéo comme vidéo "espace réservé", utilisez le module Média pour modifier les propriétés vidéo de ces vidéos et les marquer avec <code translate="No">cp-ad-holder</code>.
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="commutateur de rapport" src="/assets/images/cloud-playout/playout-ad-tag-video.png"/></figure>
+    </p>
+    <h3>Activation des annonces côté serveur pour une chaîne</h3>
+    <p>Lors de la création d'un canal, définissez le <strong>Insertion d'annonces</strong> option pour <strong>Sur</strong>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="commutateur de rapport" src="/assets/images/cloud-playout/playout-ad-insertion-option.png"/></figure>
+    <aside class="bcls-aside bcls-aside--information">Remarque : Pour les canaux existants, le paramètre Insertion d'annonces ne peut pas être modifié.</aside>
+    <h3>Insertion d'espaces réservés d'annonces dans un programme</h3>
+    <p>Vous devez insérer des espaces réservés publicitaires dans la liste des programmes où les annonces doivent être affichées. Procédez comme suit pour insérer des espaces réservés aux annonces.</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Cliquez sur le nom d'un canal pour le modifier.</li>
+      <li>Dans la liste des programmes, cochez la case à côté de la vidéo <strong>après</strong> dont vous souhaitez diffuser une annonce.</li>
+      <li>Cliquez sur <strong>Insérer des annonces</strong> et sélectionnez un <strong>durée de l'annonce</strong>. La liste des durées d'annonces est générée en fonction de la durée de toutes les vidéos "d'espace réservé" de coupure publicitaire (balisées <code translate="No">cp-ad-holder</code>).
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="commutateur de rapport" src="/assets/images/cloud-playout/playout-insert-ads-button.png"/></figure>
       </li>
-      <li>Modifiez les informations de format associé si nécessaire. La taille par défaut de l'affiche et des images miniatures se trouve à la fin du profil.</li>
-      <li>Cliquez sur <strong>Save</strong>.</li>
+      <li>Cliquez sur <strong>D'accord</strong>. La vidéo « espace réservé » avec la longueur sélectionnée sera insérée dans le programme après la vidéo sélectionnée.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="commutateur de rapport" src="/assets/images/cloud-playout/playout-ad-break-inserted.png"/></figure>
+        <aside class="bcls-aside bcls-aside--information">Remarque : La vidéo qui est insérée comme "espace réservé" <strong>Ne fera pas</strong> être joué dans le cadre du programme. Cette vidéo est uniquement utilisée pour indiquer où une demande d'annonce sera faite et la durée de l'annonce.</aside>
+      </li>
+      <li>Cliquez sur <strong>sauver</strong> pour enregistrer les modifications apportées au programme.</li>
     </ol>
-    <div class="BCL-subsection">
-      <h3>Ajouter un filigrane à un profil</h3>
-      <p>Un filigrane peut être ajouté à chaque rendu en ajoutant le <code translate="No">watermarks</code> élément à chaque <code translate="No">rendition</code>:</p>
-      <pre>
-       filigranes ": [{" y ": -20," x ": -10," width ": "20%", "url": "http://www.mysite.com/companylogo.png"}]
-       </pre>
-      <p>le <code translate="No">watermarks</code> element a les paramètres suivants.</p>
-      <table class="bcls-table">
-        <thead class="bcls-table__head">
-          <tr>
-            <th width="13%">Paramètre</th>
-            <th width="14%">Type</th>
-            <th width="73%">Description</th>
-          </tr>
-        </thead>
-        <tbody class="bcls-table__body">
-          <tr>
-            <td ><code translate="No">url</code></td>
-            <td >chaîne</td>
-            <td >URL de l'image du filigrane</td>
-          </tr>
-          <tr>
-            <td ><code translate="No">width</code></td>
-            <td >chaîne</td>
-            <td >largeur en pixels ou pourcentage de la largeur du cadre; par exemple 20 ou 10%</td>
-          </tr>
-          <tr>
-            <td ><code translate="No">height</code></td>
-            <td >chaîne</td>
-            <td >hauteur en pixels ou pourcentage de la largeur du cadre; par exemple 20 ou 10%</td>
-          </tr>
-          <tr>
-            <td ><code translate="No">x</code></td>
-            <td >chaîne</td>
-            <td >distance du bord gauche au centre de l'image en pixels ou en pourcentage de la largeur du cadre; par exemple 20 ou 10% (utilisez des valeurs négatives comme -10 pour positionner le filigrane par rapport au bord droit)</td>
-          </tr>
-          <tr>
-            <td ><code translate="No">y</code></td>
-            <td >chaîne</td>
-            <td >distance du bord supérieur au centre de l'image en pixels ou en pourcentage de la hauteur du cadre; par exemple 20 ou 10% (utilisez des valeurs négatives comme -10 pour positionner le filigrane par rapport au bord inférieur)</td>
-          </tr>
-        </tbody>
-      </table>
-      &nbsp;
-      <p>Un exemple de profil avec un filigrane est présenté ci-dessous:</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/node18503-watermark.png"/></figure>
-    </div>
+    <h3>Sélection de la configuration de l'annonce</h3>
+    <p>Une fois que le programme commence à jouer, cliquez sur <strong>Afficher dans Brightcove Live</strong> pour afficher la chaîne dans le module Live. La liste déroulante située sous le lecteur peut être utilisée pour sélectionner la configuration de l'annonce qui sera utilisée.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="commutateur de rapport" src="/assets/images/cloud-playout/playout-live-select-ad-config.png"/></figure>
+    <figure class="bcls-figure"></figure>
+    <p>Pour obtenir des informations complètes sur l'insertion d'annonces côté serveur, consultez le <a href="https://ssai.support.brightcove.com/getting-started/video-cloud-ssai-overview.html">Présentation de Video Cloud SSAI</a> sujet.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Related_topics">Rubriques connexes</h2>
+    <ul>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">Vue d'ensemble : Lecture dans le cloud</a></li>
+      <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Créer un canal de diffusion cloud</a></li>
+      <li><a href="/cloud-playout/using-channel-actions.html">Utilisation des actions de canal</a></li>
+      <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Affichage de la sortie et des analyses de canal</a></li>
+      <li><a href="/cloud-playout/generating-channel-embed-code.html">Génération du code d'intégration de canal</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Vue d'ensemble : API EPG</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">Référence de l'API EPG</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">Référence de l'API de canal</a></li>
+    </ul>
   </section>
 </article>
-
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -963,7 +999,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  Dernière mise à jour de la page le 01 février 2021
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1025,7 +1068,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">Confidentialité</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Termes et conditions</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1036,8 +1079,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({

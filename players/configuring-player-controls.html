@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="fr">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -489,8 +497,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">Gérer les canaux de diffusion dans le cloud <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">Vue d'ensemble : Lecture dans le cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Créer un canal de diffusion cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">Utilisation des actions de canal</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">Monétisation de la diffusion dans le cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">Génération du code d'intégration de canal</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Affichage de la sortie et des analyses de canal</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">Gérer les joueurs <strong>+</strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">Ajout de la recherche de vignettes</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">Configuration d'une superposition de lecteur</a></li>
@@ -698,6 +741,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">Révision des événements de joueur dans Google Analytics</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">Référence du rapport Tendances maintenant</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +777,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">Création de profils d'ingest hérités</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">Meilleures pratiques d'ingest Profils</a></li>
                   
                 
@@ -763,10 +806,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Profils d'ingestion standard (DD &amp; CAE)</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">Profils d'ingestion standard (hérités)</a></li>
                   
                 
                   
@@ -879,159 +918,89 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <article class="bcls-article">
   <h1>Configuration des contrôles du lecteur</h1>
-  <summary
-    >Dans cette rubrique, vous apprendrez comment configurer les contrôles pour un lecteur.</summary
-                >
+  <summary>Dans cette rubrique, vous apprendrez comment configurer les contrôles pour un lecteur.</summary>
   <section class="bcls-section">
-    <p>
-      Les contrôles du joueur tels qu'un sélecteur de qualité, le taux de lecture, le contrôle plein écran et le curseur de volume vertical peuvent être configurés pour un joueur.
-    </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="menu style" src="/assets/images/players/node18509-player-controls-example.png"/>
-    </figure>
-    <p>
-      Si vous voyez un contrôle qui apparaît comme indiqué ici:
-      <figure class="bcls-figure">
-        <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-button-itself.png"/>
-      </figure>
-      il active la fonctionnalité d'image dans l'image. Voir le <a href="#picture-in-picture">Image dans l'image</a> plus loin dans ce document pour des informations complètes.
-    </p>
-    <p>
-      Pour configurer le <strong>Contrôles</strong> properties, procédez comme suit:
-    </p>
+    <p>Les contrôles du joueur tels qu'un sélecteur de qualité, le taux de lecture, le contrôle plein écran et le curseur de volume vertical peuvent être configurés pour un joueur. </p>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="menu style" src="/assets/images/players/node18509-player-controls-example.png"/> </figure>
+    <p>Si vous voyez un contrôle qui apparaît comme indiqué ici:
+      <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-button-itself.png"/> </figure>
+      il active la fonctionnalité d'image dans l'image. Voir le <a href="#picture-in-picture">Image dans l'image</a> plus loin dans ce document pour des informations complètes. </p>
+    <p>Pour configurer le <strong>Contrôles</strong> properties, procédez comme suit: </p>
     <ol class="bcls-tasklist-restart">
-      <li>
-        Cliquez sur <strong>Players</strong> dans l'en-tête de navigation pour ouvrir le module Players.
-      </li>
-      <li>
-        Cliquez sur le lien du lecteur à configurer.
-      </li>
-      <li>
-        Cliquez sur <strong>Contrôles</strong> dans le menu de navigation de gauche.
-      </li>
+      <li>Cliquez sur <strong>Players</strong> dans l'en-tête de navigation pour ouvrir le module Players. </li>
+      <li>Cliquez sur le lien du lecteur à configurer. </li>
+      <li>Cliquez sur <strong>Contrôles</strong> dans le menu de navigation de gauche. </li>
     </ol>
-    <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="menu style" src="/assets/images/players/node18509-player-controls.png"/>
-    </figure>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="menu style" src="/assets/images/players/node18509-player-controls.png"/> </figure>
     <p>Les contrôles suivants peuvent être configurés :</p>
     <ul>
       <li><a href="#quality">Sélecteur de qualité</a></li>
       <li><a href="#rates">Taux de lecture</a></li>
       <li><a href="#fullscreen">Plein écran</a></li>
-      <li>
-        <a href="#volume">Curseur de volume vertical</a>
-      </li>
-      <li>
-        <a href="#skip">Passer à la vidéo suivante (playlist)</a>
-      </li>
+      <li> <a href="#volume">Curseur de volume vertical</a></li>
+      <li><a href="#seeking">Recherche de vignettes</a></li>
+      <li> <a href="#skip">Passer à la vidéo suivante (playlist)</a> </li>
     </ul>
-    <p>
-      Une fois les modifications apportées, assurez-vous de republier le lecteur pour que les modifications soient visibles.
-    </p>
-    <aside class="bcls-aside bcls-aside--information">
-      Remarque : toute modification apportée à un lecteur peut prendre jusqu'à cinq minutes pour s'afficher dans les lecteurs publiés.
-    </aside>
+    <p>Une fois les modifications apportées, assurez-vous de republier le lecteur pour que les modifications soient visibles. </p>
+    <aside class="bcls-aside bcls-aside--information"> Remarque : toute modification apportée à un lecteur peut prendre jusqu'à cinq minutes pour s'afficher dans les lecteurs publiés. </aside>
   </section>
   <section class="bcls-section">
     <h2 id="quality">Sélecteur de qualité</h2>
-    <p>
-      Activation du <strong> Sélecteur de qualité</strong> offre la possibilité de sélectionner manuellement un rendu différent pendant la lecture de la vidéo. Une icône d'engrenage apparaîtra dans le coin inférieur droit du joueur.
-    </p>
-    <aside class="bcls-aside bcls-aside--information">
-      Remarque : Le sélecteur de qualité nécessite Brightcove Player version 5.17.0 ou plus récente et peut ne pas fonctionner avec tous les navigateurs.
-    </aside>
-    <p>
-      Lorsque le sélecteur de qualité est activé, deux options pour <strong>Étiquette du sélecteur de qualité</strong> sont activés:
-    </p>
+    <p>Activation du <strong> Sélecteur de qualité</strong> offre la possibilité de sélectionner manuellement un rendu différent pendant la lecture de la vidéo. Une icône d'engrenage apparaîtra dans le coin inférieur droit du joueur. </p>
+    <aside class="bcls-aside bcls-aside--information">Remarque : Le sélecteur de qualité nécessite Brightcove Player version 5.17.0 ou plus récente et peut ne pas fonctionner avec tous les navigateurs. </aside>
+    <p>Lorsque le sélecteur de qualité est activé, deux options pour <strong>Étiquette du sélecteur de qualité</strong> sont activés: </p>
     <ul>
-      <li>
-        <strong>Afficher la résolution (par exemple, 720p)</strong> - Les rendus seront affichés par des lignes de résolution horizontale
-        <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-resolution.png"/>
-        </figure>
-        <p>
-          Lors de l'utilisation de cette option, un autre paramètre (<code translate="No">resolutionLabelBitrates</code> ) peuvent être ajoutés au plugin Quality Selection pour afficher également les débits.
-        </p>
-        <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-resolution-bitrates.png"/>
-        </figure>
-        <p>
-          Cela doit être fait en éditant les paramètres du plugin car il n'y a actuellement aucun moyen de configurer cette option à l'aide de l'interface utilisateur du module Players. Pour plus d'informations, consultez le <a href="https://player.support.brightcove.com/plugins/quality-selection-plugin.html">Plugin de sélection de qualité</a> document.
-        </p>
+      <li><strong>Afficher la résolution (par exemple, 720p)</strong> - Les rendus seront affichés par des lignes de résolution horizontale
+        <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-resolution.png"/> </figure>
+        <p>Lors de l'utilisation de cette option, un autre paramètre (<code translate="No">resolutionLabelBitrates</code> ) peuvent être ajoutés au plugin Quality Selection pour afficher également les débits. </p>
+        <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-resolution-bitrates.png"/> </figure>
+        <p>Cela doit être fait en éditant les paramètres du plugin car il n'y a actuellement aucun moyen de configurer cette option à l'aide de l'interface utilisateur du module Players. Pour plus d'informations, consultez le <a href="https://player.support.brightcove.com/plugins/quality-selection-plugin.html">Plugin de sélection de qualité</a> document.</p>
       </li>
-      <li>
-        <strong>Afficher HD / SD</strong> - Le lecteur examinera les informations de débit binaire pour chaque rendu pour déterminer s'il s'agit de SD ou HD
-        <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-hd-sd.png"/>
-        </figure>
+      <li><strong>Afficher HD / SD</strong> - Le lecteur examinera les informations de débit binaire pour chaque rendu pour déterminer s'il s'agit de SD ou HD
+        <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-hd-sd.png"/> </figure>
       </li>
     </ul>
   </section>
   <section class="bcls-section">
     <h2 id="rates">Taux de lecture</h2>
-    <p>
-      Activation <strong> Taux de lecture </strong>offre la possibilité de sélectionner manuellement une vitesse de lecture différente. Une icône de taux de lecture apparaît dans le coin inférieur droit du lecteur.
-    </p>
-    <aside class="bcls-aside bcls-aside--information">
-      Remarques :
+    <p>Activation <strong> Taux de lecture </strong>offre la possibilité de sélectionner manuellement une vitesse de lecture différente. Une icône de taux de lecture apparaît dans le coin inférieur droit du lecteur.</p>
+    <aside class="bcls-aside bcls-aside--information"> Remarques :
       <ul>
-        <li>
-          Le sélecteur de taux de lecture nécessite Brightcove Player version 6.35.0 ou ultérieure et peut ne pas fonctionner avec tous les navigateurs.
-        </li>
+        <li>Le sélecteur de taux de lecture nécessite Brightcove Player version 6.35.0 ou ultérieure et peut ne pas fonctionner avec tous les navigateurs. </li>
         <li>La largeur du lecteur doit être d'au moins 424 pixels pour afficher le contrôle des taux de lecture.</li>
       </ul>
     </aside>
-    <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-playback-rates.png"/>
-    </figure>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-playback-rates.png"/> </figure>
   </section>
   <section class="bcls-section">
     <h2 id="fullscreen">Plein écran</h2>
-    <p>
-      Sélectionner <strong>Plein écran</strong> pour activer le contrôle plein écran. Le contrôle plein écran permet de redimensionner le lecteur pour remplir tout l'écran. Au lancement de la vidéo, une icône de plein écran s'affiche en bas à droite du lecteur.
-    </p>
+    <p>Sélectionner <strong>Plein écran</strong> pour activer le contrôle plein écran. Le contrôle plein écran permet de redimensionner le lecteur pour remplir tout l'écran. Au lancement de la vidéo, une icône de plein écran s'affiche en bas à droite du lecteur. </p>
   </section>
   <section class="bcls-section">
     <h2 id="volume">Curseur de volume vertical</h2>
-    <p>
-      Sélectionner <strong>Curseur de volume vertical</strong> pour afficher le curseur de volume verticalement.
-    </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-vertical-volume.png"/>
-    </figure>
-    <aside class="bcls-aside bcls-aside--information language-editable">
-      Cette fonctionnalité est uniquement disponible dans Brightcove Player 6.32.0+.
-    </aside>
+    <p>Sélectionner <strong>Curseur de volume vertical</strong> pour afficher le curseur de volume verticalement. </p>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-vertical-volume.png"/> </figure>
+    <aside class="bcls-aside bcls-aside--information language-editable"> Cette fonctionnalité est uniquement disponible dans Brightcove Player 6.32.0+. </aside>
   </section>
   <section class="bcls-section">
-    <h2 id="skip">Passer à la vidéo suivante (sélection)</h2>
-    <p>
-      Sélectionner <strong>Passer à la vidéo suivante (playlist)</strong> pour activer le contrôle de saut. Vous pouvez cliquer sur le contrôle de saut pour passer à la vidéo suivante dans la liste de lecture.
-    </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-skip-control.png"/>
-    </figure>
+    <h2 id="seeking">Recherche de vignettes</h2>
+    <p>Sélectionner <strong>Recherche de vignettes</strong> pour afficher des miniatures vidéo sur la barre de progression.</p>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-thumbnail-seeking.png"/> </figure>
+    <aside class="bcls-aside bcls-aside--information language-editable"> Cette fonctionnalité n'est disponible que dans Brightcove Player 6.41.0+. Pour en savoir plus sur la recherche de vignettes, voir <a href="adding-thumbnail-seeking-player.html">Ajout de la recherche de vignettes à un lecteur Brightcove</a>.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="skip">Passer à la vidéo suivante (playlist)</h2>
+    <p>Sélectionner <strong>Passer à la vidéo suivante (playlist)</strong> pour activer le contrôle de saut. Vous pouvez cliquer sur le contrôle de saut pour passer à la vidéo suivante dans la liste de lecture. </p>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-skip-control.png"/> </figure>
   </section>
   <section class="bcls-section">
     <h2 id="picture-in-picture">Image dans l'image</h2>
-    <p>
-      HTML5 image dans la fonctionnalité d'image est définie comme suit : <em>Permet aux sites Web de créer une fenêtre vidéo flottante toujours au-dessus des autres fenêtres afin que les utilisateurs puissent continuer à consommer des médias pendant qu'ils interagissent avec d'autres sites de contenu ou applications sur leur appareil</em>.
-    </p>
-    <p>
-      Un exemple d'image dans l'image est illustré dans les deux captures d'écran suivantes. Cette première capture d'écran montre un navigateur avec un lecteur affichant une vidéo. Notez le bouton image dans l'image en bas à droite du joueur avec la flèche rouge pointant vers lui.
-    </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="p-in-p nirnak" width="800" height="525" src="/assets/images/players/node18509-normal.png"/>
-    </figure>
-    <p>
-      Cette capture d'écran suivante montre le résultat du clic sur le bouton Image dans l'image. Le joueur se déplace par défaut près du coin inférieur droit de l'écran (PAS du navigateur). Le joueur peut alors être glissé partout où le spectateur souhaite le placer.
-    </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="" width="800" height="525" src="/assets/images/players/node18509-p-in-p.png"/>
-    </figure>
-    <p>
-      Cette fonctionnalité est activée par défaut. Tous les navigateurs ne prennent pas en charge cette fonctionnalité image dans l'image. Le tableau suivant détaille la prise en charge actuelle.
-    </p>
+    <p>HTML5 image dans la fonctionnalité d'image est définie comme suit : <em>Permet aux sites Web de créer une fenêtre vidéo flottante toujours au-dessus des autres fenêtres afin que les utilisateurs puissent continuer à consommer des médias pendant qu'ils interagissent avec d'autres sites de contenu ou applications sur leur appareil</em>. </p>
+    <p> Un exemple d'image dans l'image est illustré dans les deux captures d'écran suivantes. Cette première capture d'écran montre un navigateur avec un lecteur affichant une vidéo. Notez le bouton image dans l'image en bas à droite du joueur avec la flèche rouge pointant vers lui. </p>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="p-in-p nirnak" width="800" height="525" src="/assets/images/players/node18509-normal.png"/> </figure>
+    <p>Cette capture d'écran suivante montre le résultat du clic sur le bouton Image dans l'image. Le joueur se déplace par défaut près du coin inférieur droit de l'écran (PAS du navigateur). Le joueur peut alors être glissé partout où le spectateur souhaite le placer. </p>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" width="800" height="525" src="/assets/images/players/node18509-p-in-p.png"/> </figure>
+    <p>Cette fonctionnalité est activée par défaut. Tous les navigateurs ne prennent pas en charge cette fonctionnalité image dans l'image. Le tableau suivant détaille la prise en charge actuelle. </p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
@@ -1058,12 +1027,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </tr>
       </tbody>
     </table>
-    <p>
-      Vous pouvez désactiver cette fonctionnalité dans Studio à l'aide du <strong>Éditeur JSON</strong> option de la <strong>JOUEURS</strong> module. Pour ce faire, ajoutez l'option de configuration <code translate="No">"picture_in_picture_control": false,</code> comme montré ici:
-    </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-json-editor.png"/>
-    </figure>
+    <p>Vous pouvez désactiver cette fonctionnalité dans Studio à l'aide du <strong>Éditeur JSON</strong> option de la <strong>JOUEURS</strong> module. Pour ce faire, ajoutez l'option de configuration <code translate="No">"picture_in_picture_control": false,</code> comme montré ici: </p>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-json-editor.png"/> </figure>
   </section>
 </article>
 
@@ -1081,7 +1046,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  Dernière mise à jour de la page le 20 janvier 2021
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1143,7 +1115,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">Confidentialité</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Termes et conditions</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1154,8 +1126,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({

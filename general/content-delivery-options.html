@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="fr">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -489,8 +497,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">Gérer les canaux de diffusion dans le cloud <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">Vue d'ensemble : Lecture dans le cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Créer un canal de diffusion cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">Utilisation des actions de canal</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">Monétisation de la diffusion dans le cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">Génération du code d'intégration de canal</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Affichage de la sortie et des analyses de canal</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">Gérer les joueurs <strong>+</strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">Ajout de la recherche de vignettes</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">Configuration d'une superposition de lecteur</a></li>
@@ -698,6 +741,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">Révision des événements de joueur dans Google Analytics</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">Référence du rapport Tendances maintenant</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +777,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">Création de profils d'ingest hérités</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">Meilleures pratiques d'ingest Profils</a></li>
                   
                 
@@ -763,10 +806,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Profils d'ingestion standard (DD &amp; CAE)</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">Profils d'ingestion standard (hérités)</a></li>
                   
                 
                   
@@ -883,7 +922,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
     <p>Une des premières choses à décider après la création de votre compte Video Cloud est de savoir comment vous prévoyez de livrer vos fichiers vidéo. Video Cloud propose de nombreuses solutions offrant plusieurs avantages et plusieurs restrictions. La méthode de diffusion souhaitée dépendra du niveau de protection à garantir à vos fichiers, la manière que vous comptez utiliser pour atteindre votre public, si vos ressources vidéo se trouvent déjà sur un réseau de distribution de contenu, etc.</p>
-    <p>Les options de diffusion de contenu décrites dans cette rubrique ne sont disponibles que pour les éditeurs Video Cloud Enterprise. Les éditeurs Video Cloud Pro et Express doivent utiliser Brightcove comme CDN.</p>
+    <p>Les options de diffusion de contenu décrites dans cette rubrique ne sont disponibles que pour les éditeurs Video Cloud Enterprise. Les éditeurs Video Cloud Enterprise et Express doivent utiliser Brightcove comme CDN.</p>
     <p>Dans cette rubrique, vous en apprendrez plus sur les sujets suivants :</p>
     <ul>
       <li><a href="#what">Qu'est-ce qu'un CDN?</a></li>
@@ -899,7 +938,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="what">Qu'est-ce qu'un CDN ?</h2>
     <p>Les éditeurs utilisent les CDN pour diffuser leur contenu à grande échelle parmi les utilisateurs en ligne. <a target="_blank" href="http://en.wikipedia.org/wiki/Content_Delivery_Network">Wikipédia</a> définit le CDN de la manière suivante :</p>
     <p><em>Un réseau de distribution de contenu ou réseau de distribution de contenu (CDN) est un système d'ordinateurs mis en réseau sur Internet qui coopèrent de manière transparente pour fournir du contenu le plus souvent dans le but d'améliorer les performances, l'évolutivité et la rentabilité pour les utilisateurs finaux.</em></p>
-    <p>Il existe de nombreux types de CDN. Si vous êtes un éditeur Video Cloud Pro ou Express, Brightcove est votre solution CDN. Si vous êtes un éditeur de Video Cloud Enterprise, vous pouvez choisir de diffuser votre contenu à l'aide du CDN Brightcove ou via <a href="#cdns">tout CDN pris en charge par Video Cloud</a>.</p>
+    <p>Il existe de nombreux types de CDN. Si vous êtes un éditeur Video Cloud Enterprise ou Express, Brightcove est votre solution CDN. Si vous êtes un éditeur de Video Cloud Enterprise, vous pouvez choisir de diffuser votre contenu à l'aide du CDN Brightcove ou via <a href="#cdns">tout CDN pris en charge par Video Cloud</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="without">Puis-je diffuser mon contenu sans CDN ?</h2>
@@ -909,25 +948,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="types">Comment le contenu multimédia est-il diffusé ?</h2>
     <p>Il existe plusieurs types de technique de diffusion de contenus :</p>
     <ul>
-      <li><a href="#pd">Téléchargement progressif</a></li>
       <li><a href="#fms">Diffusion</a></li>
+      <li><a href="#pd">Téléchargement progressif</a></li>
     </ul>
-    <section id="pd" class="bcls-subsection">
-      <h3>Téléchargement progressif (ou TP)</h3>
-      <p>Lorsque vous diffusez votre contenu par téléchargement progressif, le fichier est diffusé à partir d’un serveur Web standard par le biais d’une requête HTTP à l’instar de toute autre page Web ou de tout autre document à télécharger. Lorsque la vidéo se lance, le fichier vidéo est téléchargé sur l'ordinateur ou l'appareil du spectateur et est stocké dans un dossier temporaire. La lecture de la vidéo commencera lorsque le volume de téléchargement du fichier sera suffisant. Si le spectateur veut faire avance rapide ou aller directement à un moment précis de la vidéo, il ne pourra le faire que si la partie en question a déjà été téléchargée et stockée. Par rapport au streaming vidéo, le téléchargement progressif n'a qu'un seul avantage constant : vous n'avez pas besoin d'un serveur de streaming pour diffuser la vidéo. La vidéo en téléchargement progressif peut être diffusée à partir de n’importe quel serveur Web standard.</p>
-      <p>Le téléchargement progressif est parfait pour les amateurs ou les sites Web qui ont peu de trafic, ne vous dérange pas si leur contenu est mis en cache sur l'ordinateur/appareil du spectateur et si vous n'avez besoin que de diffuser des vidéos de plus courte durée (moins de 10 minutes). Les éditeurs qui ont besoin de fonctionnalités avancées et de contrôle sur leur diffusion vidéo, et/ou ceux qui ont besoin d'afficher la vidéo à un public plus large (plusieurs centaines de spectateurs simultanés ou plus), doivent suivre et rapporter des statistiques d'utilisation ou de visualisation de la vidéo, ou qui veulent offrir la meilleure expérience de lecture interactive, auront besoin de diffuser leur vidéo. La diffusion en continu consomme également moins de bande passante que la livraison progressive, car seule la partie de la vidéo qui est regardée est réellement livrée.</p>
-      <p>Caractéristiques principales du téléchargement progressif :</p>
-      <ul>
-        <li>Fonctionnalités de recherche et de navigation limitées</li>
-        <li>Les utilisateurs peuvent accéder au contenu et le redéfinir.</li>
-        <li>N'utilise pas la fonctionnalité de diffusion dynamique de Video Cloud.</li>
-        <li>Moins sécurisé et le contenu peut être facilement copié</li>
-        <li>Toutes les parties de la vidéo sont téléchargées, ce qui a pour effet d'utiliser plus de bande passante.</li>
-      </ul>
-    </section>
     <section id="fms" class="bcls-subsection">
       <h3>Streaming (également appelé HLS ou DASH)</h3>
-      <p>À l'inverse, la diffusion en continu de vidéos se fait depuis un serveur de diffusion en direct. Le fichier n'est pas téléchargé sur l'ordinateur/appareil des utilisateurs. La lecture commence dès que l'utilisateur appuie sur le bouton. Si l'utilisateur décide de faire avance rapide ou de passer directement à un autre moment de la vidéo, la vidéo se lira sans à-coups. L'un des avantages de la diffusion en continu réside dans le fait que la bande passante ne sert qu'à diffuser la portion de vidéo regardée par l'utilisateur à l'instant T. Rien n'est conservé du côté client ; tout est côté serveur.</p>
+      <p>La vidéo en streaming est diffusée via un serveur de streaming sans que le fichier ne soit jamais téléchargé sur l'ordinateur / l'appareil du spectateur. La lecture commence dès que l'utilisateur appuie sur le bouton. Si l'utilisateur décide de faire avance rapide ou de passer directement à un autre moment de la vidéo, la vidéo se lira sans à-coups. L'un des avantages de la diffusion en continu réside dans le fait que la bande passante ne sert qu'à diffuser la portion de vidéo regardée par l'utilisateur à l'instant T. Rien n'est conservé du côté client ; tout est côté serveur.</p>
+      <aside class="bcls-aside bcls-aside--information language-editable">Notez qu'à l'ère des lecteurs vidéo HTML5, tous les appareils et navigateurs modernes prennent en charge le streaming et l'utiliseront s'il est disponible (plutôt que le téléchargement progressif). C'est une bonne chose, car cela permet une meilleure gestion de la mise en mémoire tampon et économise de la bande passante si le spectateur ne regarde pas la vidéo entière.</aside>
       <p>La diffusion en continu est utile dans chaque situation pour laquelle vous voulez ou devez effectuer les opérations suivantes :</p>
       <ul>
         <li>Diffuser des vidéos de longue durée (10 minutes ou plus) ou des fichiers en haute définition.</li>
@@ -939,7 +966,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <p>Les appareils Apple iOS prennent uniquement en charge Apple HTTP Live Streaming (HLS) et HTTP (téléchargement progressif) pour la livraison de fichiers vidéo. Vous devez vous assurer que vos vidéos disposent d'un ou plusieurs formats associés HLS disponibles. Les règles de l'App Store exigent l'utilisation d'Apple HTTP Live Streaming pour le contenu vidéo long format (supérieur à 5 Mo ou 10 minutes).</p>
       <p>Caractéristiques principales de la diffusion en continu :</p>
       <ul>
-        <li>Le contenu vidéo est sécurisé via un lien vidéo provisoire.</li>
+        <li>Le contenu vidéo est sécurisé via un lien vidéo temporaire</li>
         <li>L'utilisateur peut faire avance rapide.</li>
         <li>Utilise la fonctionnalité de diffusion dynamique de Video Cloud.</li>
         <li>Permet de diffuser plus de flux avec moins de bande passante.</li>
@@ -947,12 +974,26 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </ul>
       <p>En pratique, vous réaliserez très rarement si le contenu a été diffusé en continu ou téléchargé progressivement, sauf si vous recherchez certaines des fonctionnalités distinguées décrites ci-dessus.</p>
     </section>
-    <section id="images" class="bcls-subsection">
-      <h3>Diffusion des ressources images</h3>
-      <p>Quel que soit l’usage que vous faites de la diffusion en continu ou du téléchargement progressif pour le contenu vidéo, les images diffusées aux utilisateurs finaux dans le lecteur Video Cloud (vignettes et captures d’écran, par exemple) sont transmises par téléchargement HTTP.</p>
-    </section>
+  <section id="pd" class="bcls-subsection">
+    <h3>Téléchargement progressif (ou TP)</h3>
+    <aside class="bcls-aside bcls-aside--information language-editable">Seuls les navigateurs ou appareils très anciens nécessitent encore un téléchargement progressif. Son utilisation principale est désormais de fournir des rendus qui peuvent être téléchargés et enregistrés par l'utilisateur.</aside>
+    <p>Lorsque vous diffusez votre contenu par téléchargement progressif, le fichier est diffusé à partir d’un serveur Web standard par le biais d’une requête HTTP à l’instar de toute autre page Web ou de tout autre document à télécharger. Lorsque la vidéo se lance, le fichier vidéo est téléchargé sur l'ordinateur ou l'appareil du spectateur et est stocké dans un dossier temporaire. La lecture de la vidéo commencera lorsque le volume de téléchargement du fichier sera suffisant. Si le spectateur veut faire avance rapide ou aller directement à un moment précis de la vidéo, il ne pourra le faire que si la partie en question a déjà été téléchargée et stockée. Par rapport au streaming vidéo, le téléchargement progressif n'a qu'un seul avantage constant : vous n'avez pas besoin d'un serveur de streaming pour diffuser la vidéo. La vidéo en téléchargement progressif peut être diffusée à partir de n’importe quel serveur Web standard.</p>
+    <p>Le téléchargement progressif est parfait pour les amateurs ou les sites Web qui ont peu de trafic, ne vous dérange pas si leur contenu est mis en cache sur l'ordinateur/appareil du spectateur et si vous n'avez besoin que de diffuser des vidéos de plus courte durée (moins de 10 minutes). Les éditeurs qui ont besoin de fonctionnalités avancées et de contrôle sur leur diffusion vidéo, et/ou ceux qui ont besoin d'afficher la vidéo à un public plus large (plusieurs centaines de spectateurs simultanés ou plus), doivent suivre et rapporter des statistiques d'utilisation ou de visualisation de la vidéo, ou qui veulent offrir la meilleure expérience de lecture interactive, auront besoin de diffuser leur vidéo. La diffusion en continu consomme également moins de bande passante que la livraison progressive, car seule la partie de la vidéo qui est regardée est réellement livrée.</p>
+    <p>Caractéristiques principales du téléchargement progressif :</p>
+    <ul>
+      <li>Fonctionnalités de recherche et de navigation limitées</li>
+      <li>Les utilisateurs peuvent accéder au contenu et le redéfinir.</li>
+      <li>N'utilise pas la fonctionnalité de diffusion dynamique de Video Cloud.</li>
+      <li>Moins sécurisé et le contenu peut être facilement copié</li>
+      <li>Toutes les parties de la vidéo sont téléchargées, ce qui a pour effet d'utiliser plus de bande passante.</li>
+    </ul>
   </section>
-  <section class="bcls-section">
+  <section id="images" class="bcls-subsection">
+    <h3>Diffusion des ressources images</h3>
+    <p>Quel que soit l’usage que vous faites de la diffusion en continu ou du téléchargement progressif pour le contenu vidéo, les images diffusées aux utilisateurs finaux dans le lecteur Video Cloud (vignettes et captures d’écran, par exemple) sont transmises par téléchargement HTTP.</p>
+  </section>
+</section>
+<section class="bcls-section">
     <h2 id="compare">Comparaison de la diffusion de contenu : ressources vidéo hébergées par Brightcove, BYO ou ressources distantes</h2>
     <p>Video Cloud prend en charge plusieurs configurations CDN de base, selon le fournisseur et la configuration du CDN. Les options disponibles sont les suivantes :</p>
     <ul>
@@ -1035,7 +1076,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  Dernière mise à jour de la page le 11 janvier 2021
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1097,7 +1145,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">Confidentialité</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Termes et conditions</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1108,8 +1156,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({

@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="fr">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -489,8 +497,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">Gérer les canaux de diffusion dans le cloud <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">Vue d'ensemble : Lecture dans le cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Créer un canal de diffusion cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">Utilisation des actions de canal</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">Monétisation de la diffusion dans le cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">Génération du code d'intégration de canal</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Affichage de la sortie et des analyses de canal</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">Gérer les joueurs <strong>+</strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">Ajout de la recherche de vignettes</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">Configuration d'une superposition de lecteur</a></li>
@@ -698,6 +741,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">Révision des événements de joueur dans Google Analytics</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">Référence du rapport Tendances maintenant</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +777,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">Création de profils d'ingest hérités</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">Meilleures pratiques d'ingest Profils</a></li>
                   
                 
@@ -763,10 +806,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Profils d'ingestion standard (DD &amp; CAE)</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">Profils d'ingestion standard (hérités)</a></li>
                   
                 
                   
@@ -922,6 +961,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>Nom</strong> - Pas plus de 255 caractères.</li>
       <li><strong>ID</strong> - ID vidéo attribué par le système (unique sur tous les comptes Video Cloud).</li>
       <li><strong>Brève description</strong> - Pas plus de 250 caractères. </li>
+      <li><strong>Tags</strong> : une ou plusieurs balises séparées par des virgules. Vous pouvez utiliser des balises pour ajouter des vidéos à des sélections intelligentes ou pour rechercher des vidéos à l'aide de l'API CMS.
+        <ul>
+          <li>Les balises peuvent contenir jusqu'à 128 caractères. Si des balises contiennent plus de 128 caractères, une erreur s'affiche lorsque vous tentez d'enregistrer les modifications.</li>
+          <li>Les balises ne peuvent pas contenir de virgules. Par exemple, une étiquette « toit, grenier + cour avant » n'est pas prise en charge.</li>
+          <li>La limite de balises autorisées est de 1 200.</li>
+          <li>Une balise ne diffère que dans la casse (minuscules, majuscules) est traitée comme une balise identique et la casse correspondra automatiquement à celles de la balise d'origine.</li>
+          <li>Les problèmes de sensibilité à la casse doivent être traités de manière externe vers Video Cloud, par exemple en utilisant des méthodes JavaScript pour modifier les chaînes.</li>
+          <li>Après avoir entré une balise, appuyez sur la touche <strong>virgule</strong> ou <strong>entrez</strong>. Les balises qui ont été ajoutées s'afficheront dans une boîte colorée.
+            <figure class="bcls-figure"></figure>
+          </li>
+        </ul>
+      </li>
       <li><strong>Reference ID</strong> : identifiant unique affecté par un éditeur à une vidéo ou une sélection. Un ID de référence (limité à 150 caractères). L'ID de référence est différent de l'ID de la vidéo ou de l’ID de sélection, qui sont des ID uniques générés par Video Cloud. L'ID de référence permet la coordination entre Video Cloud et d’autres services tels que le CMS d’un éditeur. Vous ne pouvez pas faire une modification par lots de l’ID de référence, car deux vidéos ne peuvent pas avoir le même ID de référence. Les ID de référence sont toujours uniques. Supprimer une vidéo permettra de libérer un ID précédemment utilisé.</li>
       <li><strong>Video Projection</strong> : indique comment la vidéo a été enregistrée.
         <ul>
@@ -949,20 +1000,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="categorization">Catégorisation</h2>
-    <p>La section Catégorisation affiche les <strong>Mots clés</strong> , <strong>Listes de lecture manuelles</strong> la vidéo est attribuée et le <strong>Dossier</strong> la vidéo est en. Pour modifier les propriétés, effectuez des modifications directement dans cette section. Appuyez sur Entrée pour enregistrer les modifications.</p>
+    <p>La section Catégorisation affiche les<strong> Listes de lecture manuelles</strong> la vidéo est attribuée et le <strong>Dossier</strong> la vidéo est en. Pour modifier les propriétés, effectuez des modifications directement dans cette section. Appuyez sur Entrée pour enregistrer les modifications.</p>
     <ul>
-      <li><strong>Tags</strong> : une ou plusieurs balises séparées par des virgules. Vous pouvez utiliser des balises pour ajouter des vidéos à des sélections intelligentes ou pour rechercher des vidéos à l'aide de l'API CMS.
-        <ul>
-          <li>Les balises peuvent contenir jusqu'à 128 caractères. Si des balises contiennent plus de 128 caractères, une erreur s'affiche lorsque vous tentez d'enregistrer les modifications.</li>
-          <li>Les balises ne peuvent pas contenir de virgules. Par exemple, une étiquette « toit, grenier + cour avant » n'est pas prise en charge.</li>
-          <li>La limite de balises autorisées est de 1 200.</li>
-          <li>Une balise ne diffère que dans la casse (minuscules, majuscules) est traitée comme une balise identique et la casse correspondra automatiquement à celles de la balise d'origine.</li>
-          <li>Les problèmes de sensibilité à la casse doivent être traités de manière externe vers Video Cloud, par exemple en utilisant des méthodes JavaScript pour modifier les chaînes.</li>
-          <li>Après avoir entré une balise, appuyez sur la touche <strong>virgule</strong> ou <strong>entrez</strong>. Les balises qui ont été ajoutées s'afficheront dans une boîte colorée.
-            <figure class="bcls-figure"></figure>
-          </li>
-        </ul>
-      </li>
       <li><strong>Manual Playlists</strong> : sélections auxquelles appartient la vidéo. Cliquez sur le X pour supprimer la vidéo d'une liste de lecture. Pour plus d’informations, consultez la rubrique <a href="/media/creating-and-managing-playlists.html">Création et gestion de sélections</a>.</li>
       <li><strong>Folder</strong> : le dossier auquel est affectée la vidéo. Pour plus d'informations, consultez la rubrique <a href="/media/organizing-videos-using-folders.html">Organisation des vidéos dans des dossiers</a>.</li>
     </ul>
@@ -976,8 +1015,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><a href="/media/replacing-video-source-file.html">Remplacer le fichier source vidéo</a></li>
       <li><a href="/media/retranscoding-videos-using-media-module.html">Retranscoder la vidéo</a></li>
     </ul>
-    <p>Dans cet exemple, le transcodage hérité a été utilisé (lorsque la vidéo a été téléchargée, un profil d'ingest hérité a été utilisé). Pour télécharger un rendu, faites un clic-droit sur le lien de format du rendu.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15482-video-files.png"/></figure>
     <p>Dans cet exemple, <a href="/general/overview-dynamic-delivery.html">Livraison dynamique</a> le transcodage a été utilisé (lorsque la vidéo a été téléchargée, un profil d'acquisition Dynamic Delivery ou Context Aware Encoding a été utilisé).</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15482-video-files-dd.png"/></figure>
     <aside class="bcls-aside bcls-aside--information">Remarque : Un commutateur à bascule DRM peut également apparaître dans la section si le compte a été activé pour DRM. Pour plus d'informations sur DRM, consultez <a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-content-drm.html">Ingérer du contenu avec DRM</a>.</aside>
@@ -1035,7 +1072,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  Dernière mise à jour de la page le 01 février 2021
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1097,7 +1141,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">Confidentialité</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Termes et conditions</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1108,8 +1152,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({

@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="fr">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -489,8 +497,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">Gérer les canaux de diffusion dans le cloud <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">Vue d'ensemble : Lecture dans le cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Créer un canal de diffusion cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">Utilisation des actions de canal</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">Monétisation de la diffusion dans le cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">Génération du code d'intégration de canal</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Affichage de la sortie et des analyses de canal</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">Gérer les joueurs <strong>+</strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">Ajout de la recherche de vignettes</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">Configuration d'une superposition de lecteur</a></li>
@@ -698,6 +741,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">Révision des événements de joueur dans Google Analytics</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">Référence du rapport Tendances maintenant</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +777,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">Création de profils d'ingest hérités</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">Meilleures pratiques d'ingest Profils</a></li>
                   
                 
@@ -763,10 +806,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Profils d'ingestion standard (DD &amp; CAE)</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">Profils d'ingestion standard (hérités)</a></li>
                   
                 
                   
@@ -934,6 +973,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><a href="/analytics/getting-started-analytics-module.html">Analytique</a> - Affichez des analyses sur les performances de la vidéo et du lecteur</li>
       <li><a href="/players/getting-started-players-module.html">Joueurs</a> - Créer et styliser les joueurs et générer du code de publication pour les joueurs</li>
       <li><a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html">Vivre</a> - Créer et diffuser des événements en direct</li>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">Lecture dans le cloud</a> - Créez des chaînes linéaires en direct pour les vidéos</li>
       <li><a href="https://gallery.support.brightcove.com/get-started/getting-started-brightcove-gallery.html">Galerie</a> - Créez des portails vidéo pour votre contenu vidéo</li>
       <li><a href="https://social.support.brightcove.com/get-started/getting-started-brightcove-social.html">Social</a> - Distribuez des vidéos sur les comptes de réseaux sociaux</li>
       <li><a href="https://audience.support.brightcove.com/get-started/getting-started-audience-module.html">Public</a> - Connecte l'analyse vidéo de Video Cloud aux plateformes d'automatisation du marketing</li>
@@ -946,7 +986,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>Vues vidéo</strong> - Affiche le nombre de vues vidéo par jour pour la période sélectionnée. En cliquant sur le <strong>Voir les détails de la vidéo</strong> Le lien ouvrira le rapport sur les performances où vous pourrez voir les performances vidéo</li>
       <li><strong>Relevé de compte</strong> - Affiche le nombre total de vidéos et de lecteurs dans le compte et le nombre de vidéos récemment créées et mises à jour. Cliquez sur un numéro pour ouvrir le module Media ou Lecteurs.</li>
       <li><strong>Type d'appareil</strong> - Affiche le type d'appareils utilisés pour regarder des vidéos pendant la période sélectionnée. En cliquant sur le <strong>Voir les vues vidéo par type d'appareil</strong> Le lien ouvrira le rapport sur les performances où vous pourrez afficher les performances vidéo par type d'appareil.</li>
-      <li><strong>Quoi de neuf?</strong> - Affiche les informations de mise à jour du produit Video Cloud. Pour une liste complète des mises à jour, consultez le <a href="/release-notes/video-cloud-studio-release-notes.html">Notes de mise à jour de Video Cloud Studio</a>.</li>
+      <li><strong>Quoi de neuf?</strong> - Affiche les informations de mise à jour de Video Cloud Enterpriseduct. Pour une liste complète des mises à jour, consultez le <a href="/release-notes/video-cloud-studio-release-notes.html">Notes de mise à jour de Video Cloud Studio</a>.</li>
       <li><strong>Vidéos les plus populaires</strong> - Affiche les vidéos avec le plus de vues pour la période sélectionnée. Cliquez sur le lien du titre de la carte pour ouvrir le rapport de performance dans lequel vous pouvez visualiser les performances vidéo.</li>
       <li><strong>Affichage des régions</strong> - Affiche les emplacements du spectateur pour la période sélectionnée. En cliquant <strong>Voir les visionnages vidéo par pays</strong> ouvrira le rapport sur les performances dans lequel vous pourrez voir les vues vidéo par pays.</li>
     </ul>
@@ -964,11 +1004,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ul>
     <p>Pour plus d'informations, reportez-vous à <a href="/admin/managing-profile-information.html">la section Gestion des informations de profil</a>.</p>
   </section>
-  <section class="bcls-section">
-    <h2 id="shortcuts">Raccourcis clavier</h2>
-    <p>En appuyant sur <strong>?</strong> sur la page d'accueil de Video Cloud Studio ouvre une liste des touches de raccourci disponibles.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node14494-keyboard-shortcuts.png"/></figure>
-  </section>
 </article>
 
 <!-- complete bootstrap layout -->
@@ -985,7 +1020,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  Dernière mise à jour de la page le 02 février 2021
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1047,7 +1089,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">Confidentialité</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Termes et conditions</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1058,8 +1100,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({
