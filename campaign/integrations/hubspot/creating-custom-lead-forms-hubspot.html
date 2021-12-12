@@ -1,0 +1,118 @@
+---
+title: La création de formulaires pour prospects personnalisés pour HubSpot
+description: Dans cette rubrique, vous apprendrez à utiliser un formulaire HubSpot pour capturer des données de prospect dans un Brightcove Player.
+parent: HubSpot 
+grandparent: Integrations
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Le module Campaign offre la possibilité de créer des formulaires de prospects personnalisés qui vous permettent de capturer des informations sur les téléspectateurs pendant que les vidéos sont lues dans les lecteurs Brightcove. Les données de prospect sont envoyées à HubSpot et traitées par lui.</p>
+    <p>La création d'un formulaire de clients potentiels passe par les étapes suivantes :</p>
+    <ol>
+      <li><a href="#form">Créer un formulaire dans HubSpot</a></li>
+      <li><a href="#edit">Copier et modifier le code d'intégration du formulaire</a></li>
+      <li><a href="#leadform">Créer un formulaire pour prospects personnalisé dans le module Campagne</a></li>
+      <li><a href="#player">Attribuer le formulaire de prospection à un lectuer</a></li>
+      <li><a href="#formdata">Valider les données du formulaire dans HubSpot</a></li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">Note: Pour plus d'informations sur les formulaires de prospects standard qui capturent les informations de visionneuse et enregistrent les données dans Video Cloud, voir <a href="/campaign/general/creating-campaign-lead-form.html">Création d'un formulaire de pistes de campagne</a>.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="form">Création d'un formulaire dans HubSpot</h2>
+    <p>Les formulaires HubSpot peuvent être utilisés pour générer des informations de prospect auprès des visiteurs du site Web. Ces formulaires peuvent également être affichés à l'intérieur des lectuers de Brightcove. Les étapes ci-dessous créeront un formulaire simple pour capturer les informations de l'utilisateur. Pour plus de détails sur les formulaires HubSpot, consultez la <a href="https://knowledge.hubspot.com/landing-page-user-guide-v2/how-to-create-a-form-for-your-landing-page">documentation HubSpot</a>.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Connectez-vous à votre compte HubSpot.</li>
+      <li>Cliquez sur <strong>&gt; Formulaires marketing</strong>. Si vous utilisez le menu Classique, cliquez sur &gt; <strong>Formulaires</strong> <strong>Contacts</strong>.</li>
+      <li>Cliquez sur <strong>Créer un formulaire</strong>.</li>
+      <li>Cliquez sur <strong>Formulaire intégré</strong> puis cliquez <strong>Prochain</strong>. Par défaut, le formulaire contiendra un <strong>E-mail</strong> terrain et un <strong>Soumettre</strong> bouton.</li>
+      <li>Assurez-vous que le <strong>modèle vide</strong> est sélectionné. Cliquez sur <strong>Démarrer</strong>.</li>
+      <li>Cliquez sur le nom par défaut dans l'en-tête et nommez le formulaire. Appuyez sur <strong>Entrée</strong> pour enregistrer les modifications. </li>
+      <li>Cliquez sur le nom par défaut dans l'en-tête et nommez le formulaire. Appuyez sur <strong>Entrée</strong> pour enregistrer les modifications.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/hubspot/node16772-name-form.png" /></figure>
+      </li>
+      <li>Le côté gauche de la page contient une liste de champs qui peuvent être ajoutés au formulaire. Faites glisser et déposez le <strong>Prénom</strong> et <strong>Nom de famille</strong> champs que vous voulez sur le formulaire sur le côté droit de la page.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/hubspot/node16772-drag-field.png" /></figure>
+      </li>
+      <li>Pour rendre un champ obligatoire, passez la souris dessus et cliquez sur <strong>Plus &gt; Rendre obligatoire</strong>. Les champs obligatoires affichent un * en regard de l'étiquette du champ.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/hubspot/node16772-req-field.png" /></figure>
+      </li>
+      <li>Cliquez sur le lien <strong>Options</strong> en haut de la page.</li>
+      <li>Pour <strong>ce qui se passe après l'envoi de ce formulaire par un visiteur</strong>, cliquez sur <strong>Afficher un message de remerciement</strong>. Conservez le message par défaut car il ne sera jamais affiché.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/hubspot/node16772-submit-form-options.png" /></figure>
+      </li>
+      <li>Cliquez sur le lien <strong>Style et aperçu</strong> en haut de la page. Par défaut, un aperçu <strong>du Bureau</strong> s'affiche.</li>
+      <li>Cliquez sur <strong>Publier </strong>en haut de la page pour publier les modifications apportées au formulaire.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="edit">Copie et modification du code d'intégration du formulaire</h2>
+    <p>Pour utiliser le formulaire à l'intérieur du module Campaign, vous devrez copier et modifier le code d'intégration du formulaire. En outre, vous voudrez peut-être faire un style de base au formulaire. Dans les étapes ci-dessous, nous allons copier le code d'intégration du formulaire dans un éditeur HTML, puis apporter quelques modifications de style au formulaire.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Cliquez sur <strong>Partager</strong> en haut à droite de la page et copiez le code d'intégration dans le Presse-papiers.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/hubspot/node16772-copy-form-embed.png" /></figure>
+      </li>
+      <li>Collez le code d'intégration dans l'éditeur HTML de votre choix.</li>
+      <li>Le code d'intégration a besoin d'un petit changement afin que Campaign sache fermer le formulaire lorsqu'il est soumis. Localisez la ligne qui a <strong><code translate="No"> formId:</code></strong> Ajouter une virgule à la fin de la ligne.</li>
+      <li>Ajoutez cette ligne sous la <strong><code translate="No"> formId:</code></strong> ligne.
+        <pre>
+<code translate="No">onFormSubmit: bcLeadForm.submit</code></pre>
+      </li>
+      <li>Par défaut, lorsque le formulaire est affiché à l'intérieur d'un lecteur Brightcove, le formulaire s'affiche sur un fond transparent au-dessus du lecteur. Ajoutez le CSS suivant au code d'intégration pour changer la couleur d'arrière-plan en gris.<br />
+        <code translate="No">&lt;style&gt;<br />
+        body {<br />
+        background-color: rgba(204,204,204,0.9);<br />
+        margin: 0;<br />
+        padding: 20px;<br />
+        height: 100%;<br />
+        }<br />
+        &lt;/style&gt;</code></li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="leadform">Création d'un formulaire pour prospects personnalisé dans le module Campagne</h2>
+    <p>Une fois le code d'intégration du formulaire modifié, créez un formulaire pour prospects personnalisé dans le module Campagne et associez le formulaire pour prospects à un lecteur compatible avec Campaign.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Ouvrez le module Campagne.</li>
+      <li>Cliquez sur <strong>Formulaires de prospect</strong> dans la navigation de gauche. Si des formulaires de clients potentiels ont déjà été créés, ils s'afficheront ici.</li>
+      <li>Cliquez sur <strong>Create Lead Form</strong>.</li>
+      <li>Donnez au formulaire un <strong>nom</strong> descriptif.</li>
+      <li>Choisissez la langue dans <strong>Form Language</strong>.</li>
+      <li>Sélectionnez le moment d'affichage dans <strong>Form Timing</strong>. Cela permet de déterminer quand s'affichera le formulaire de clients potentiels.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit lead form (1)" src="/assets/images/campaign/integrations/hubspot/node16772-edit-lead-form-1.png" /></figure>
+      </li>
+      <li>Définissez le type de formulaire sur <strong>Custom Lead Form</strong>.</li>
+      <li>Coller dans le <strong>code d'intégration du formulaire</strong>.</li>
+      <li><strong>(Facultatif)</strong> Collez dans le code HTML <strong>de confirmation</strong>. La vue de confirmation s'affiche pendant 5 secondes, puis la vidéo reprendra la lecture. Si la confirmation HTML n'est pas incluse, la lecture de la vidéo reprendra après l'envoi du formulaire. <aside class="bcls-aside bcls-aside--information">Note: Vous devez styler le code HTML de confirmation afin de ne pas vous retrouver avec du texte noir sur fond noir.</aside>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit lead form (2)" src="/assets/images/campaign/integrations/hubspot/node16772-edit-lead-form-2.png" /></figure>
+      </li>
+      <li><strong>(Facultatif)</strong> Cliquez sur <strong>Preview Form</strong> pour afficher un aperçu du formulaire.</li>
+      <li>Cliquez sur <strong>Save</strong> pour enregistrer le formulaire.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="player">Affectation d'un formulaire de clients potentiels à un lecteur</h2>
+    <p>Une fois le formulaire de client potentiel créé, vous devez l'affecter à un lecteur. Pour ce faire, procédez comme suit :</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Cliquez sur <strong>lectuers de la campagne</strong> dans la navigation de gauche.</li>
+      <li>Localisez votre lectuer et utilisez la liste déroulante <strong>Formulaire de prospect</strong> pour sélectionner le formulaire de prospect.</li>
+    </ol>
+    <p>La configuration est désormais terminée ; vous êtes prêt à capturer les informations sur les clients potentiels. Lorsqu'une vidéo est publiée à l'aide d'un lecteur compatible avec Campaign, le formulaire pour prospects apparaîtra en fonction des paramètres de synchronisation du formulaire.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="formdata">Validation des données du formulaire dans HubSpot</h2>
+    <p>Les prospects capturés à l'aide du formulaire de prospect personnalisé seront ajoutés en tant que contacts dans votre compte HubSpot. Un moyen facile de visualiser les données capturées par le formulaire de prospect consiste à créer une Smart List dans HubSpot.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Connectez-vous à votre compte HubSpot.</li>
+      <li>Cliquez sur <strong>Commercialisation</strong> &gt; <strong>Formes</strong>.</li>
+      <li>Lorsque vous survolez un formulaire, un menu <strong>Actions</strong> apparaît. Cliquez sur <strong>Actions &gt; Afficher les soumissions</strong>. Une liste des soumissions de formulaires apparaîtra.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="assign-lead-form-to-player" src="/assets/images/campaign/integrations/hubspot/node16772-form-submissions.png" /></figure>
+      </li>
+      <li>Lorsque vous passez la souris sur une ligne, cliquez sur <strong>Voir la soumission</strong> pour afficher les données du formulaire.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="assign-lead-form-to-player" src="/assets/images/campaign/integrations/hubspot/node16772-submission-details.png" /></figure>
+      </li>
+    </ol>
+  </section>
+</article>

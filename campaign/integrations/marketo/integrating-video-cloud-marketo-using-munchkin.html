@@ -1,0 +1,124 @@
+---
+title: Intégration de Video Cloud avec Marketo à l'aide de Munchkin
+description: Cette rubrique explique comment configurer le module Campaign à utiliser avec Marketo Munchkin.
+parent: Marketo 
+grandparent: Integrations
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Le module Campaign permet à Video Cloud de synchroniser les données de visualisation des Brightcove Players vers Marketo. Une fois dans Marketo, ces données peuvent être utilisées pour la segmentation, la logique de campagne, les rapports, la notation des prospects et la personnalisation des communications.</p>
+    <p>Pour plus d'informations sur la configuration du module Campaign à utiliser avec Marketo à l'aide des API REST, consultez <a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-rest-apis.html">Intégration de Video Cloud avec Marketo à l'aide des API REST</a>.</p>
+    <p>L'intégration du module Campaign avec Marketo se compose de deux composants principaux :</p>
+    <ul>
+      <li>Un plug-in Brightcove Player pour permettre le suivi des données de vues vidéo</li>
+      <li>Un processus de synchronisation pour envoyer des données de suivi de Video Cloud à Marketo</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="requirements">Exigences</h2>
+    <p>Pour utiliser le module Campagne avec Marketo, vous devez :</p>
+    <ul>
+      <li>Avoir un compte Marketo avec l'API Munchkin activée - vous aurez besoin de votre identifiant de compte Munchkin (voir <a href="#marketo">Accès au Marketo munchkin</a> ci-dessous) ; les utilisateurs ayant le rôle d'utilisateur Munchkin devraient pouvoir accéder à ces valeurs.</li>
+      <li>Avoir un compte Professional ou Enterprise Video Cloud</li>
+      <li>Activez le module Campagne pour votre compte en soumettant les informations requises dans l'écran de démarrage initial qui apparaît lorsque vous ouvrez le module Campagne</li>
+      <li>Cliquez sur le contrat de service la première fois que vous utilisez le module</li>
+      <li>Utilisez le code de publication Advanced Inbed (dans la page) lors de la publication de votre lecteur ; le code de publication d'intégration standard (iframe) ne fonctionnera pas car le plugin fonctionnera à l'intérieur d'un iframe et ne pourra donc pas accéder aux paramètres d'URL de la page parent et peut ne pas obtenir les bons cookies</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="features">Fonctionnalités</h2>
+    <p>Voici quelques-unes des principales fonctionnalités de l'intégration Video Cloud - Marketo :</p>
+    <ul>
+      <li><strong>Formulaires Lead</strong> - Créez des formulaires Marketo qui apparaîtront automatiquement lorsque les spectateurs regardent des vidéos. Pour plus d'informations, voir <a href="/campaign/integrations/marketo/creating-custom-lead-forms-marketo.html">Création de formulaires de prospect personnalisés pour Marketo</a>.</li>
+      <li><strong>Format de données</strong>: les données de visualisation du cloud vidéo sont transmises à Marketo sous la forme d'une vue de page ou d'une visite Web virtuelle. L'événement de visite de page Web contient des paramètres de requête qui indiquent le niveau d'engagement de l'utilisateur. Les données répliquées sur Marketo sont les suivantes :
+        <ul>
+          <li>Nom de la vidéo</li>
+          <li>ID de la vidéo</li>
+          <li>ID de compte (Video Cloud)</li>
+          <li>URL de la page (URL de la page de référence)</li>
+          <li>ID du lectuer (lecteur Video Cloud)</li>
+          <li>% regardé (25 %, 50 %, 75 %, 95 %)</li>
+        </ul>
+      </li>
+      <li><strong>Transfert de données</strong> - Les données de visualisation sont envoyées immédiatement à Marketo lorsque le lecteur Brightcove activé pour la campagne les génère. Cependant, certains rapports de la plate-forme Marketo peuvent prendre un certain temps à s'actualiser. L'intégration de Marketo Munchkin n'envoie pas de données de visualisation à Campaign. Les données de visualisation sont envoyées directement à Marketo côté client dans le navigateur.</li>
+      <li><strong>Conservation des données</strong> - Les données collectées peuvent éventuellement être conservées dans Video Cloud pendant 6 mois.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="marketo">Accéder au Marketo munchkin</h2>
+    <p>Lors de la configuration de l'intégration avec Video Cloud, vous serez invité à entrer votre Marketo munchkin. Suivez les étapes ci-dessous pour accéder à cette valeur.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Connectez-vous à votre compte Marketo.</li>
+      <li>Cliquez sur <strong>Admin</strong> dans la navigation supérieure.</li>
+      <li>Dans la navigation de gauche, accédez à <strong>Admin &gt;</strong> <strong>Integration &gt;</strong> <strong>Munchkin</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="marketo account settings" src="/assets/images/campaign/integrations/marketo/node15636-marketo-account.png" /></figure>
+      </li>
+      <li>Copiez l' <strong>ID de compte Munchkin</strong> et enregistrez-le dans un endroit sûr. Il sera nécessaire lors de la configuration du module Campaign.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="marketo-account-id" src="/assets/images/campaign/integrations/marketo/node15636-marketo-account-id.png" /></figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="setupConnection">Configuration de la connexion</h2>
+    <p>Procédez comme suit pour configurer la connexion entre Video Cloud et Marketo.</p>
+    <h3 id="establishConnection">Établissement de la connexion entre Video Cloud et Marketo</h3>
+    <ol class="bcls-tasklist-restart">
+      <li>Ouvrez le module Campagne et cliquez sur <strong>Connexions de données</strong> dans la navigation de gauche.</li>
+      <li>Cliquez sur <strong>Add New Collection</strong>.</li>
+      <li>Sélectionnez <strong>Marketo</strong> comme intégration. <aside class="bcls-aside bcls-aside--information">Note: Les intégrations disponibles sont basées sur votre abonnement Video Cloud.</aside>
+      </li>
+      <li>(Facultatif) Entrez un <strong>nom de connexion</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Campaign setup" src="/assets/images/campaign/integrations/marketo/node15636-setup-section.png" /></figure>
+      </li>
+      <li>Cliquez sur <strong>Connect</strong>.</li>
+      <li>Sélectionnez Volume <strong>élevé (Munchkin),</strong> puis cliquez sur <strong>Enregistrer</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="marketo integration type" src="/assets/images/campaign/integrations/marketo/node15636-munchkin-rest.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">Note: Pour plus d'informations sur l'utilisation de l'intégration REST, reportez-vous à la section <a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-rest-apis.html">Intégration de Video Cloud with Marketo Using the REST API</a>.</aside>
+      </li>
+      <li>Clique le <strong>vide</strong> lien dans le <strong>Identifiant de compte Marketo</strong> section. Collez votre <strong>ID de compte Munchkin</strong> et cliquez sur <strong>Enregistrer</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Marketo splash screen" src="/assets/images/campaign/integrations/marketo/node15636-marketo-acct-id.png" /></figure>
+      </li>
+    </ol>
+    <p>La connexion Video Cloud à Marketo est maintenant configurée et prête à l'emploi.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configure">Configuration de l'intégration</h2>
+    <p>Une fois la connexion Video Cloud to Marketo établie, vous pouvez configurer l'intégration.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connected options" src="/assets/images/campaign/integrations/marketo/node15636-connected-options.png" /></figure>
+    <ol class="bcls-tasklist-restart">
+      <li>Par défaut, l' <strong>état de la connexion</strong> sera <strong>activé</strong>. L' <strong>état de la connexion</strong> détermine si les données d'engagement vidéo Video Cloud sont envoyées à Marketo.
+        <ul>
+          <li><strong>Activé</strong> - Les données sont collectées et seront envoyées à Marketo</li>
+          <li><strong>Désactivé</strong> - Aucune donnée n'est collectée (l'intégration est désactivée)</li>
+        </ul>
+      </li>
+    </ol>
+    <p>Pour supprimer l'intégration avec Marketo, cliquez sur <strong>Déconnecter</strong>. Le module Campaign prend en charge plusieurs connexions aux plateformes marketing. Cliquez sur <strong>Add New Collection</strong> pour configurer des intégrations supplémentaires.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="player">Création d'un lecteur compatible avec la campagne</h2>
+    <p>Les données d'engagement vidéo ne seront envoyées à Marketo que lorsque vous utilisez un lecteur vidéo compatible avec Campaign. Pour plus d'informations sur la création d'un Brightcove Player activé pour la campagne, consultez <a href="/campaign/general/creating-campaign-enabled-player.html">Création d'un lecteur compatible avec la campagne</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="trackingid">Transmission d'un ID de suivi</h2>
+    <p>Le module Campaign prend en charge la possibilité de transmettre une valeur d'ID de suivi à Marketo. L'ID de suivi peut être utilisé pour suivre un ID de campagne par exemple. L'ID de suivi peut être ajouté à l'URL qui affiche le lecteur activé pour la campagne ou ajouté au code d'intégration du lecteur.</p>
+    <ul>
+      <li>Exemple: Ajoute à l'URL</li>
+    </ul>
+    <pre>
+  http://www.myurl.com/video.html ?<strong>bctrackingid=12345</strong></pre>
+    <ul>
+      <li>Exemple: Ajouté au code d'intégration du lectuer</li>
+    </ul>
+    <pre>
+  &lt;vidéo data-video-id="6033402539001" data-account="1486906377" data-player="default" data-embed="default" data-application-id class="video-js" <strong>data-bc-trackingid="12345"</strong> les contrôles&gt;&lt; /vidéo&gt;&lt; script src="//players.brightcove.net/1486906377/default_default/index.min.js"&gt;&lt; /scénario&gt;</pre>
+    <p>Campaign transmettra ensuite la valeur à Marketo en tant qu'autre champ synchronisé.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="identify">Identification des visiteurs</h2>
+    <p>Les lectuers activés pour la campagne avec une intégration Marketo feront référence au cookie Munchkin (_mkto_trk) qui est créé dans le navigateur de l'utilisateur. Cette valeur est capturée dans les données de visualisation du module Campaign et est utilisée pour synchroniser les données de visualisation avec Marketo.  </p>
+  </section>
+</article>

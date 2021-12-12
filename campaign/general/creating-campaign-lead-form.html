@@ -1,0 +1,85 @@
+---
+title: Création d'une formulaire de prospect de campagne
+description: Dans cette rubrique, vous apprendrez à créer un formulaire pour prospects pouvant être affiché dans un lecteur compatible avec Campaign.
+parent: General Information
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Les formulaires de prospect peuvent être utilisés pour capturer les informations du spectateur pendant la lecture vidéo. Il existe deux types de formulaires de plomb :</p>
+    <ul>
+      <li><strong>Formulaires de prospection de campagne</strong> - Vous permet de choisir parmi un ensemble de champs et les données du formulaire sont enregistrées localement dans Video Cloud. Ces formulaires sont utilisés avec les lectuers configurés avec le suivi de campagne.</li>
+      <li><strong>Formulaires de prospects personnalisés</strong> - Vous permet d'entrer un formulaire HTML personnalisé généré à partir d'une plate-forme d'automatisation du marketing. Ces formulaires sont utilisés avec des lectuers configurés avec une connexion à une plateforme de marketing automation.</li>
+    </ul>
+    <p>Pour plus d'informations sur la création de formulaires pour prospects personnalisés avec une plate-forme d'automatisation du marketing, consultez le document de votre plate-forme :</p>
+    <ul>
+      <li>Oracle Eloqua<a href="/campaign/integrations/eloqua/creating-custom-lead-forms-oracle-eloqua.html"></a></li>
+      <li><a href="/campaign/integrations/marketo/creating-custom-lead-forms-marketo.html">Marketo</a></li>
+      <li>HubSpot<a href="/campaign/integrations/hubspot/creating-custom-lead-forms-hubspot.html"></a></li>
+      <li>Salesforce<a href="/campaign/integrations/salesforce/creating-custom-lead-forms-salesforce.html"></a></li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="leadform">Création d'un formulaire de clients potentiels</h2>
+    <p>Pour créer un formulaire de clients potentiels, procédez ainsi.</p>
+    <h3>Configuration du contenu du formulaire</h3>
+    <ol class="bcls-tasklist">
+      <li>
+        <p>Ouvrez le module Campagne.</p>
+      </li>
+      <li>Cliquez sur <strong>Formulaires de prospect</strong> dans la navigation de gauche. Si des formulaires de clients potentiels ont déjà été créés, ils s'afficheront ici.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="manage lead forms section" src="/assets/images/campaign/general/node15860-manage-lead-forms.png" /></figure>
+      </li>
+      <li>Cliquez sur <strong>Create Lead Form</strong>.</li>
+      <li>Donnez au formulaire un <strong>nom</strong> descriptif.</li>
+      <li>Sélectionnez un statut dans <strong>Lead Form Status</strong>.
+        <ul>
+          <li><strong>Actif</strong></li>
+          <li><strong>Inactif</strong></li>
+        </ul>
+      </li>
+      <li>Choisissez la langue dans <strong>Form Language</strong>.</li>
+      <li>Sélectionnez le moment d'affichage dans <strong>Form Timing</strong>. Cela permet de déterminer quand s'affichera le formulaire de clients potentiels.</li>
+      <li>Cochez <strong>Require submission to watch video</strong> pour exiger que le formulaire de clients potentiels soit envoyé avant de pouvoir regarder la vidéo.</li>
+      <li>Cocher <strong>Always show the lead form even if the lead is already known</strong> affichera toujours le formulaire de clients potentiels, même si celui-ci est déjà connu. Si cette option n'est pas cochée, le formulaire prospect n'est pas affiché si le prospect est connu.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit lead form" src="/assets/images/campaign/general/node15860-edit-lead-form-1.png" /></figure>
+      </li>
+      <li>Sélectionnez le type du formulaire.
+        <ul>
+          <li><strong>Formulaire de responsable de campagne</strong> - Le formulaire est construit à l'aide d'une mise en page et d'un ensemble de champs par défaut, les données sont enregistrées localement dans Video Cloud</li>
+          <li><strong>Formulaire de prospects personnalisé</strong>: permet de saisir du code HTML personnalisé (généralement à partir d'une plateforme d'automatisation du marketing), les données sont enregistrées dans la plateforme d'automatisation du marketing</li>
+        </ul>
+      </li>
+      <li>Saisissez un message d'en-tête dans <strong>Top Message</strong>. Le message d'en-tête s'affiche en haut du formulaire de clients potentiels.</li>
+      <li>Sélectionnez les champs à afficher sur le formulaire. Un maximum de 4 champs peut être sélectionné.</li>
+      <li>Saisissez le <strong>texte de la politique de confidentialité</strong> et <strong>l'URL de la politique de confidentialité</strong>. Vous devez renseigner ces champs pour pouvoir enregistrer le formulaire de clients potentiels.</li>
+      <li>Entrez le texte du bouton à utiliser pour le <strong>Annuler</strong> et <strong>Bouton de soumission</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit lead form" src="/assets/images/campaign/general/node15860-edit-lead-form-2.png" /></figure>
+      </li>
+      <li><strong>(Facultatif)</strong> Cliquez sur <strong>Preview Form</strong> pour afficher un aperçu du formulaire. La fenêtre d'aperçu permet de prévisualiser le formulaire sur smartphone, tablette ou ordinateurs de bureau. Cliquez sur <strong>Fermer</strong> lorsque vous avez terminé.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="preview lead form" src="/assets/images/campaign/general/node15860-preview-lead-form.png" /></figure>
+      </li>
+      <li>Cliquez sur <strong>Save</strong> pour enregistrer le formulaire.</li>
+    </ol>
+    <p>Le formulaire pour prospects peut être modifié en cliquant sur le bouton <strong>Éditer</strong> bouton.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="assign">Affectation d'un formulaire de clients potentiels à un lecteur</h2>
+    <p>Pour attribuer un formulaire d'avance à un lectuer, procédez comme suit :</p>
+    <ol class="bcls-tasklist">
+      <li>Cliquez sur <strong>lectuers de la campagne</strong> dans la navigation de gauche.</li>
+      <li>Localisez votre lectuer et utilisez la liste déroulante <strong>Formulaire de prospect</strong> pour sélectionner le formulaire de prospect.</li>
+    </ol>
+    <p>La configuration est désormais terminée ; vous êtes prêt à capturer les informations sur les clients potentiels. Lorsqu'une vidéo est publiée à l'aide d'un lecteur compatible avec Campaign, le formulaire pour prospects apparaîtra en fonction des paramètres de synchronisation du formulaire.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="export">Exportation des données de formulaire de piste</h2>
+    <p>Il existe deux options pour exporter les données de prospect accessibles à partir du menu de navigation de gauche :</p>
+    <ul>
+      <li><strong>Exporter les données de campagne</strong> - Utilisé pour exporter les données de prospects collectées à partir des lecteurs Brightcove activés pour la campagne. Pour plus d'informations, voir <a href="/campaign/admin/exporting-campaign-data-campaign-module.html">Exportation des données de campagne à partir du module de campagne</a>.</li>
+      <li><strong>Export Gallery Leads</strong> - Utilisé pour exporter les données de prospects collectées à partir des expériences Gallery. Pour plus d'informations, voir <a href="https://gallery.support.brightcove.com/experiences/portal/exporting-gallery-lead-data.html">Exportation des données de prospect de la galerie</a></li>
+    </ul>
+  </section>
+</article>

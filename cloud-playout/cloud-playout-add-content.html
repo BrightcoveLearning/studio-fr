@@ -1,0 +1,120 @@
+---
+title: Ajout de contenu à une chaîne Cloud Playout Channel 
+description: Dans cette rubrique, vous apprendrez comment ajouter des éléments VOD, des événements en direct et des listes de lecture à votre chaîne Cloud Playout.
+parent: Cloud Playout
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+		<h2 id="Introduction">Introduction</h2>
+		<p>Selon la façon dont vous avez configuré votre canal Cloud Playout, vous pouvez ajouter du contenu de différents types. Le contenu et les listes de lecture VOD peuvent être ajoutés à n'importe quelle chaîne. De plus, vous pouvez ajouter des événements en direct si vous avez configuré le canal pour prendre en charge cela. Les sections suivantes fournissent des étapes pour ajouter chaque type de contenu.</p>
+		<aside class="bcls-aside bcls-aside--information">Notez que vous pouvez également <a href="/cloud-playout/adding-bumpers-to-vod.html">ajouter des pare-chocs</a> à votre chaîne, et <a href="/cloud-playout/enabling-server-side-ads.html">annonces côté serveur</a> , si le canal a été configuré pour cela. Consultez ces rubriques pour plus de détails sur la façon de procéder.</aside>
+	</section>
+  
+  <section class="bcls-section">
+    <h2 id="add_videos">Ajouter du contenu VOD</h2>
+    <p>Une fois que vous avez créé votre chaîne ou lorsque vous accédez aux détails de la chaîne, l'écran affiche les paramètres de la chaîne :</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-channel-details.png" alt="Channel Settings">
+      <figcaption class="bcls-caption--image">Paramètres de canal</figcaption>
+    </figure>
+    <p>Vous pouvez modifier les détails, mais la principale étape suivante consiste à ajouter du contenu à la chaîne.</p>
+    <h3>Ajouter des étapes de vidéos (VOD)</h3>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Cliquez sur <span class="button-blue"><i data-feather="plus"></i> Ajouter des vidéos</span> (Si vous êtes sur la page de liste des chaînes, cliquez sur le nom de la chaîne pour ouvrir la page des paramètres de la chaîne, puis cliquez sur <span class="button-blue"><i data-feather="plus"></i> Ajouter des vidéos</span>).
+      </li>
+      <li>Cochez la case située en regard des vidéos que vous souhaitez ajouter à la chaîne.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select videos" src="/assets/images/cloud-playout/playout-select-videos.png" /></figure>
+      </li>
+      <li>Cliquez sur <span class="button-blue">Ajouter des vidéos</span>)</li>
+      <li>Cliquez sur <span class="button-blue"><i data-feather="save"></i> Économisez</span>.</li>
+      <li>
+        La liste des programmes de la chaîne apparaîtra :
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-vod-program-list.png" alt="Program List">
+          <figcaption class="bcls-caption--image">Liste des programmes</figcaption>
+        </figure>
+        <p>Notez que les heures de début et de fin sont calculées automatiquement à partir des durées vidéo. Vous pouvez glisser-déposer des vidéos dans la liste pour les réorganiser, et les heures de début et de fin seront automatiquement ajustées.</p>
+      </li>
+    </ol>
+	</section>
+
+	<section class="bcls-section">
+		<h2 id="add_playlists">Ajouter des listes de lecture</h2>
+		<p>Vous pouvez également importer des listes de lecture entières dans votre chaîne. Notez les conditions suivantes :</p>
+		<ul>
+			<li>Vous pouvez importer à la fois des listes de lecture EXPLICIT (manuel) et intelligentes.</li>
+			<li>UNE <strong>instantané</strong> de la liste de lecture dans son état actuel sera importée (ce qui signifie que les futures modifications apportées à la liste de lecture seront <strong>ne pas</strong> se refléter dans le contenu de la chaîne).</li>
+			<li>Une seule liste de lecture peut être importée à la fois.</li>
+			<li>Si la liste de lecture importée contient un événement en direct, un nouvel événement en direct identique avec le même nom, la même description et la même durée sera créé. En effet, un événement Live partage toujours une relation 1:1 avec la chaîne.</li>
+			<li>Les vidéos de la playlist seront ajoutées <strong>jusqu'à la fin</strong> du programme de la chaîne en cours.</li>
+			<li>Vous pouvez ajouter du contenu VOD ainsi que des listes de lecture, et les doublons sont autorisés.</li>
+			<li>Il y a un contrôle de validation sur la limite totale des actifs (100). Si l'importation dépasse la limite de 100 actifs, l'importation échouera.</li>
+			<li>
+				<aside class="bcls-aside bcls-aside--information">Note: Si l'entrée Live n'est pas activée pour la chaîne, vous pouvez toujours importer une liste de lecture qui inclut des événements Live en choisissant d'exclure les événements Live de l'importation.</aside>
+			</li>
+			<li>
+				<aside class="bcls-aside bcls-aside--information">Note: S'il s'agit d'un canal compatible SSAI, les événements en direct ne sont pas autorisés. Vous pouvez toujours importer une liste de lecture qui inclut des événements Live en choisissant d'exclure les événements Live de l'importation.</aside>
+			</li>
+			<li>
+				<aside class="bcls-aside bcls-aside--information">Note: Seuls les éléments éligibles avec un rendu MP4 seront autorisés. Un avertissement indique quels actifs ne seront pas éligibles à l'importation. Sur confirmation, seuls les actifs éligibles seront importés.</aside>
+			</li>
+		</ul>
+		<h3>Ajouter des étapes de playlist</h3>
+		<ol class="bcls-tasklist-restart">
+			<li>Cliquez sur <span class="button-blue"><i data-feather="plus"></i> Importez des listes de lecture</span>.</li>
+			<li>Cliquez sur <span class="blue-button">Importer</span> pour la liste de lecture que vous souhaitez importer.</li>
+			<li>Si des messages apparaissent indiquant que certains éléments de la liste de lecture ne peuvent pas être importés, cliquez sur <span class="blue-button">Procéder</span> si vous souhaitez importer les vidéos prises en charge.</li>
+      <li>Cliquez sur <span class="button-blue"><i data-feather="save"></i> Économisez</span>.</li>
+			<li>
+				Si l'importation a réussi, vous le verrez dans la liste de vos programmes :
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/cloud-playout/program-list-with-playlist-imports.png" alt="Program List with Playlist">
+					<figcaption class="bcls-caption--image">Liste des programmes avec liste de lecture</figcaption>
+				</figure>
+			</li>
+		</ol>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Add_Live_events">Ajouter des événements en direct</h2>
+		<p>Remarque: cela ne s'applique que si la chaîne est activée pour des événements en direct.</p>
+    <ol class="bcls-tasklist">
+        <li>Cliquez sur <img src="/assets/images/cloud-playout/cloudplayout-add-live-event.png" alt="add live event" class="ui-image"></li>
+        <li>
+          Dans la boîte de dialogue Ajouter un événement en direct, saisissez le <strong>Nom</strong> , <strong>Durée</strong> , et <strong>La description</strong> pour l'événement en direct :
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-add-live-event.png" alt="Add Live Event">
+            <figcaption class="bcls-caption--image">Ajouter un événement en direct</figcaption>
+          </figure>
+          <p>Notez que la durée minimale d'un événement en direct est de 5 minutes et que la durée peut être incrémentée ou décrémentée par intervalles de 5 minutes seulement. Si nécessaire, la durée peut être modifiée en ligne dans la zone de texte pour ajuster la granularité du temps. La durée d'un événement en direct peut être modifiée à tout moment, même en cours de lecture.</p>
+        </li>
+        <li>
+          Après avoir ajouté des événements en direct, ils apparaîtront dans la liste des programmes avec des éléments VOD :
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-live-event-program-list.png" alt="Program List">
+            <figcaption class="bcls-caption--image">Liste des programmes</figcaption>
+          </figure>
+        </li>
+        <li>Vous pouvez faire glisser des événements en direct pour réorganiser la liste comme vous le pouvez les vidéos. Vous pouvez également utiliser le <img src="/assets/images/cloud-playout/cloudplayout-quick-edit.png" alt="quick edit" class="ui-image"> bouton pour modifier la durée d'un événement en direct.</li>
+    </ol>
+	</section>
+    <p>Regarde aussi <a href="/cloud-playout/adding-bumpers-to-vod.html">Ajout de pare-chocs au contenu</a> pour ajouter des bumpers à des éléments de VOD ou d'événements en direct.</p>
+  
+  <section class="bcls-section">
+    <h2 id="Related_topics">Rubriques connexes</h2>
+    <ul>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">Vue d'ensemble: Lecture dans le cloud</a></li>
+      <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Créer un canal de diffusion dans le cloud</a></li>
+      <li><a href="/cloud-playout/adding-bumpers-to-vod.html">Ajout de bumpers à Cloud Playout</a></li>
+      <li><a href="/cloud-playout/static-image-overlays.html">Superpositions d'images statiques</a></li>
+      <li><a href="/cloud-playout/using-channel-actions.html">Utilisation des actions de canal</a></li>
+      <li><a href="/cloud-playout/enabling-server-side-ads.html">Monétisation de la diffusion dans le cloud</a></li>
+      <li><a href="/cloud-playout/generating-channel-embed-code.html">Génération du code d'intégration de chaîne</a></li>
+      <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Affichage de la sortie et des analyses de canal</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Vue d'ensemble: API EPG</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">Référence de l'API EPG</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">Référence de l'API de canal</a></li>
+    </ul>
+  </section>
+</article>

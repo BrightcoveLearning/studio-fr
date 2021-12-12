@@ -1,0 +1,144 @@
+---
+title: La FAQ de la campagne Brightcove
+description: Cette rubrique contient certaines des questions fréquemment posées à propos de Brightcove Campaign.
+parent: General Information
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section" id="why-how">
+    <h2>Pourquoi la campagne et comment ça marche</h2>
+    <dl>
+      <dt class="bcls-question">Pourquoi dois-je suivre la vidéo dans ma solution d'automatisation marketing ?</dt>
+      <dd class="bcls-answer">Les solutions d'automatisation marketing ne suivent pas la vidéo aujourd'hui. Si vous investissez dans la vidéo en tant que contenu puissant, vous devez vous assurer d'en suivre l'efficacité et d'automatiser les communications avec les leads/utilisateurs qui consultent votre contenu. </dd>
+      <dt class="bcls-question">Brightcove et le module Campaign utilisent-ils des cookies ?</dt>
+      <dd class="bcls-answer">Le module Campaign crée et utilise un cookie tiers pour identifier les utilisateurs lorsqu'une intégration est en place. De cette façon, les spectateurs ne sont pas invités à remplir un formulaire de prospect une deuxième fois. Le module utilise également les API Marketo, HubSpot et Eloqua, qui utilisent elles-mêmes des cookies pour suivre les spectateurs. Lors de l'utilisation des profils de campagne, un cookie Brightcove est utilisé.</dd>
+      <dt class="bcls-question">La campagne Brightcove est-elle activée pour tous les clients ?</dt>
+      <dd class="bcls-answer">Non. Campaign est disponible en tant que module complémentaire achetable à Video Marketing Suite (VMS). Les profils de campagne, cependant, sont disponibles gratuitement pour chaque client Brightcove. Vous pouvez le considérer comme "Campaign-lite".</dd>
+      <dt class="bcls-question">Qui est éligible pour les profils de campagne.</dt>
+      <dd class="bcls-answer">À partir du quatrième trimestre 2017, chaque client VMS aura accès gratuitement aux profils de campagne. <a href="/campaign/integrations/non-map/using-campaign-module-track-viewers.html">Les clients devront l'activer pour commencer le suivi des données</a>. Les clients de l'Enterprise Video Suite (EVS) bénéficieront également du suivi de l'authentification unique de la campagne.</dd>
+    </dl>
+  </section>
+  <section class="bcls-section" id="tracking-limitations">
+    <h2>Suivi et limitations des visionneuses</h2>
+    <dl>
+      <dt class="bcls-question">Quelles sont les limites des profils de campagne par rapport au module de campagne complet ?</dt>
+      <dd class="bcls-answer">
+        <ul>
+          <li>Aucune intégration avec des systèmes tiers</li>
+          <li>Aucun accès à l'API</li>
+          <li>Pas de formulaires pour prospects personnalisés (formulaires pour prospects de campagne uniquement)</li>
+          <li>1000 vues/période de capture maximale de 24 heures</li>
+        </ul>
+        Vous pouvez toujours exporter manuellement les données de Campaign vers un fichier CSV ou XLS.</dd>
+      <dt class="bcls-question">Quelles limites/exigences Campaign a-t-il lorsqu'il est connecté à une plate-forme d'automatisation du marketing ?</dt>
+      <dd class="bcls-answer">Les limites et les exigences sont décrites dans la documentation de chaque plateforme :
+        <ul>
+          <li>Oracle Eloqua<a href="/campaign/integrations/eloqua/integrating-video-cloud-oracle-eloqua.html"></a></li>
+          <li>HubSpot (<a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-client-side-apis.html">API côté client</a> ou <a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-rest-apis.html">API REST</a>)</li>
+          <li>Marketo (<a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-munchkin.html">Munchkin</a> ou <a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-rest-apis.html">API REST</a>)</li>
+          <li>Salesforce<a href="/campaign/integrations/salesforce/integrating-video-cloud-salesforce.html"></a></li>
+        </ul>
+      </dd>
+      <dt class="bcls-question">Y a-t-il des limites quant à la fréquence d'interrogation de l'API Audience ? Je sais qu'il y a une limite de 1000 sur les résultats de recherche vidéo, mais existe-t-il d'autres majuscules liées à la fréquence à ce point de terminaison API ? </dt>
+      <dd class="bcls-answer">Le nombre maximal d'événements de vue par appel d'API est en fait 100. Il n'y a pas de limite de taux en place, mais si vous essayez de l'appeler trop, cela ralentira probablement un peu.</dd>
+      <dt class="bcls-question">Existe-t-il un moyen d'obtenir les données de la campagne plus rapidement que le délai de 3 heures actuellement en vigueur ? J'aimerais obtenir des mesures « proches des temps réel ».</dt>
+      <dd class="bcls-answer">Non. Si vous voulez des mesures en temps réel, vous devez écrire votre propre plugin et envoyer des données à votre propre système.</dd>
+      <dt class="bcls-question">Quel est le déclencheur pour qu'une vue d'événement soit envoyée à Campaign ? Est-ce à la fin de la vidéo, lorsque la fenêtre du lecteur est fermée, ou autre chose ? Que se passe-t-il si l'utilisateur ne termine jamais la vidéo et ne ferme pas sa fenêtre de lecteur ?</dt>
+      <dd class="bcls-answer">Cela varie, mais, en gros, le plugin Campaign renvoie un battement de cœur au serveur toutes les 10 secondes.</dd>
+      <dt class="bcls-question">Quand Campaign considère-t-il que le suivi d'une vue est "terminé" ? Est-ce lorsque la fenêtre du lecteur est fermée ou si elle complète la vidéo ? Que se passe-t-il s'ils regardent partway, mettent en pause la vidéo et ne ferment jamais la fenêtre du lecteur ?</dt>
+      <dd class="bcls-answer">C'est quand 15 minutes se sont écoulées depuis la dernière fois que nous avons vu un rythme cardiaque, essentiellement le manque d'activité.</dd>
+      <dt class="bcls-question">Les données de visionnage peuvent-elles changer une fois qu'elles sont disponibles dans les données de visionnage de la campagne ? Ces données d'événement seront-elles jamais mises à jour à l'avenir par une sorte de consolidation des journaux ? </dt>
+      <dd class="bcls-answer">Une fois que les données sont disponibles dans Campaign via l'interface utilisateur ou l'API, elles sont considérées comme « réglées » et elles ne changeront pas.</dd>
+    </dl>
+  </section>
+  <section class="bcls-section" id="data-protection">
+    <h2>Protection des données et conservation des dossiers</h2>
+    <dl>
+      <dt class="bcls-question">La campagne est-elle conforme au RGPD ?</dt>
+      <dd class="bcls-answer">
+        <p>Oui, Campaign donne aux clients la possibilité d'agir au nom de leurs utilisateurs, en recherchant et en purgeant toutes les données qu'ils ont collectées via Campaign. </p>
+        <p><a href="/campaign/admin/managing-viewer-data.html">https://studio.support.brightcove.com/campaign/admin/managing-viewer-data.html</a></p>
+      </dd>
+      <dt class="bcls-question">Combien de temps les données peuvent-elles être conservées dans Campaign ?</dt>
+      <dd class="bcls-answer">Les intégrations MAP peuvent être réglées sur un maximum de 6 mois, et les intégrations non-MAP peuvent être réglées sur 3 ans. </dd>
+      <dt class="bcls-question">Combien de temps les recherches GUID sont-elles mises en cache ?</dt>
+      <dd class="bcls-answer">30 jours pour les données connues et 7 jours pour inconnu (s'applique uniquement aux intégrations MAP, aucune recherche requise pour les intégrations non-MAP)</dd>
+    </dl>
+  </section>
+  <section id="marketing-automation" class="bcls-section">
+    <h2>Automatisation marketing et analyse des visionneuses</h2>
+    <dl>
+      <dt class="bcls-question">Qu'est-ce qui diffère du suivi vidéo de n'importe quel autre média dans ma plateforme d'automatisation marketing ?</dt>
+      <dd class="bcls-answer">Contrairement à une page Web ou à un livre blanc téléchargeable, avec une vidéo, vous pouvez déterminer exactement la quantité de vidéo regardée par le spectateur et, par conséquent, exactement à quel contenu il a été exposé. </dd>
+      <dt class="bcls-question">Comment vous connecter à mon compte Eloqua/Marketo/Hubspot ?</dt>
+      <dd class="bcls-answer">Vous pouvez vous connecter à votre compte Eloqua/Marketo/HubSpot directement via la Video Marketing Suite dans le module Campagne. À partir de là, vous pouvez créer des lecteurs et des formulaires de prospect avec le suivi MAP intégré, de sorte que vous pouvez commencer à suivre l'analyse vidéo immédiatement.</dd>
+      <dt class="bcls-question">Puis-je suivre les vues sur mes pages Eloqua/Marketo/Hubspot ainsi que sur mes pages de destination non-eloqua/marketo/Hubspot (sitecore/WordPresss/Gallery etc) ? </dt>
+      <dd class="bcls-answer">Oui, tant que le lecteur utilisé est « Activé pour la campagne » (le plug-in Campaign est-il installé), toutes les vues seront suivies, que le lecteur réside sur une page de destination MAP ou sur toute autre page de destination.</dd>
+      <dt class="bcls-question">Que puis-je suivre avec cette intégration ?</dt>
+      <dd class="bcls-answer">Grâce à notre intégration, vous pouvez suivre les analyses de visualisation vidéo (vidéo, ID vidéo, pourcentage de visualisation, temps regardé) pour les contacts connus déjà dans votre base de données.</dd>
+      <dt class="bcls-question">Qu'en est-il des contacts inconnus ? Je peux les suivre aussi ?</dt>
+      <dd class="bcls-answer">Avec Brightcove Campaign, vous pouvez suivre les contacts inconnus, puis lorsqu'ils soumettent un formulaire Eloqua/HubSpot (devenu connu), Campaign est en mesure d'associer rétroactivement leurs informations d'audience à ce nouveau contact. Campaign soumet à nouveau les informations d'audience quotidiennement pour faire correspondre les données d'affichage de contacts inconnus à votre instance Oracle Eloqua/HubSpot. </dd>
+      <dt class="bcls-question">Où mes données de visualisation vidéo apparaîtraient-elles dans mon MAP ?</dt>
+      <dd class="bcls-answer">Cela dépend du MAP que vous utilisez. Reportez-vous à la documentation suivante pour <a href="/campaign/integrations/eloqua/eloqua-integration-testing-guide.html">Oracle Eloqua</a>, <a href="/camapign/integrations/marketo/marketo-rest-integration-testing-guide.html">Marketo</a> et <a href="/campaign/integrations/hubspot/hubspot-rest-api-integration-testing-guide.html">HubSpot</a>.</dd>
+      <dt class="bcls-question">Où dans Salesforce mes données de visualisation vidéo apparaîtraient-elles ?</dt>
+      <dd class="bcls-answer">Les vues vidéo sont fournies dans Salesforce sous la forme d'une tâche sous le contact du spectateur dans la section Activité. Reportez-vous à la section <a href="/campaign/integrations/salesforce/integrating-video-cloud-salesforce.html#sfdata">Affichage de données vidéo dans Salesforce</a> pour un exemple de ceci. </dd>
+      <dt class="bcls-question">Puis-je être averti avec Salesforce lorsqu'un de mes contacts a regardé des vidéos ?</dt>
+      <dd class="bcls-answer">Pas directement. Toutefois, vous pouvez exécuter des rapports qui vous avertiraient de l'activité d'un contact.</dd>
+      <dt class="bcls-question">Y a-t-il une différence entre le suivi avec Salesforce et Oracle Eloqua/Marketo ?</dt>
+      <dd class="bcls-answer">La plus grande différence est que Salesforce n'utilise pas de cookies pour suivre les utilisateurs. Par conséquent, un identifiant unique doit être transmis pour identifier le spectateur. Voir <a href="/campaign/integrations/salesforce/integrating-video-cloud-salesforce.html#identify">ce document</a> pour plus d'informations. En outre, Salesforce, en tant que CRM, n'offre pas de suivi automatisé ou de notation de prospect. Toutefois, vous pouvez créer des tâches dans Salesforce, qui sont ensuite affectées à votre équipe commerciale pour des suivis réels.</dd>
+      <dt class="bcls-question">Campaign dispose d'une option d'intégration « Personnalisée ». Avec quelles autres plates-formes Campaign peut-elle s'intégrer à l'aide de cette option ?</dt>
+      <dd class="bcls-answer">
+        <p>Campaign peut « s'intégrer » à n'importe quelle plate-forme de données qui :</p>
+        <ol>
+          <li>Utilise un identifiant unique pour chaque enregistrement de contact</li>
+          <li>Possède une API qui peut recevoir des données supplémentaires de plateformes tierces (comme Campaign)</li>
+        </ol>
+      </dd>
+    </dl>
+  </section>
+  <section id="lead-forms" class="bcls-section">
+    <h2>Formulaires de plomb du lectuer</h2>
+    <dl>
+      <dt class="bcls-question">Quand Campaign affiche-t-il un formulaire pour prospects ?</dt>
+      <dd class="bcls-answer">Le paramètre par défaut affiche uniquement le formulaire prospect pour un utilisateur inconnu dans votre base de données MAP (ceux que vous souhaitez convertir en utilisateur connu). Vous pouvez le remplacer dans les paramètres si vous choisissez de toujours afficher le formulaire prospect. Ceci est très utile pour les tests. Les utilisateurs connus sont automatiquement suivis et ces données sont associées au contact dans votre MAP sans qu'il soit nécessaire d'afficher un formulaire.</dd>
+      <dt class="bcls-question">Puis-je personnaliser les formulaires de prospecte ?</dt>
+      <dd class="bcls-answer">Vous pouvez ajuster le texte et les champs affichés à l'aide de l'interface utilisateur. Vous ne pouvez pas le modifier au-delà de ce qui est disponible dans l'interface utilisateur (Gallery peut mettre à jour certains styles pour que les formulaires correspondent au site) </dd>
+    </dl>
+  </section>
+  <section id="general" class="bcls-section">
+    <h2>Sujets généraux</h2>
+    <dl>
+      <dt class="bcls-question">Quel code d'intégration dois-je utiliser ? Iframe ou en page ?</dt>
+      <dd class="bcls-answer">Pour que Campaign fonctionne, il est nécessaire que le code d'intégration avancé soit utilisé. Si le code d'intégration standard (iframe) est utilisé, le lecteur est isolé de la page, ce qui signifie que le plug-in Campaign ne peut pas voir l'identifiant unique et, par conséquent, tous les utilisateurs seront considérés comme « inconnus ».</dd>
+      <dt class="bcls-question">Qu'est-ce que l'automatisation marketing ?</dt>
+      <dd class="bcls-answer">L'automatisation du marketing est une technologie qui suit l'interaction lead/utilisateur avec différents canaux de marketing en ligne (email, web, formulaires, contenu, vidéo, social, etc.). L'automatisation du marketing aide les marketeurs à commercialiser plus efficacement sur ces canaux et automatise les tâches marketing répétitives (telles que les communications par e-mail). L'automatisation du marketing permet au marketeur de configurer des tâches automatisées et personnalisées basées sur des variables prédéfinies. Par exemple, si un utilisateur regarde 75 % d'une vidéo spécifique, envoyez-lui un e-mail sur ce sujet spécifique, mais s'il ne regarde que 12 %, envoyez-lui quelque chose d'autre. </dd>
+      <dt class="bcls-question">Brightcove est-elle une entreprise d'automatisation marketing ?</dt>
+      <dd class="bcls-answer">Non, Brightcove fournit une solution complète pour le marketing vidéo. Avec notre solution, vous pouvez mettre vos vidéos en ligne, organiser votre contenu, créer des lecteurs, créer des portails vidéo, suivre des analyses et intégrer votre propre plateforme d'automatisation marketing existante. Brightcove intègre l'analyse vidéo dans les plates-formes d'automatisation marketing.</dd>
+      <dt class="bcls-question">Comment puis-je vérifier si une activité personnalisée Marketo est correctement configurée ?</dt>
+      <dd class="bcls-answer">Campaign a une URL cachée qui offre des outils de débogage pour certains types d'intégrations, Marketo REST en étant un. <a href="https://studio.brightcove.com/products/videocloud/campaign/debug">https://studio.brightcove.com/products/videocloud/campaign/debug</a>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Campaign settings " src="/assets/images/campaign/general/faq-debug.png" /></figure>
+      </dd>
+      <dt class="bcls-question">Que faut-il faire pour configurer une intégration personnalisée ?</dt>
+      <dd class="bcls-answer">Trois choses doivent être faites :
+        <ol>
+          <li>Vous devez exposer un identifiant unique dans l'URL ou le code de la page que Campaign peut capturer.</li>
+          <li> Créez un script qui utilise les API Audience pour récupérer les données sous forme de fichier JSON (Brightcove Global Services peut vous aider).</li>
+          <li> Mappez les données aux champs de votre base de données de destination (pensez à fusionner des feuilles de calcul).</li>
+        </ol>
+        La documentation de support suivante couvre ces tâches :
+        <ul>
+          <li><a href="/campaign/integrations/non-map/creating-custom-integrations-campaign-module.html">Création d'intégrations personnalisées avec le module de campagne</a> - Couvre comment fournir un identifiant unique que Campaign peut capturer</li>
+          <li> <a href="/campaign/develop/overview-audience-api.html">API Audience</a>: explique comment récupérer par programmation toutes les données sous forme de fichier JSON que vous pouvez ensuite importer dans le système de traitement de vos données de votre choix</li>
+        </ul>
+      </dd>
+      <dt class="bcls-question">Comment Campaign envoie-t-il les données CDO à Eloqua ?</dt>
+      <dd class="bcls-answer">Nous utilisons l'API de masse d'objets personnalisés. <a href="https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/api-bulk-2.0-customobjects.html">https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/api-bulk-2.0-customobjects.html </a></dd>
+      <dt class="bcls-question">Comment Campaign pousse-t-il l'activité des actifs externes ? Comment puis-je contrôler les campagnes, les ressources externes et les types d'activité utilisés ?</dt>
+      <dd class="bcls-answer">Nous utilisons l'API d'activité externe (<a href="https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/op-api-rest-2.0-data-activity-post.html">https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/op-api-rest-2.0-data-activity-post.html</a>). Il n'y a aucun contrôle sur le nom de la campagne, le nom ou le type de ressource. Nous créons simplement une campagne par nous-mêmes (nommée BrightCoveVideoPlay), puis procédons à la création d'activités, également appelées BrightCoveVideoPlay. </dd>
+      <dt class="bcls-question">Quelles adresses IP puis-je ajouter à la liste blanche pour que Campaign puisse communiquer avec le service X ?</dt>
+      <dd class="bcls-answer">Campaign a établi un ensemble d'adresses IP qui doivent être utilisées pour la liste blanche d'adresses IP. Pour voir la liste, modifiez une connexion Eloqua et cliquez sur le bouton <a ng-click="showInfo()" ng-if="::!ctrl.hideWhitelistInfo &amp;&amp; ctrl.isEloqua(ctrl.integration)" context="troubleSeeing"><strong>Impossible de voir les données de la campagne dans Eloqua ?</strong></a> lien pour voir la liste des adresses IP.</dd>
+    </dl>
+  </section>
+</article>

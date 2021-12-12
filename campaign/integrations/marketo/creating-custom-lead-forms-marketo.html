@@ -1,0 +1,132 @@
+---
+title: Création de formulaires pour prospects personnalisés pour Marketo
+description: Dans cette rubrique, vous apprendrez à utiliser un formulaire Marketo pour capturer des données de prospect dans un Brightcove Player.
+parent: Marketo 
+grandparent: Integrations
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Le module Campaign offre la possibilité de créer des formulaires pour prospects qui vous permettent de capturer des informations sur les téléspectateurs pendant que les vidéos sont lues dans les lecteurs Brightcove. Vous avez ainsi la possibilité d'inclure les champs dont vous avez besoin (visibles ou masqués) et de tirer parti de fonctionnalités telles que le profilage progressif (si disponible). Les données de prospect sont envoyées à Marketo et traitées par Marketo.</p>
+    <p>La création d'un formulaire de clients potentiels passe par les étapes suivantes :</p>
+    <ol>
+      <li><a href="#form">Créer un formulaire</a></li>
+      <li><a href="#formcss">Facultatif - Style du formulaire à l'aide de CSS</a></li>
+      <li><a href="#edit">Copier le code d'intégration du formulaire</a></li>
+      <li><a href="#leadform">Créer un formulaire pour prospects personnalisé dans le module Campagne</a></li>
+      <li><a href="#player">Attribuer le formulaire de prospection à un lectuer</a></li>
+      <li><a href="#formdata">Valider les données du formulaire dans Marketo</a></li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">Note: Pour plus d'informations sur les formulaires de prospects standard qui capturent les informations de visionneuse et enregistrent les données dans Video Cloud, voir <a href="/campaign/general/creating-campaign-lead-form.html">Création d'un formulaire de pistes de campagne</a>.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="form">Création d'un formulaire</h2>
+    <p>Marketo offre la possibilité de créer des formulaires pour capturer des informations de visionneuse. Ces formulaires peuvent être affichés dans les lecteurs Brightcove activés pour Campaign. Les données capturées sont ensuite utilisées à des fins de personnalisation pour les communications ultérieures. La procédure ci-dessous permet de créer un formulaire simple pour capturer le prénom, le nom et l'adresse électronique. Pour plus de détails sur les formulaires Marketo, reportez-vous à la <a href="https://docs.marketo.com/display/public/DOCS/Forms">documentation Marketo</a>.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Connectez-vous à votre compte Marketo.</li>
+      <li>Accédez à <strong>Design Studio </strong> &gt; <strong>Formulaires,</strong> puis cliquez sur <strong>Nouveau &gt; Nouveau formulaire</strong>. La boîte de dialogue Nouveau formulaire s'ouvre.</li>
+      <li>Entrez un <strong>nom</strong> pour le formulaire et cliquez sur <strong>CRÉER</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/marketo/node16110-lead-form.png" /></figure>
+      </li>
+      <li>Le concepteur de formulaire s'ouvrira. Par défaut, les champs Prénom, Nom et Adresse e-mail seront sur le formulaire. Modifiez les propriétés et le comportement du champ selon vos besoins. Cliquez sur <strong>SUIVANT</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/marketo/node16110-lead-form-design.png" /></figure>
+      </li>
+      <li>Cliquez sur les icônes fléchées pour sélectionner un thème de formulaire. Le thème du formulaire contrôle le style du formulaire. Cliquez sur <strong>Prévisualiser le brouillon</strong> pour afficher un aperçu du formulaire. Dans cet exemple, le thème <strong>Dark</strong> a été sélectionné.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/marketo/node16110-preview-draft.png" /></figure>
+      </li>
+      <li>Cliquez sur <strong>Modifier le brouillon</strong> pour revenir à l'éditeur de formulaire.</li>
+      <li>Cliquez sur <strong>SUIVANT</strong>.</li>
+      <li>Configurez les paramètres de formulaire supplémentaires et cliquez sur <strong>TERMINER</strong>.</li>
+      <li>Cliquez sur <strong>APPROUVER ET FERMER</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="formcss">Facultatif - Styler le formulaire à l'aide de CSS</h2>
+    <p>Lors de la création d'un formulaire, Marketo permet de sélectionner un thème de formulaire pour fournir un style de formulaire de base. Vous pouvez également personnaliser le formulaire en utilisant votre propre CSS personnalisé. Dans cette section, nous allons personnaliser le thème Dark et rendre le texte de l'étiquette blanc et gras. Pour plus de détails sur les formulaires Marketo, reportez-vous à la <a href="https://docs.marketo.com/display/public/DOCS/Edit+the+CSS+of+a+Form+Theme">documentation Marketo</a>.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Accédez à <strong>Design Studio </strong> &gt; <strong>Formulaires,</strong> puis cliquez sur votre formulaire.</li>
+      <li>Cliquez sur <strong>Modifier le formulaire</strong>.</li>
+      <li>Cliquez sur Paramètres de <strong>formulaire,</strong> puis sur l'icône en forme de roue dentée.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/marketo/node16110-edit-form-css.png" /></figure>
+      </li>
+      <li>Cliquez sur <strong>Afficher le thème CSS pour</strong> afficher le thème CSS actuel. Cliquez sur <strong>Modifier le CSS personnalisé</strong>. Collez le code CSS suivant pour que le texte de l'étiquette soit blanc et gras.
+        <pre>
+étiquette .mktoForm { font-weight: bold; color: #FFF; }</pre>
+        <aside class="bcls-aside bcls-aside--information">Note: Entrez uniquement votre CSS personnalisé (juste les parties qui sont différentes). Vous n'avez pas à coller dans l'intégralité du thème CSS.</aside>
+      </li>
+      <li>Cliquez sur <strong>SAVE</strong>.</li>
+      <li>Cliquez sur <strong>Prévisualiser le brouillon</strong> pour afficher un aperçu du formulaire. Le texte de l'étiquette doit être blanc et gras.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/marketo/node16110-preview-draft-after.png" /></figure>
+      </li>
+      <li>Cliquez sur <strong>Modifier le brouillon</strong> pour revenir à l'éditeur de formulaire.</li>
+      <li>Cliquez sur <strong>TERMINER</strong> <strong>, puis APPROUVER ET FERMER</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="edit">Copie du code d'intégration du formulaire</h2>
+    <p>Pour utiliser le formulaire à l'intérieur du module Campaign, vous devrez copier le code d'intégration du formulaire.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Dans la navigation de gauche, faites un clic droit sur le formulaire et cliquez sur <strong>Code intégré</strong>.</li>
+      <li>Met le <strong>Type de code</strong> à <strong>Normal</strong> puis copiez le <strong>Code</strong> au presse-papiers. Cliquez sur <strong>Close</strong> (Fermer).
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/marketo/node16110-form-embed-code-copy.png" /></figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="leadform">Création d'un formulaire pour prospects personnalisé dans le module Campagne</h2>
+    <p>Une fois le formulaire créé et stylisé, créez un formulaire pour prospects personnalisé dans le module Campagne et associez le formulaire pour prospects à un lecteur compatible Campagne.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Ouvrez le module Campagne.</li>
+      <li>Cliquez sur <strong>Formulaires de prospect</strong> dans la navigation de gauche. Si des formulaires de clients potentiels ont déjà été créés, ils s'afficheront ici.</li>
+      <li>Cliquez sur <strong>Create Lead Form</strong>.</li>
+      <li>Donnez au formulaire un <strong>nom</strong> descriptif.</li>
+      <li>Choisissez la langue dans <strong>Form Language</strong>.</li>
+      <li>Sélectionnez le moment d'affichage dans <strong>Form Timing</strong>. Cela permet de déterminer quand s'affichera le formulaire de clients potentiels.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit lead form (1)" src="/assets/images/campaign/integrations/marketo/node16110-edit-lead-form-1.png" /></figure>
+      </li>
+      <li>Définissez le type de formulaire sur <strong>Custom Lead Form</strong>.</li>
+      <li>Coller dans le <strong>formulaire HTML</strong> à partir de Marketo.</li>
+      <li><strong>(Facultatif)</strong> Collez dans le code HTML <strong>de confirmation</strong>. La vue de confirmation s'affiche pendant 5 secondes, puis la vidéo reprendra la lecture. Si la confirmation HTML n'est pas incluse, la lecture de la vidéo reprendra après l'envoi du formulaire.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit lead form (2)" src="/assets/images/campaign/integrations/marketo/node16110-edit-lead-form-2.png" /></figure>
+      </li>
+      <li><strong>(Facultatif)</strong> Cliquez sur <strong>Preview Form</strong> pour afficher un aperçu du formulaire.</li>
+      <li>Cliquez sur <strong>Save</strong> pour enregistrer le formulaire.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="player">Affectation d'un formulaire de clients potentiels à un lecteur</h2>
+    <p>Une fois le formulaire de client potentiel créé, vous devez l'affecter à un lecteur. Pour ce faire, procédez comme suit :</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Cliquez sur <strong>lectuers de la campagne</strong> dans la navigation de gauche.</li>
+      <li>Localisez votre lectuer et utilisez la liste déroulante <strong>Formulaire de prospect</strong> pour sélectionner le formulaire de prospect.</li>
+    </ol>
+    <p>La configuration est désormais terminée ; vous êtes prêt à capturer les informations sur les clients potentiels. Lorsqu'une vidéo est publiée à l'aide d'un lecteur compatible avec Campaign, le formulaire pour prospects apparaîtra en fonction des paramètres de synchronisation du formulaire.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="formdata">Validation des données de formulaire dans Marketo</h2>
+    <p>Il existe plusieurs façons de valider que les données du formulaire ont été transmises à Marketo. Procédez comme suit pour afficher les données du formulaire dans Marketo.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Connectez-vous à votre compte Marketo.</li>
+      <li>Cliquez sur <strong>Base de données prospect</strong>.</li>
+      <li>Dans la navigation de gauche, développez Listes dynamiques de groupe, puis cliquez sur <strong>Form Capture SL</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/marketo/node16110-form-capture-sl.png" /></figure>
+      </li>
+      <li>Clique le <strong>Liste intelligente</strong> languette.</li>
+      <li>Dans la liste des <strong>Filtres</strong> sur le côté droit de la page, localisez le <strong>Formulaire rempli</strong> filtre. Cliquez sur le filtre et faites-le glisser vers la page.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/marketo/node16110-add-filter.png" /></figure>
+      </li>
+      <li>Entrez le nom de votre formulaire. Vous pouvez également cliquer sur le <strong>+</strong> pour rechercher votre formulaire.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/marketo/node16110-constraint.png" /></figure>
+      </li>
+      <li>Cliquez sur <strong>Responses</strong> en haut de la page pour afficher les données de prospect filtrées.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="lead form data" src="/assets/images/campaign/integrations/marketo/node16110-form-data.png" /></figure>
+      </li>
+      <li>Cliquez sur un <strong> ID</strong> pour ouvrir le détail du prospect.</li>
+      <li>Clique le <strong>Journal d'activité</strong> languette. Confirmer que le formulaire a été rempli.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="lead form data" src="/assets/images/campaign/integrations/marketo/node16110-activity.png" /></figure>
+      </li>
+    </ol>
+  </section>
+</article>

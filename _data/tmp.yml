@@ -1,0 +1,97 @@
+  name: Mise en route
+  url: /get-started/index.html
+  docs:
+    - name: Démarrer avec l'audience
+      url: /get-started/getting-started-audience-module.html
+    - name: Vidéos de formation du public
+      url: /get-started/audience-training-videos.html
+  name: Informations générales
+  url: /general/index.html
+  docs:
+    - name: Champs d'audience et définitions de données
+      url: /general/audience-fields-and-data-definitions.html
+    - name: Configuration des paramètres d'audience
+      url: /general/configuring-audience-settings.html
+    - name: Création d'un lecteur compatible avec l'audience
+      url: /general/creating-audience-enabled-player.html
+    - name: Créer un formulaire de prospect d'audience
+      url: /general/creating-audience-lead-form.html
+    - name: Comment l'audience identifie les spectateurs
+      url: /general/how-audience-module-identifies-viewers.html
+    - name: Publication d'une vidéo par e-mail
+      url: /general/publishing-video-email-using-audience-module.html
+    - name: Utilisation de mesures et d'événements personnalisés
+      url: /general/using-custom-metrics-and-events.html
+    - name: Affichage des événements du lectuer
+      url: /general/viewing-player-events-audience-module.html
+    - name: Affichage de l'activité vidéo
+      url: /general/viewing-video-activity.html
+    - name: Affichage des informations sur le profil de l'
+      url: /general/viewing-viewer-profile-information.html
+    - name: Utilisation des champs UTM
+      url: /general/working-utm-fields-audience-module.html
+  name: Intégrations
+  url: /integrations/index.html
+  docs:
+    - name: Eloqua
+      url: /integrations/eloqua/index.html
+      docs:
+        - name: Création de formulaires de prospecs personnalisés
+          url: /integrations/eloqua/creating-custom-lead-forms-oracle-eloqua.html
+        - name: Guide de test d'intégration d'Eloqua
+          url: /integrations/eloqua/eloqua-integration-testing-guide.html
+        - name: Intégration d'une vidéo sur une page de destination
+          url: /integrations/eloqua/embedding-video-cloud-video-eloqua-landing-page.html
+        - name: Intégration avec Oracle Eloqua
+          url: /integrations/eloqua/integrating-video-cloud-oracle-eloqua.html
+    - HubSpotname: 
+      url: /integrations/hubspot/index.html
+      docs:
+        - name: Création de formulaires de prospecs personnalisés
+          url: /integrations/hubspot/creating-custom-lead-forms-hubspot.html
+        - name: Guide de test de l'API REST HubSpot
+          url: /integrations/hubspot/hubspot-rest-api-integration-testing-guide.html
+        - name: 'Intégration avec HubSpot (API côté client)'
+          url: /integrations/hubspot/integrating-video-cloud-hubspot-using-client-side-apis.html
+        - name: 'Intégration avec HubSpot (API REST)'
+          url: /integrations/hubspot/integrating-video-cloud-hubspot-using-rest-apis.html
+    - name: Marketo
+      url: /integrations/marketo/index.html
+      docs:
+        - name: Création de formulaires de prospecs personnalisés
+          url: /integrations/marketo/creating-custom-lead-forms-marketo.html
+        - name: 'Intégration avec Marketo (Munchkin)'
+          url: /integrations/marketo/integrating-video-cloud-marketo-using-munchkin.html
+        - name: 'Intégration avec Marketo (API REST)'
+          url: /integrations/marketo/integrating-video-cloud-marketo-using-rest-apis.html
+        - name: Guide de test d'intégration REST Marketo
+          url: /integrations/marketo/marketo-rest-integration-testing-guide.html
+    - name: Non-carte
+      url: /integrations/non-map/index.html
+      docs:
+        - name: Création d'intégrations personnalisées
+          url: /integrations/non-map/creating-custom-integrations-audience-module.html
+        - name: Intégration avec Single Sign-On
+          url: /integrations/non-map/integrating-audience-single-sign.html
+        - name: Utilisation de l'audience pour suivre les visionneuses
+          url: /integrations/non-map/using-audience-module-track-viewers.html
+    - Salesforcename: 
+      url: /integrations/salesforce/index.html
+      docs:
+        - name: Création de formulaires de prospecs personnalisés
+          url: /integrations/salesforce/creating-custom-lead-forms-salesforce.html
+        - name: Création d'un objet Salesforce pour Pardot
+          url: /integrations/salesforce/creating-custom-lead-forms-salesforce.html
+        - name: Intégration avec Salesforce
+          url: /integrations/salesforce/integrating-video-cloud-salesforce.html
+  name: Administration de l'audience
+  url: /admin/index.html
+  docs:
+    - name: Exportation de données depuis l'audience
+      url: /admin/exporting-audience-data-audience-module.html
+    - name: Exportation des données de prospec-galerie
+      url: /admin/exporting-gallery-lead-data.html
+    - name: Gestion des données du Viewer
+      url: /admin/managing-viewer-data.html
+    - name: Dépannage des problèmes d'audience
+      url: /admin/troubleshooting-audience-issues.html

@@ -1,0 +1,103 @@
+---
+title: Utilisation des métriques et événements personnalisés
+description: Dans cette rubrique, vous apprendrez à associer des événements et des métriques personnalisés pour afficher les événements.
+parent: General Information
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Le plug-in du lecteur Campaign inclut une API côté client pour attacher des événements et des métriques personnalisés pour afficher les événements. L'exemple suivant décrit comment suivre les événements et les mesures personnalisés.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Obtenir une référence au lectuer Brightcove. Cet exemple suppose qu'un <code translate="No">id</code> de <code translate="No">myPlayerID</code> a été ajouté au code d'intégration du lectuer.
+        <pre>
+  <code class="language-javascript" translate="No">
+var player = videojs(‘myPlayerID’);
+  </code>
+  </pre>
+      </li>
+      <li>Écoutez l'événement prêt pour le public, <code translate="No">audience:ready</code>.
+        <pre>
+  <code class="language-javascript" translate="No">
+player.on(‘audience:ready’, function() {
+  // player.audience is now available for use
+});
+</code></pre>
+      </li>
+      <li>Pour suivre une valeur de chaîne, appelez <code translate="No">player.audience.track(‘event[1-3]’, ‘value’)</code>. Pour suivre une valeur numérique, appelez <code translate="No">player.audience.track(‘metric[1-3]’, value)</code>. La valeur renvoyée est un booléen indiquant si l'événement a été envoyé avec succès ou non.
+        <pre>
+  <code class="language-javascript" translate="No">
+// Store the string value “foo” in the slot event1
+player.audience.track(‘event1’, ‘foo’);
+
+// Store the string value “bar” in the slot event2
+player.audience.track(‘event2’, ‘bar’);
+
+// Store the decimal value 15.08 in slot metric1
+player.audience.track(‘metric1’, 15.08);
+
+// Replace the value in slot metric1 with the number 10,
+// and validate that the call was sent successfully
+var result = player.audience.track(‘metric1’, 10);
+
+if (result) {
+   console.log(‘metric sent successfully’);
+}
+  </code>
+  </pre>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="sync">Synchronisation avec les plateformes d'automatisation marketing</h2>
+    <p>Les événements/mesures personnalisés stockés sur un événement de vue seront synchronisés pour Marketo REST et Eloqua si les champs sont définis sur l'activité personnalisée ou CDO. Campaign synchronisera également les événements/métriques personnalisés avec HubSpot s'ils sont définis et avec Salesforce si l'intégration utilise un <strong>Type de mappage</strong> de <strong>Avancée</strong> et les événements/métriques sont mappés à quelque chose.</p>
+    <h3>Marketo REST</h3>
+    <p>Pour les intégrations Marketo REST, les éditeurs doivent vérifier que l'activité personnalisée <strong>Brightcove Video View</strong> dans Marketo comporte les champs d'événement et de mesure personnalisés. Les activités personnalisées sont situées sous <strong>Administrateur</strong> &gt; <strong>Gestion de base de données</strong>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit custom activity" src="/assets/images/campaign/general/node18442-edit-activity.png" /></figure>
+    <p>Si les champs ne se trouvent pas dans l'objet Vue vidéo Brightcove :</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Mettez à jour l'activité personnalisée <strong>Brightcove Video View</strong> pour ajouter les champs, ou</li>
+      <li>Contactez le support Marketo et demandez-leur d'ajouter les champs.</li>
+      <li>Une fois les champs ajoutés, revenez à Campagne et appuyez sur le bouton <strong>Mise à jour complète</strong> bouton afin que Campaign puisse accéder aux champs nouvellement ajoutés.</li>
+    </ol>
+    <h3>Oracle Eloqua</h3>
+    <p>Pour les intégrations Eloqua, les éditeurs doivent vérifier que l'objet personnalisé <strong>BrightCoveVideoView</strong> possède les champs d'événement et de mesure personnalisés.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit custom activity" src="/assets/images/campaign/general/node18442-eloqua-cdo.png" /></figure>
+    <p>Si les champs n'existent pas, les champs doivent être ajoutés à l'objet <strong>BrightCoveVideoView</strong> :</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Reconnecter votre compte Eloqua, ou</li>
+      <li>Utilisation du bouton de mise à niveau du mappage des données</li>
+    </ol>
+    <h3>Force de vente</h3>
+    <p>Pour Salesforce, votre connexion Campaign doit utiliser un <strong>Type de mappage</strong> de <strong>Avancée</strong>. Les champs <strong>Événement</strong> et <strong>Mesure</strong> peuvent être mappés aux objets Salesforce.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit custom activity" src="/assets/images/campaign/general/node18442-sf-fields.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="notes">Notes</h2>
+    <ul>
+      <li>La limite de longueur de chaîne pour les valeurs de slot d'événement est de 250 caractères.</li>
+      <li>Si plusieurs valeurs sont envoyées au même emplacement d'événement ou de mesure au cours d'une seule session d'affichage, la valeur existante dans l'emplacement est remplacée par la nouvelle valeur. Dans l'exemple suivant, la valeur finale stockée dans event1 est « click3 ».
+        <pre>
+  <code class="language-javascript" translate="No">
+player.audience.track(‘event1’, ‘click1’);
+player.audience.track(‘event1’, ‘click2’);
+player.audience.track(‘event1’, ‘click3’);
+</code>
+      </pre>
+      </li>
+      <li>Si un événement de vue pour la session n'existe pas encore, un événement sera créé.</li>
+      <li>Si le résultat de <code translate="No">track()</code> est faux indiquant que l'événement n'a pas pu être envoyé, vous pouvez <a href="#logging">activer l'option verbeuse</a> sur le plugin Campaign pour voir la journalisation de la console avec une raison spécifique.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="view">Affichage des événements et des mesures</h2>
+    <p>Les événements et métriques personnalisés apparaîtront dans l'interface utilisateur de la campagne. Dans la navigation de gauche, cliquez sur <strong>Toutes les activités récentes</strong>. Si des événements ou des mesures personnalisés ont été enregistrés, le lien <strong>Afficher les événements d'interaction</strong> est activé. Cliquez sur le lien pour afficher les données d'événement/mesure.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="viewing metrics" src="/assets/images/campaign/general/node18442-events-ui.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="logging">Activation de la journalisation détaillée</h2>
+    <p>La journalisation détaillée peut être activée en ajoutant&nbsp;<code translate="No">bcverbose=1</code> à l'URL de la page avec le player ou en configurant le plugin Campaign avec le <code translate="No">"verbose": true</code> option:</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="configure plugin" src="/assets/images/campaign/general/node18442-plugin.png" /></figure>
+  </section>
+</article>

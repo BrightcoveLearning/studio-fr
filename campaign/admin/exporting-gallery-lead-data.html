@@ -1,0 +1,48 @@
+---
+title: Exportation des données de prospect de galerie
+description: Dans cette rubrique, vous apprendrez à exporter les données de formulaires pour prospects collectées via les expériences Gallery.
+parent: Administering Campaign
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Les données du formulaire de prospect Gallery sont collectées lorsqu'une expérience Gallery a été configurée pour utiliser un formulaire prospect. Pour plus d'informations sur la configuration d'une expérience de portail pour collecter des données de prospect, consultez <a href="https://gallery.support.brightcove.com/experiences/portal/using-lead-form-portal-experience.html">Utilisation d'un formulaire de prospect avec une expérience de portail</a>.</p>
+    <p>Lors de l'exportation de prospects de la galerie à partir du module Campaign, seules les données capturées à l'aide des formulaires de prospect Campaign seront exportées. Les données de prospect provenant de formulaires de prospect personnalisés seront stockées dans votre logiciel d'automatisation marketing.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Seuls les utilisateurs disposant de privilèges Administrateur pourront télécharger les données des prospects.</aside>
+  </section>
+  <section class="bcls-section">
+    <p>Pour exporter les données de prospect Gallery, procédez comme suit.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Ouvrez le <strong>Campagne</strong> module.</li>
+      <li>Cliquez sur <strong>Exporter les pistes de la galerie</strong> dans la navigation de gauche.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/admin/node18585-export-gallery-leads.png" /></figure>
+      </li>
+      <li>Sélectionnez une expérience Gallery à partir de laquelle exporter les prospects.</li>
+      <li>Saisissez les champs <strong>Start date</strong> (Date de début) et <strong>End date</strong> (Date de fin) des clients potentiels.</li>
+      <li>Sélectionnez un format d'exportation, <strong>Valeurs séparées par des virgules</strong> ou <strong>Excel</strong>.</li>
+      <li>Cliquez sur le bouton <strong>Exporter</strong> pour télécharger les données de prospect.</li>
+    </ol>
+    <p>Les champs suivants seront inclus dans le fichier exporté :</p>
+    <ul>
+      <li><strong>Tous les champs de formulaire de prospects possibles</strong>
+        <ul>
+          <li>Adresse e-mail</li>
+          <li>Prénom</li>
+          <li>Nom</li>
+          <li>Téléphone d'affaires</li>
+          <li>country</li>
+          <li>Nom de l'entreprise</li>
+          <li>industrie</li>
+        </ul>
+      </li>
+      <li><strong>ExternaliD</strong> - ID utilisé pour identifier de manière unique le visualiseur</li>
+      <li><strong>PlayerID</strong> - ID du lectuer affichant le formulaire de prospect</li>
+      <li><strong>VideoID</strong> - Identifiant vidéo de la vidéo regardée lors de la collecte des données</li>
+      <li><strong>PageURL</strong> - La visionneuse d'URL de page était allumé lorsque les données ont été collectées</li>
+      <li><strong>CreateDat</strong> - données de date et d'heure ont été collectées</li>
+      <li><strong>experience</strong> - Nom de l'expérience affichée lors de la collecte des données</li>
+    </ul>
+  </section>
+</article>

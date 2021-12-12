@@ -1,0 +1,73 @@
+---
+title: Exportation des données de campagne à partir du module de campagne
+description: Dans cette rubrique, vous apprendrez à exporter des données d'événement de vue et des données de formulaire pour prospects.
+parent: Administering Campaign
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Les événements de visualisation sont enregistrés au fur et à mesure que les vidéos sont visionnées à l'aide de lecteurs compatibles avec Campaign. Les données de prospect sont capturées au fur et à mesure que les utilisateurs saisissent des données dans les formulaires de prospect Campaign. Le module Campagne propose deux types de formulaires pour prospects :</p>
+    <ul>
+      <li><strong>Formulaires de prospection de campagne</strong> - Ces formulaires sont construits en sélectionnant parmi un ensemble de champs prédéfinis dans le module Campagne. Ces formulaires enregistrent les données de prospect dans Video Cloud. Pour plus d'informations sur la création de formulaires pour prospects Campaign, consultez <a href="/campaign/general/creating-campaign-lead-form.html">Création d'un formulaire de prospect de campagne</a>.</li>
+      <li><strong>Formulaires de prospects personnalisés</strong> - Ces formulaires sont créés à l'aide de votre plateforme d'automatisation du marketing. Le code d'intégration du formulaire est ensuite utilisé dans le module Campaign pour créer un formulaire pour prospects personnalisé. Ces formulaires envoient des données de prospect à la plateforme d'automatisation du marketing. Pour plus d'informations sur la création de formulaires de prospect, consultez le document correspondant à votre plateforme marketing :
+        <ul>
+          <li><a href="/campaign/integrations/eloqua/creating-custom-lead-forms-oracle-eloqua.html">Eloqua</a></li>
+          <li><a href="/campaign/integrations/marketo/creating-custom-lead-forms-marketo.html">Marketo</a></li>
+          <li>Salesforce<a href="/campaign/integrations/salesforce/creating-custom-lead-forms-salesforce.html"></a></li>
+          <li>HubSpot<a href="/campaign/integrations/hubspot/creating-custom-lead-forms-hubspot.html"></a></li>
+        </ul>
+      </li>
+    </ul>
+    <p>Lors de l'exportation des données de prospect depuis le module Campaign, seules les données capturées à l'aide des formulaires de prospect Campaign seront exportées. Les données de prospect provenant de formulaires de prospect personnalisés seront stockées dans votre logiciel d'automatisation marketing.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="export lead data" src="/assets/images/campaign/admin/node15862-export.png" /></figure>
+    <p>Pour exporter des données, procédez comme suit :</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Ouvrez le module Campagne.</li>
+      <li>Cliquez sur <strong>Campagne d'exportation&nbsp;Données</strong> dans la navigation de gauche. <aside class="bcls-aside bcls-aside--information">Note: Vous devez être administrateur de compte pour accéder au menu Exporter les données.</aside>
+      </li>
+      <li>Sélectionnez une <strong>connexion de données</strong> à partir de partir de. La liste déroulante <strong>Connexion de données</strong> répertorie toutes les intégrations configurées.</li>
+      <li>Sélectionnez les données à exporter.
+        <ul>
+          <li><strong>Afficher les événements</strong> - Enregistré par les lectuers activés pour la campagne</li>
+          <li><strong>Leads</strong> - Capturés à l'aide de formulaires</li>
+        </ul>
+      </li>
+      <li>Utilisez le sélecteur de dates pour sélectionner une <strong>date de début</strong> et une <strong>date de fin</strong>.</li>
+      <li>Sélectionnez un&nbsp;<strong>Format d'exportation</strong>.
+        <ul>
+          <li>Valeurs séparées par des virgules (CSV)</li>
+          <li>Excel (XLS)</li>
+        </ul>
+      </li>
+      <li>Cliquez sur <strong>Exporter</strong> pour télécharger les données de prospect.</li>
+      <li>Les données du formulaire de prospect et de l'événement de vue seront téléchargées dans des fichiers distincts. Les données des<strong>pistes</strong> contiennent les données saisies dans le formulaire de prospect ainsi que les champs suivants :
+        <ul>
+          <li><strong>ExternaliD</strong> - Il s'agit de l'ID externe qui apparaît sur la page Toutes les activités récentes. Dans le cas d'Oracle Eloqua, c'est le guid Eloqua. Avec Marketo, c'est le guid Marketo</li>
+          <li><strong>PlayerID</strong> - ID de lectuer du lectuer utilisé lors de l'affichage du formulaire</li>
+          <li><strong>VideoID</strong> - ID vidéo de la vidéo en cours de lecture lorsque le formulaire était affiché</li>
+          <li><strong>PageUrl</strong> - URL de la page affichant le formulaire prospect (expériences Gallery uniquement)</li>
+          <li><strong>CreateDat</strong> - Date et heure à laquelle les données ont été capturées</li>
+          <li><strong>expérience</strong> - Expérience de la galerie qui a collecté les données (expériences Gallery uniquement)</li>
+        </ul>
+        <p>Les données<strong>d'événements d'affichage</strong> contiendront les champs suivants :</p>
+        <ul>
+          <li><strong>ExternaliD</strong> - Il s'agit de l'ID externe qui apparaît sur la page Toutes les activités récentes. Dans le cas d'Oracle Eloqua, c'est le guid Eloqua. Avec Marketo, c'est le guid Marketo</li>
+          <li><strong>VideoID</strong> - Identifiant vidéo de la vidéo</li>
+          <li><strong>VideoName</strong> - Nom de la vidéo</li>
+          <li><strong>regardé</strong> - Pourcentage de vidéos regardées (au pourcentage le plus proche)</li>
+          <li><strong>TimeWatched</strong> - Durée totale de visionnée</li>
+          <li><strong>PlayerID</strong> - ID de lecteur du lecteur utilisé pour regarder la vidéo</li>
+          <li><strong>PageURL</strong> - URL de la page contenant le lecteur</li>
+          <li><strong>CreateDat</strong> - Date et heure à laquelle les données ont été capturées</li>
+          <li><strong>UpdateDAT</strong> - Date et heure de la dernière sauvegarde de l'événement, ce qui se traduit approximativement par le moment où le spectateur a cessé de regarder. Si la vidéo ne dure qu'une minute, CreateDAT et UpdateDAT seront très proches</li>
+          <li><strong>IsSynced</strong> - Indique si cet événement de vue a été automatiquement exporté vers l'outil d'automatisation marketing de l'éditeur.</li>
+          <li><strong>TrackingID</strong> - ID de suivi transmis en tant que paramètre d'URL. Pour plus d'informations sur l'utilisation d'un identifiant de suivi, consultez <a href="/campaign/integrations/non-map/creating-custom-integrations-campaign-module.html">Création d'intégrations personnalisées avec le module de campagne</a>.</li>
+          <li><strong>Champs UTM</strong> - UTM Source, UTM Medium, UTM Campaign, UTM Term et UTM Content. Pour plus d'informations sur l'utilisation des champs UTM, consultez <a href="/campaign/general/working-utm-fields-campaign-module.html">Utilisation des champs UTM dans le module Campaign</a>.</li>
+          <li><strong>metric1-3</strong>, <strong>event1-3</strong> - Utilisé lors de l'utilisation de mesures et d'événements <a href="/campaign/general/using-custom-metrics-and-events.html">personnalisés</a></li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+</article>

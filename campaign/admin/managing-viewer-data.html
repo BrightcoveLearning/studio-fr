@@ -1,0 +1,42 @@
+---
+title: La gestion des données de la visionneuse
+description: Dans cette rubrique, vous apprendrez à gérer les données de la visionneuse dans le module Campaign.
+parent: Administering Campaign
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>L'option Gérer les données de la visionneuse vous permet de rechercher un utilisateur, puis de supprimer cet utilisateur ou d'exporter les données de cet utilisateur.</p>
+    <aside class="bcls-aside bcls-aside--information">Notes :
+      <ul>
+        <li>Généralement, lors de l'intégration à une plate-forme d'automatisation du marketing (intégration MAP), le paramètre de période de conservation des données est utilisé pour contrôler la durée de conservation des données.</li>
+        <li>Vous devez être un administrateur de compte pour accéder au menu Gérer les données de la visionneuse</li>
+      </ul>
+    </aside>
+  </section>
+  <section class="bcls-section">
+    <p>Pour gérer les données de la visionneuse, procédez comme suit.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Ouvrez le module Campagne.</li>
+      <li>Cliquez sur <strong>Gérer les données du visualiseur</strong> dans la navigation de gauche.</li>
+      <li>Entrez l'utilisateur à rechercher. Généralement, il s'agit de l'une des valeurs suivantes :
+        <ul>
+          <li><strong>E-mail</strong> - Lorsque vous utilisez le suivi de campagne et qu'un formulaire de prospect de campagne est utilisé ou avec des intégrations SSO</li>
+          <li><strong>ID utilisateur</strong> - Lors de l'utilisation de l'authentification unique ou d'intégrations personnalisées</li>
+          <li><strong>GUID personnalisé</strong> - Pour les utilisateurs anonymes</li>
+          <li><strong>GUID externe</strong>: lorsqu'une intégration MAP est utilisée</li>
+        </ul>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="export lead data" src="/assets/images/campaign/admin/node18548-search.png" /></figure>
+      </li>
+      <li>Si une correspondance est trouvée, sélectionnez une action :
+        <ul>
+          <li><strong>Supprimer les données de visionneuse</strong> - Supprime les données d'affichage et de prospect pour l'utilisateur</li>
+          <li><strong>Exporter les données de visionneuse</strong> - Exportez les données des événements prospect et affichez l'utilisateur. Les données de prospect contiendront les données qui ont été saisies dans un formulaire de prospect de campagne. Les données d'événement de vue contiennent tous les événements de vue de la visionneuse.</li>
+        </ul>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="export lead data" src="/assets/images/campaign/admin/node18548-select-action.png" /></figure>
+      </li>
+    </ol>
+  </section>
+</article>

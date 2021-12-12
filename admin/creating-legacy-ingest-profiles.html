@@ -1,0 +1,76 @@
+---
+title: Création de profils d'ingestion hérités
+parent: Administering Accounts
+description: This topic provides an overview of how to create custom ingest profiles for use with Legacy transcoding.
+layout: staging
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>La page d'administration des profils d'acquisition peut être utilisée pour créer de nouveaux profils d'acquisition hérités. Les profils d'ingest sont définis à l'aide de JSON. Lors de la création d'un nouveau profil hérité, il est utile de consulter le <a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-legacy-transcoding.html">Profils d'ingestion standard pour le transcodage hérité</a> document et recherchez un profil similaire à celui dont vous avez besoin. Ensuite, dans Studio, vous pouvez facilement dupliquer le profil, puis le modifier avec vos modifications.</p>
+    <p >Remarque: Pour plus d'informations sur la création de profils d'ingestion utilisant DRM, consultez le <a href="https://general.support.brightcove.com/general/mpeg-dash-video.html">Vidéo MPEG-DASH</a> document du développeur.</p>
+    <p >Remarque: Chaque profil peut créer un maximum de 25 formats associés. &nbsp;Les images d'affiche et de vignettes comptent pour un maximum de 25.&nbsp;</p>
+    <p>Pour créer un nouveau profil d'ingestion hérité :</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Cliquez sur le lien <strong>ADMIN</strong> dans l'en-tête Studio.</li>
+      <li>Clique le <strong>Ingérer des profils</strong> relier.</li>
+      <li>Recherchez un profil hérité à dupliquer. Cliquez sur le nom du profil pour ouvrir l'éditeur de profils.</li>
+      <li>Cliquez sur <strong>Profil en double</strong>. L'éditeur de profil s'ouvrira avec le nouveau profil.</li>
+      <li>Faites défiler la page vers le haut du profil. Modifiez l' <code translate="No"><strong>name</strong></code> élément pour donner au profil un nom significatif. Ce nom s'affichera dans Video Cloud Studio.</li>
+      <li>Modifiez l' <code translate="No"><strong>description</strong></code> élément pour donner au profil une description significative.
+        <figure class="bcls-figure"><img alt="" src="/assets/images/admin/node18503-edit-profile-name.png" /></figure>
+      </li>
+      <li>Modifiez les informations de format associé si nécessaire. La taille par défaut de l'affiche et des images miniatures se trouve à la fin du profil.</li>
+      <li>Cliquez sur <strong>Save</strong>.</li>
+    </ol>
+    <div class="BCL-subsection">
+      <h3>Ajouter un filigrane à un profil</h3>
+      <p>Un filigrane peut être ajouté à chaque rendu en ajoutant l' <code translate="No">watermarks</code> élément à chacun <code translate="No">rendition</code>:</p>
+      <pre>
+       filigranes": [{ "y": -20, "x": -10, "width": "20%", "url": "http://www.mysite.com/companylogo.png" }]
+       </pre>
+      <p>L' <code translate="No">watermarks</code> élément possède les paramètres suivants.</p>
+      <table class="bcls-table">
+        <thead class="bcls-table__head">
+          <tr>
+            <th width="13%">Paramètre</th>
+            <th width="14%">Type</th>
+            <th width="73%">Description</th>
+          </tr>
+        </thead>
+        <tbody class="bcls-table__body">
+          <tr>
+            <td ><code translate="No">url</code></td>
+            <td >chaîne</td>
+            <td >URL de l'image du filigrane</td>
+          </tr>
+          <tr>
+            <td ><code translate="No">width</code></td>
+            <td >chaîne</td>
+            <td >largeur en pixels ou en pourcentage de la largeur du cadre, par exemple 20 ou 10%</td>
+          </tr>
+          <tr>
+            <td ><code translate="No">height</code></td>
+            <td >chaîne</td>
+            <td >hauteur en pixels ou en pourcentage de la largeur du cadre, par exemple 20 ou 10 %</td>
+          </tr>
+          <tr>
+            <td ><code translate="No">x</code></td>
+            <td >chaîne</td>
+            <td >distance entre le bord gauche et le centre de l'image en pixels ou en pourcentage de la largeur de l'image ; par exemple 20 ou 10 % (utilisez des valeurs négatives telles que -10 pour positionner le filigrane par rapport au bord droit)</td>
+          </tr>
+          <tr>
+            <td ><code translate="No">y</code></td>
+            <td >chaîne</td>
+            <td >distance entre le bord supérieur et le centre si l'image est exprimée en pixels ou en pourcentage de la hauteur de l'image ; par exemple 20 ou 10 % (utilisez des valeurs négatives telles que -10 pour positionner le filigrane par rapport au bord inférieur)</td>
+          </tr>
+        </tbody>
+      </table>
+      &nbsp;
+      <p>Un exemple de profil avec un filigrane est présenté ci-dessous :</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/node18503-watermark.png" /></figure>
+    </div>
+  </section>
+</article>

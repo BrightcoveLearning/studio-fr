@@ -1,0 +1,32 @@
+---
+title: Comment le score de référence vidéo est calculé
+parent: General Information
+description: In this topic you will learn how about the Video Benchmark Score and learn how it is calculated.
+---
+
+<article class="bcls-article">
+  <h1>Comment calculer le score de benchmark vidéo</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Le Video Benchmark Score (VBS) examine deux mesures vidéo clés :</p>
+    <ul>
+      <li>Taux de lecture</li>
+      <li>Pourcentage moyen visionné</li>
+    </ul>
+    <p>Le taux de lecture est calculé en divisant le nombre de vues de la vidéo par le nombre de fois que la vidéo a été chargée (vues de vidéo / chargements de vidéo). Si vous avez une page avec une vidéo dessus et que cette page est vue 10 fois, et que les téléspectateurs regardent la vidéo sur 4 de ces pages vues, la vidéo aura un taux de lecture de 40%.  </p>
+    <p>Le pourcentage moyen de visionnage mesure le pourcentage d'une vidéo réellement visionnée. Par exemple, deux spectateurs regardent une vidéo de 60 secondes. Le premier spectateur regarde pendant 5 secondes et le deuxième spectateur pendant 25 secondes. Au total, ces téléspectateurs ont accumulé 30 secondes de visionnage, soit une moyenne de 15 secondes. Le pourcentage moyen de visionnage serait de 25 % (5 secondes + 25 secondes)/(60 secondes x 2 spectateurs).</p>
+    <p>Le VBS commence par comparer le taux de lecture et le pourcentage moyen de visionnage de votre vidéo à toutes les vidéos avec le même type de contenu vidéo (présentation du produit, détails du produit, etc.). Nous déterminons ensuite où se situe votre vidéo au sein de ce groupe: s'agit-il du 10e centile, du 20e centile, etc. Ces deux centiles sont ensuite moyennés. Donc, si votre vidéo se situe dans le 60e centile pour le taux de lecture et le 70e centile en pourcentage moyen de visionnage, votre VBS aurait 65 ans.</p>
+    <p>Il y a une pondération à la baisse supplémentaire du VBS si le taux de lecture ou le pourcentage moyen de visionnage est égal ou inférieur au 30e centile. Il s'agit de souligner les mauvaises performances et la nécessité de s'améliorer.</p>
+    <p>La formule de pondération à la baisse est la suivante, écrite en pseudo-code : </p>
+    <pre><code translate="No">
+If either rate is &lt;=30
+   lower_rate = smaller of the two rates
+   multiple = (1.1-(1/(lower_rate/10)))
+   If multiple &lt; .35
+     multiple = 0.35
+     score = (start_rate + percentage_watched)/2)*multiple
+   end if
+end if
+    </code></pre>
+  </section>
+</article>

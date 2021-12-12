@@ -1,0 +1,49 @@
+---
+title: "Aperçu: l'API sociale"
+description: Cette rubrique fournit une vue d'ensemble de l'API sociale.
+parent: Developers
+---
+ <h1>Cette page a été déplacée - vous serez dirigé vers le <a href="https://apis.support.brightcove.com/social/getting-started/overview-social-api.html">nouvel emplacement</a> en 3 secondes. Veuillez mettre à jour vos signets !</h1>
+<script type="text/javascript">
+var t = setTimeout(fonction() { window.location.href = 'https://apis.support.brightcove.com/social/getting-started/overview-social-api.html'; } , 3000);
+</script>
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">Introduction</h2>
+    <p>L'API Social permet d'obtenir le statut et l'historique du partage social pour vos vidéos. Il est principalement destiné à aider avec les intégrations CMS, pour permettre à vos utilisateurs de visualiser ces informations dans votre propre système CMS.</p>
+    <p>Pour plus de détails sur les requêtes, reportez-vous à la <a href="/develop/reference.html">référence de l'API</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="base_url">URL de base</h2>
+    <p>L'URL de base de l'API est :</p>
+    <pre>
+  <code class="language-http" translate="No">https://edge.social.api.brightcove.com/v1</code></pre>
+  </section>
+  <section class="bcls-section">
+    <h2 id="authentication">Authentification</h2>
+    <p>L'authentification des demandes nécessite un <span translate="No">En-tête d'autorisation</span> :</p>
+    <pre class="line-numbers">
+        <code class="language-http" translate="No">Authorization: Bearer {access_token}</code></pre>
+    <p>Les <code translate="No">access_token</code> est un jeton d'accès OAuth2 temporaire qui doit être obtenu auprès du <span translate="No">Brightcove OAuth</span> service. Pour plus de détails sur la façon d'obtenir les informations d'identification client et de les utiliser pour récupérer des jetons d'accès, consultez le <a href="https://apis.support.brightcove.com/oauth/getting-started/overview-oauth-api-v4.html">Présentation de Brightcove OAuth</a> sujet.</p>
+    <h3>Opérations</h3>
+    <p>Lorsque vous demandez des informations d'identification client, vous devez spécifier le type d'accès au compte ou les opérations que vous souhaitez. Ce qui suit est une liste des opérations actuellement prises en charge pour le <span translate="No">API sociale</span> :</p>
+    <ul>
+      <li><code translate="No">video-cloud/social/status/read</code></li>
+    </ul>
+    <p>Notez que lorsque l'API sociale est en version bêta, les autorisations <strong>ne sont pas</strong> disponibles dans la section Administrateur Studio pour la gestion des informations d'identification de l'API. Au lieu de cela, vous devrez utiliser l'API OAuth pour créer vos informations d'identification. Cependant, Brightcove Learning Services, a créé un <a href="https://apis.support.brightcove.com/oauth/code-samples/oauth-api-sample-create-client-credentials.html">outil en ligne simple</a> pour ce faire.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Summary_of_requests">Résumé des demandes</h2>
+    <p>Dans la version actuelle de l'API, seules les <code translate="No">GET</code> requêtes sont prises en charge. Il y a deux groupes de demandes, résumés dans les sections suivantes.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Status_requests">Demandes d'état</h2>
+    <p><a href="/develop/reference.html#tag/Status">Les demandes d'état</a> renvoient l'état actuel du partage social pour les vidéos. Vous pouvez obtenir le statut de toutes les vidéos de votre compte ou d'une vidéo spécifique.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="History_requests">Demandes d'historique</h2>
+    <p><a href="/develop/reference.html#tag/History">Les demandes d'historique</a> renvoient l'historique de partage social pour les vidéos. Vous pouvez obtenir l'historique de toutes les vidéos de votre compte, ou une vidéo spécifique.</p>
+  </section>
+</article>

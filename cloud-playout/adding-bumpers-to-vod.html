@@ -1,0 +1,86 @@
+---
+title: Ajout de bumpers à Cloud Playout 
+description: Dans cette rubrique, vous apprendrez comment ajouter des bumpers (annonces internes) aux vidéos VOD et aux événements en direct dans une chaîne Cloud Playout.
+parent: Cloud Playout
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">Introduction</h2>
+    <p>Si vous n'activez pas les publicités côté serveur (SSAI) pour votre chaîne, vous pouvez quand même inclure des bumpers - des vidéos courtes pré ou post-roll qui peuvent être des annonces internes ou un autre type d'annonce ou de promotion. Vous pouvez également utiliser des bumpers pour créer des tampons pour vos segments de programmation en direct.</p>
+    <p>Il n'y a rien à faire lors de la création initiale du canal: l'option <span class="button-blue">Insérer des pare-chocs s'</span> affiche automatiquement après la création du canal. Cela s'applique à tous les canaux, y compris ceux activés pour les diffusions en direct ou SSAI</p>
+    <p>Vous pouvez ajouter plusieurs pare-chocs à la même vidéo, et vous pouvez réorganiser les pare-chocs dans l'ordre du programme, tout comme vous pouvez les vidéos. Cependant, certaines précautions doivent être prises pour ce faire, sinon vous risquez de vous retrouver avec un EPG inexact. Voir <a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html#epg_bumpers">L'EPG et les pare-chocs</a> pour plus de détails.</p>
+    <p>Les pare-chocs <strong>ne pas</strong> apparaissent dans le <a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG</a> mais la durée du bumper sera ajoutée à la vidéo avant ou après (selon qu'elle est pré-roll ou post-roll).</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Enabling_bumper_content">Activer le contenu du pare-chocs</h2>
+    <p>Les bumpers peuvent être n'importe quelle vidéo de votre compte, mais elle doit avoir <strong>un des</strong> les balises suivantes :</p>
+    <ul>
+      <li><code translate="no">pare-chocs cp-preroll</code></li>
+      <li><code translate="no">pare-chocs CP-Postroll-Bumper</code></li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--warning">Problèmes potentiels :
+			<ul>
+				<li>Si vous ajoutez ces deux balises à la même vidéo, cela fonctionnera toujours comme un pare-chocs, mais le <a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">EPG</a> sera inexacte.</li>
+				<li>De même, pour les chaînes compatibles SSAI, les espaces réservés pour les annonces sont traités comme des annonces post-roll. Vous ne devriez pas avoir un bumper de pré-roll suivi d'un espace réservé d'annonce, car cela crée effectivement un pré-roll<i data-feather="arrow-right"></i>séquence post-roll qui rendra l'EPG inexact.</li>
+			</ul>
+			</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="inserting-bumpers">Insertion de pare-chocs</h2>
+    <ol class="bcls-tasklist-restart">
+      <li>Avant de pouvoir insérer des pare-chocs, vous devez <a href="/cloud-playout/cloud-playout-stream-vod.html#add_videos">ajouter des vidéos et / ou des événements en direct à la chaîne</a> et <strong>sauvegarder</strong> les changements.</li>
+      <li>
+        Sélectionnez une ou plusieurs vidéos et/ou événements en direct et cliquez sur <span class="button-blue">Insérer des pare-chocs</span>.<sup><strong><a href="#note1-1">[1-1]</a></strong></sup>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/select-videos-for-bumper.png" alt="Select Videos for Bumper">
+          <figcaption class="bcls-caption--image">Sélectionnez des vidéos pour Bumper</figcaption>
+        </figure>
+      </li>
+      <li>
+        Dans le <strong>Pare-chocs</strong> boîte de dialogue sélectionner <strong>Pré-rouler</strong> ou <strong>Post-Roll</strong> puis cliquez <span class="button-blue">Insérer</span> à côté de la vidéo bumper que vous souhaitez insérer.<sup><strong><a href="#note1-2">[1-2]</a></strong></sup>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/bumper-dialog.png" alt="Bumper Dialog">
+          <figcaption class="bcls-caption--image">Boîte de dialogue de pare-chocs</figcaption>
+        </figure>
+      </li>
+      <li>
+        Vous allez maintenant voir les pare-chocs apparaître dans la liste des programmes :
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/bumper-in-program-list.png" alt="Bumper in Program List">
+          <figcaption class="bcls-caption--image">Pare-chocs dans la liste des programmes</figcaption>
+        </figure>
+      </li>
+    </ol>
+    <h3>Notes</h3>
+    <ul style="list-style: none;">
+      <li id="note1-1" style="list-style: none;"><sup><strong>[1-1]</strong></sup> Si vous sélectionnez plusieurs éléments, le même bumper sera ajouté à chacun. Si vous voulez différents pare-chocs pour différents articles, ajoutez-les un par un.</li>
+      <li id="note1-2" style="list-style: none;"><sup><strong>[1-2]</strong></sup> N'oubliez pas que seules les vidéos qui ont été <a href="#Enabling_bumper_content">étiqueté comme pare-chocs</a> apparaîtra dans la liste.</li>
+  </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="removing_bumpers">Déplacement ou retrait des pare-chocs</h2>
+    <p>Faites glisser et déposez les pare-chocs pour les déplacer vers de nouveaux emplacements dans la liste des programmes.</p>
+    <p>Pour supprimer un bumper, il suffit de le sélectionner, de cliquer <strong>Effacer</strong> , puis cliquez sur <strong>Effacer</strong> à nouveau dans la boîte de dialogue de confirmation.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/delete-bumper.png" alt="Delete Bumper">
+      <figcaption class="bcls-caption--image">Supprimer le pare-chocs</figcaption>
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Related_topics">Rubriques connexes</h2>
+    <ul>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">Vue d'ensemble: Lecture dans le cloud</a></li>
+      <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Créer un canal de diffusion dans le cloud</a></li>
+      <li><a href="/cloud-playout/static-image-overlays.html">Superpositions d'images statiques</a></li>
+      <li><a href="/cloud-playout/enabling-server-side-ads.html">Monétisation de la diffusion dans le cloud</a></li>
+      <li><a href="/cloud-playout/using-channel-actions.html">Utilisation des actions de canal</a></li>
+      <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Affichage de la sortie et des analyses de canal</a></li>
+      <li><a href="/cloud-playout/generating-channel-embed-code.html">Génération du code d'intégration de chaîne</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Vue d'ensemble: API EPG</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">Référence de l'API EPG</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">Référence de l'API de canal</a></li>
+    </ul>
+  </section>
+</article>

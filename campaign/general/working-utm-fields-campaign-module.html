@@ -1,0 +1,50 @@
+---
+title: Utilisation des champs UTM dans le module de campagne
+description: Dans cette rubrique, vous apprendrez à suivre les codes UTM dans le module Campagne.
+parent: General Information
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Les codes UTM (également appelés paramètres UTM) sont de simples extraits de texte que vous pouvez ajouter à une URL pour vous aider à suivre le succès de votre contenu Web. Il y a 5 paramètres standard que vous pouvez ajouter à n'importe quelle URL :</p>
+    <ul>
+      <li>Campagne</li>
+      <li>Source</li>
+      <li>Moyenne</li>
+      <li>Contexte</li>
+      <li>Terme</li>
+    </ul>
+    <p>Les codes UTM sont généralement ajoutés aux URL personnalisées. Voici un exemple de codes UTM (en gras) ajoutés à une URL.</p>
+    <p><code translate="No">https://www.brightcove.com/en/blog/2018/08/define-your-video-strategy-3-simple-steps-1?<strong>utm_campaign=blogpost&amp;utm_medium=social&amp;utm_source=LinkedIn</strong></code></p>
+    <p>Les codes UTM vous permettent de suivre le fonctionnement d'un billet de blog, d'une annonce Internet ou d'un message électronique sans avoir à créer des pages de destination personnalisées pour chaque campagne. En créant un code UTM distinct pour les billets de blog, les annonces et les e-mails, vous pouvez obtenir des données sur lesquelles génère plus de trafic, de conversions, etc.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configure">Configuration des connexions de données pour travailler avec les champs UTM</h2>
+    <p>Campaign analyse les champs UTM à partir des arguments d'URL. Les données UTM sont ensuite accessibles à partir de votre logiciel d'automatisation marketing ou à l'aide de l'API Audience. La configuration de la campagne requise est basée sur la plate-forme d'automatisation du marketing utilisée.</p>
+    <ul>
+      <li>HubSpot<a href="#hubspot"></a></li>
+      <li><a href="#salesforce">Salesforce</a></li>
+      <li><a href="#eloqua">Éloqua</a></li>
+      <li>Marketo<a href="#marketo"></a></li>
+    </ul>
+    <h3 id="hubspot">HubSpot</h3>
+    <p>Avec les connexions de données HubSpot, aucune configuration supplémentaire n'est requise. Les champs UTM apparaîtront automatiquement.</p>
+    <h3 id="salesforce">Force de vente</h3>
+    <p>Avec les connexions de données Salesforce, utilisez un <strong>Type de mappage</strong> de <strong>Avancée</strong> puis les champs UTM peuvent être mappés aux objets de données appropriés dans Salesforce.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/general/node18655-salesforce.png" /></figure>
+    <h3 id="eloqua">Éloqua</h3>
+    <p>Avec les connexions de données Eloqua, aucune configuration supplémentaire n'est requise. Les champs UTM apparaîtront automatiquement.</p>
+    <h3 id="marketo">Marketo</h3>
+    <p> Étant donné qu'il n'y a pas suffisamment de champs que nous pouvons ajouter à l'activité personnalisée que nous créons dans Marketo, les champs UTM ne sont pas pris en charge avec les connexions Marketo.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="export">Exporter des données à l'aide du module Campaign</h2>
+    <p>Les champs UTM sont inclus lors de l'exportation des données de la campagne et de la sélection <strong>Afficher les événements</strong>. Pour plus d'informations sur l'exportation de données, voir <a href="/campaign/admin/exporting-campaign-data-campaign-module.html">Exportation des données de campagne à partir du module de campagne</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="access">Accès aux champs UTM à l'aide de l'API Audience</h2>
+    <p>Les champs UTM sont accessibles à l'aide de l'API Audience. Pour plus d'informations, consultez la <a href="/campaign/develop/reference.html#tag/View_Events">documentation de l'API d'audience</a>.</p>
+  </section>
+</article>

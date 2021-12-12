@@ -1,0 +1,62 @@
+---
+title: Définir le statut de confidentialité pour une vidéo
+description: Cette rubrique décrit comment définir le statut de confidentialité des vidéos distribuées sur YouTube à l'aide de Brightcove Social.
+parent: General Information
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Lorsque vous créez une destination de publication YouTube, l'une des propriétés par défaut qui peut être définie est le paramètre de confidentialité YouTube. Par défaut, il existe trois options: <strong>Public</strong>, <strong>Privé</strong> et <strong>Non répertorié</strong>. Lorsque les vidéos sont publiées sur YouTube, le paramètre de confidentialité de toutes les vidéos est défini sur le paramètre sélectionné.</p>
+    <p>Vous pouvez avoir des cas où le paramètre de confidentialité YouTube pour chaque vidéo devrait être différent. Dans ce cas, un champ personnalisé associé à la vidéo peut être utilisé pour contrôler le paramètre de confidentialité permettant à chaque vidéo d'avoir un paramètre de confidentialité différent. Lorsque la vidéo est publiée sur YouTube à l'aide de Brightcove Social, le paramètre de confidentialité est défini sur la valeur spécifiée par la valeur du champ personnalisé.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="customfield">Création du champ personnalisé</h2>
+    <aside class="bcls-aside bcls-aside--information">Note: Les champs personnalisés sont disponibles uniquement pour les comptes Professional et Enterprise.</aside>
+    <p>Commencez par ajouter un champ personnalisé à votre compte, <strong>yt_privacy_status</strong> du type <strong>List</strong>. Pour plus d'informations sur l'ajout de champs personnalisés à un compte, consultez la rubrique <a href="/admin/creating-custom-metadata-fields.html">Création de champs de métadonnées personnalisés</a>. Configurer la valeur de ce champ personnalisé contrôle le paramètre de confidentialité de la vidéo YouTube :</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th scope="col"><strong>yt_privacy_status</strong></th>
+          <th scope="col">Paramètre de confidentialité de la vidéo sur YouTube</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>privée</td>
+          <td>privée</td>
+        </tr>
+        <tr>
+          <td>publique</td>
+          <td>publique</td>
+        </tr>
+        <tr>
+          <td>absente de la liste</td>
+          <td>absente de la liste</td>
+        </tr>
+        <tr>
+          <td>valeur null ou non définie</td>
+          <td>publique</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="BCL-aside">Astuce: En utilisant un <strong>Lister</strong> tapez pour le champ personnalisé, les utilisateurs pourront sélectionner le statut à l'aide d'une liste déroulante plutôt que d'avoir à saisir une valeur.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node15611-custom-field.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="assign">Affectation d'une valeur au champ personnalisé</h2>
+    <p>Une fois le champ personnalisé ajouté, la valeur peut être définie avec le module Media.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node15611-set-status.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="youtube">Modification de la destination de publication</h2>
+    <p>Modifiez la destination de publication YouTube et définissez le <strong>paramètre de confidentialité</strong> par défaut sur <strong>Utiliser le champ personnalisé YT_Privacy_Status</strong>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node15611-visibility-default.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="publish">Publication de la vidéo</h2>
+    <p>Lorsqu'une vidéo est sélectionnée et que la destination YouTube est sélectionnée, son statut de confidentialité a été défini à l'aide du champ personnalisé.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node15611-video-visibility.png" /></figure>
+  </section>
+</article>

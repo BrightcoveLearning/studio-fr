@@ -1,0 +1,90 @@
+---
+title: Le Guide de test d'intégration de l'API REST HubSpot
+description: Dans cette rubrique, vous apprendrez à vérifier une intégration entre Video Cloud et HubSpot à l'aide des API REST.
+parent: HubSpot 
+grandparent: Integrations
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Lors de la configuration d'une nouvelle intégration HubSpot à l'aide des API REST, il peut être difficile de tester et de confirmer que les données de visualisation vidéo sont effectivement fournies à HubSpot. Dans cette rubrique, vous apprendrez comment tester et confirmer systématiquement que l'intégration fonctionne et que l'affichage des données et des prospects sont envoyés à HubSpot.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Cette rubrique concerne la vérification des connexions HubSpot effectuées à l'aide des API REST.</aside> <aside class="bcls-aside bcls-aside--information">Note: Pour plus d'informations sur la configuration du module Campaign pour une utilisation avec HubSpot, consultez la section&nbsp;<a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-rest-apis.html">Intégration de Video Cloud avec HubSpot à l'aide des API REST</a>.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="start">Préliminaires</h2>
+    <p>Avant de valider l'intégration, il est supposé que vous avez :</p>
+    <ul>
+      <li>A terminé avec succès le <a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-rest-apis.html">Intégration de Brightcove Campaign avec HubSpot</a></li>
+      <li>créé au moins un <a href="/campaign/general/creating-campaign-enabled-player.html">Lecteur activé pour la campagne</a> et configuré pour utiliser la connexion HubSpot</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="lead_form">Configuration d'un formulaire de prospect de test et publication d'une vidéo</h2>
+    <p>À des fins de test, vous devrez créer et configurer un formulaire pour prospects personnalisé dans Campaign. Il s'agit d'un formulaire HubSpot dont vous avez collé le code d'intégration dans Campaign. Même si vous n'utiliserez pas de formulaires de prospect dans votre environnement de production, ce formulaire est utilisé pour vous assurer que vous êtes connu dans votre base de données et sur la page. Pour créer un formulaire HubSpot et configurer Campaign pour l'utiliser, procédez comme suit.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Connectez-vous à votre compte HubSpot.</li>
+      <li>Créez et stylisez un formulaire HubSpot. Pour plus d'informations sur la création d'un formulaire HubSpot, voir <a href="/campaign/integrations/hubspot/creating-custom-lead-forms-hubspot.html">Création de formulaires de prospect personnalisés pour HubSpot</a>.</li>
+      <li>Cliquez sur <strong>Partager</strong> en haut de la page.</li>
+      <li>Copiez le code d'intégration du formulaire dans le Presse-papiers.</li>
+      <li>Retournez au module Campagne.</li>
+      <li>Créez un nouveau formulaire de prospect à l'aide du code d'intégration du formulaire HubSpot.</li>
+      <li>Définissez votre formulaire personnalisé pour afficher le formulaire à la marque de 5 secondes. De cette façon, vous saurez exactement quand il devrait apparaître.</li>
+      <li>Cochez la case à <strong>Toujours afficher le formulaire prospect même si le prospect est déjà connu</strong>. Cela garantira que le formulaire continue de s'afficher après l'avoir rempli pendant le test.</li>
+      <li><strong>Enregistrez</strong> le formulaire.</li>
+      <li>Configurez Brightcove Player avec la connexion HubSpot pour utiliser le formulaire HubSpot qui vient d'être créé.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="preview_video">Génération d'un lien d'aperçu pour visionner la vidéo</h2>
+    <p>Pour générer un lien d'aperçu vers la vidéo, procédez comme suit.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Ouvrez le module Médias.</li>
+      <li>Sélectionnez une vidéo et publiez-la sur un lecteur Web. Assurez-vous de sélectionner le lectuer activé pour la campagne avec le formulaire de prospect.</li>
+      <li>Cliquez sur le lien de prévisualisation pour ouvrir la vidéo dans une nouvelle fenêtre de navigateur. Le test de cette façon élimine toutes les variables potentielles qui pourraient être introduites par les lectuers intégrés sur une page HTML.</li>
+      <li>Confirmez que la vidéo est lue et que le formulaire d'avance s'affiche à la barre de 5 secondes.</li>
+      <li>Remplissez le formulaire de prospect en utilisant des informations de contact uniques et une adresse e-mail (c.-à-d. un nom de célébrité ou un nom contenant les mots « bctest ») afin qu'il puisse être facilement trouvé plus tard dans HubSpot. Cela élimine toutes les variables de niveau navigateur, lectuer ou base de données. En remplissant le formulaire en tant que nouvel utilisateur, nous pouvons être sûrs que vous êtes maintenant un utilisateur connu dans HubSpot.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="confirm_data">Confirmation que Campaign capture les données avec succès</h2>
+    <p>Avant de rechercher des données de visionnage de vidéo dans HubSpot, vérifiez d'abord que Campaign a bien capturé la vue vidéo. Notez que l'affichage des données peut prendre jusqu'à 3 heures pour s'afficher dans l'interface utilisateur de la campagne. Pour confirmer que Campaign capture correctement les données, procédez comme suit.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Ouvrez le module Campagne.</li>
+      <li>Cliquez sur <strong>Toutes les activités récentes</strong> dans la navigation de gauche.</li>
+      <li>Confirmez qu'il existe un événement avec un horodatage récent indiquant le nom de la vidéo qui vient d'être regardée. L'état de l'événement doit être <strong>non traité</strong>. Cela indique que Campaign a capturé la vue mais n'a pas encore tenté de la synchroniser avec HubSpot.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/hubspot/node18741-unprocessed.png" /></figure>
+      </li>
+      <li>Pour déclencher manuellement une synchronisation entre Campaign et HubSpot, cliquez sur <strong>Activité de synchronisation</strong> dans la navigation de gauche.</li>
+      <li> <strong>Dans la liste</strong> déroulante Sélectionner une connexion, sélectionnez votre intégration HubSpot. Un bouton <strong>Test Sync</strong> devrait s'afficher.</li>
+      <li>Cliquez sur<strong> Test Sync</strong> pour déclencher une synchronisation manuelle. Notez que vous êtes limité à la fréquence à laquelle vous pouvez déclencher une synchronisation manuelle. Par défaut, Campaign synchronisera les vues avec HubSpot une fois par heure.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/hubspot/node18741-test-sync.png" /></figure>
+      </li>
+      <li>Cliquez sur <strong>Toutes les activités récentes</strong> dans la navigation de gauche.</li>
+      <li>L'état de votre événement view sera mis en <strong>file d'attente</strong>. La synchronisation des données sur HubSpot peut prendre environ 15 minutes. Une fois les données synchronisées, l'état passe à l'un des deux statuts suivants :
+        <ul>
+          <li><strong>synced</strong> - Indique que l'utilisateur était un utilisateur connu et que les données ont été correctement livrées dans son journal d'activité. Les données doivent également être visualisées dans HubSpot en quelques minutes.</li>
+          <li><strong>unknown_contact</strong> - Indique que l'utilisateur était considéré comme inconnu et que HubSpot n'a pas pu accepter les données. Si vous obtenez un <strong>contact_inconnu</strong> statut, vérifiez que vous avez publié la vidéo à l'aide du bon lecteur, que vous avez un formulaire HubSpot en place et que vous testez à l'aide du lien de prévisualisation, non intégré dans une page.
+            <figure class="bcls-figure"></figure>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="confirm_marketo">Confirmation que les données de la vue vidéo sont dans HubSpot</h2>
+    <p>Une fois que Campaign a affiché un <strong>synchronisé</strong> statut, suivez ces étapes pour vérifier que les données sont dans HubSpot.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Il faut 5 à 10 minutes pour que l'interface utilisateur HubSpot soit mise à jour avec les nouvelles données qu'elle a reçues de Campaign.</aside>
+    <ol class="bcls-tasklist-restart">
+      <li>Connectez-vous à votre compte HubSpot.</li>
+      <li>Dans HubSpot, accédez à la zone <strong>Contacts</strong> et recherchez le nom unique ou l'adresse e-mail que vous avez utilisé lors du remplissage du formulaire de prospect.</li>
+      <li>Cliquez sur le contact pour ouvrir le journal d'activité.</li>
+      <li>Clique sur le <strong>Filtrer l'activité</strong> liste déroulante (en haut de la page sous le <strong>Activité</strong> menu) et confirmez que <strong>Connexion vidéo Brightcove</strong> est vérifié. Cela garantit que l'activité de visionnage vidéo est affichée dans le journal d'activité.</li>
+      <li>Dans le journal d'activité, recherchez un <strong>Brightcove </strong>activité. Développez les détails pour afficher les données de l'événement de visualisation de la vidéo.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/hubspot/node18741-video-event.png" /></figure>
+      </li>
+    </ol>
+    <p>HubSpot exige que les données fournies via leur API soient attribuées à un contact connu. HubSpot acceptera uniquement les données des contacts connus. Les données des contacts inconnus ne seront pas synchronisées. Si vous n'utilisez pas de formulaires de prospect, il n'y a aucun moyen pour un utilisateur inconnu de se convertir en utilisateur connu et donc aucune donnée ne sera synchronisée.</p>
+  </section>
+</article>
