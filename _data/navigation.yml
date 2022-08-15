@@ -9,6 +9,45 @@
       url: /get-started/getting-started-video-cloud-studio.html
     - name: Mise en route de votre essai de Video Cloud
       url: /get-started/getting-started-your-video-cloud-trial.html
+    - name: Apprendre les bases
+      url: /get-started/basics/index.html
+      docs:
+        - name: Activation et désactivation d'une vidéo
+          url: /get-started/basics/video-cloud-basics-activating-and-deactivating-video.html
+        - name: Ajout d'un utilisateur à un compte Video Cloud
+          url: /get-started/basics/video-cloud-basics-adding-user-video-cloud-account.html
+        - name: Capture d'une affiche vidéo et d"images miniatures
+          url: /get-started/basics/video-cloud-basics-capturing-video-poster-thumbnail-images.html
+        - name: Création d'une liste de lecture manuelle
+          url: /get-started/basics/video-cloud-basics-creating-manual-playlist.html
+        - name: Création d'un lecteur
+          url: /get-started/basics/video-cloud-basics-creating-player.html
+        - name: Création d'un lecteur de lecture
+          url: /get-started/basics/video-cloud-basics-creating-playlist-player.html
+        - name: Création d'une liste de lecture intelligente
+          url: /get-started/basics/video-cloud-basics-creating-smart-playlist.html
+        - name: Déterminer la quantité de visionnage d'une vidéo
+          url: /get-started/basics/video-cloud-basics-determining-how-much-video-being-watched.html
+        - name: Déterminer quelles vidéos ont le plus de vues
+          url: /get-started/basics/video-cloud-basics-determining-which-videos-have-most-views.html
+        - name: Modification des propriétés vidéo de base
+          url: /get-started/basics/video-cloud-basics-editing-basic-video-properties.html
+        - name: Modification des propriétés vidéo pour plusieurs vidéos
+          url: /get-started/basics/video-cloud-basics-editing-video-properties-multiple-videos.html
+        - name: Organisation des vidéos à l"aide de dossiers
+          url: /get-started/basics/video-cloud-basics-organizing-videos-using-folders.html
+        - name: Publication d'une liste de lecture sur le Web
+          url: /get-started/basics/video-cloud-basics-publishing-playlist-web.html
+        - name: Publication d'une seule vidéo sur le Web
+          url: /get-started/basics/video-cloud-basics-publishing-single-video-web.html
+        - name: Coiffer un lectuer
+          url: /get-started/basics/video-cloud-basics-styling-player.html
+        - name: Téléchargement d'une affiche vidéo et d"images miniatures
+          url: /get-started/basics/video-cloud-basics-uploading-video-poster-thumbnail-images.html
+        - name: Téléchargement de vidéos
+          url: /get-started/basics/video-cloud-basics-uploading-videos.html
+        - name: Affichage de la page État du système Brightcove
+          url: /get-started/basics/video-cloud-basics-viewing-brightcove-system-status-page.html
     - name: Navigation sur le site de support de Brightcove
       url: /get-started/navigating-brightcove-support-site.html
     - name: Démarrage rapide de Video Cloud
@@ -25,46 +64,6 @@
       url: /get-started/video-cloud-glossary.html
     - name: Vidéos de formation Video Cloud Studio
       url: /training/video-cloud-studio-training-videos.html
-- section:
-  name: Apprendre les bases
-  url: /basics/index.html
-  docs:
-    - name: Activation et désactivation d'une vidéo
-      url: /basics/video-cloud-basics-activating-and-deactivating-video.html
-    - name: Ajout d'un utilisateur à un compte Video Cloud
-      url: /basics/video-cloud-basics-adding-user-video-cloud-account.html
-    - name: Capture d'une affiche vidéo et d"images miniatures
-      url: /basics/video-cloud-basics-capturing-video-poster-thumbnail-images.html
-    - name: Création d'une liste de lecture manuelle
-      url: /basics/video-cloud-basics-creating-manual-playlist.html
-    - name: Création d'un lecteur
-      url: /basics/video-cloud-basics-creating-player.html
-    - name: Création d'un lecteur de lecture
-      url: /basics/video-cloud-basics-creating-playlist-player.html
-    - name: Création d'une liste de lecture intelligente
-      url: /basics/video-cloud-basics-creating-smart-playlist.html
-    - name: Déterminer la quantité de visionnage d'une vidéo
-      url: /basics/video-cloud-basics-determining-how-much-video-being-watched.html
-    - name: Déterminer quelles vidéos ont le plus de vues
-      url: /basics/video-cloud-basics-determining-which-videos-have-most-views.html
-    - name: Modification des propriétés vidéo de base
-      url: /basics/video-cloud-basics-editing-basic-video-properties.html
-    - name: Modification des propriétés vidéo pour plusieurs vidéos
-      url: /basics/video-cloud-basics-editing-video-properties-multiple-videos.html
-    - name: Organisation des vidéos à l"aide de dossiers
-      url: /basics/video-cloud-basics-organizing-videos-using-folders.html
-    - name: Publication d'une liste de lecture sur le Web
-      url: /basics/video-cloud-basics-publishing-playlist-web.html
-    - name: Publication d'une seule vidéo sur le Web
-      url: /basics/video-cloud-basics-publishing-single-video-web.html
-    - name: Coiffer un lectuer
-      url: /basics/video-cloud-basics-styling-player.html
-    - name: Téléchargement d'une affiche vidéo et d"images miniatures
-      url: /basics/video-cloud-basics-uploading-video-poster-thumbnail-images.html
-    - name: Téléchargement de vidéos
-      url: /basics/video-cloud-basics-uploading-videos.html
-    - name: Affichage de la page État du système Brightcove
-      url: /basics/video-cloud-basics-viewing-brightcove-system-status-page.html
 - section:
   name: Informations générales
   url: /general/index.html
