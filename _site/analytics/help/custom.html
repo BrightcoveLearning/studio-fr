@@ -1,0 +1,214 @@
+﻿<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Rapports personnalisés</title>
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">   -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+  <!-- <link rel="stylesheet" href="assets/css/site/styles.css"> -->
+  <!-- <link rel="stylesheet" href="assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="assets/css/site/tabs.css"> -->
+  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/help.css">
+  <!-- <link rel="stylesheet" href="/assets/css/details.css"> -->
+  <link href="/assets/s-site-assets-stylesheets/fonts/public-sans.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/poppins.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/source-code-pro.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css">
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
+    
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XBJC11HF8Z"></script>
+<script translate="no">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XBJC11HF8Z');
+</script>
+  <!-- <script src="/assets/s-site-assets-scripts/sajari-head.js"></script> -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body class="body">
+
+<h1>Rapports personnalisés</h1>
+<article class="bcls-article">
+    <section class="bcls-section">
+        <p>Créer des rapports d'analyse personnalisés qui présentent des données et des mesures sélectionnées pour une période donnée.</p>
+   
+        <details class="details-item">
+          <summary>Signaler le fuseau horaire</summary>
+          <section class="bcls-section">
+            <p>Les données des rapports personnalisés sont basées sur le fuseau horaire du compte ; pour configurer votre fuseau horaire :</p>
+            <ol class="bcls-tasklist-restart">
+              <li>Dans Video Cloud Studio, développez le menu déroulant <strong>Admin</strong> .</li>
+              <li>Sélectionnez <strong>Paramètres du compte</strong>.</li>
+              <li>Définissez votre <strong>fuseau horaire actuel</strong>.</li>
+              <li>Cliquez sur <span class="button-blue">Save</span>.</li>
+            </ol>
+            <aside class="bcls-aside bcls-aside--information">La modification du fuseau horaire de déclaration n'affecte que les données à venir et les changements ne sont pas appliqués rétroactivement.</aside>
+            <p><a href="/analytics/reports/creating-custom-analytics-reports.html#timezone" target="_blank">En savoir plus <i data-feather="external-link"></i></a></p>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Données du rapport</summary>
+          <section class="bcls-section">
+            <ul>
+              <li>Inclure les <strong>comptes</strong> - Inclure les données du compte Video Cloud actuel ou sélectionner plusieurs comptes</li>
+              <li><strong>Type de rapport</strong> 
+                <ul>
+                  <li><strong>Unique</strong> - Le rapport est exécuté une fois, immédiatement
+                  <li><strong>Plage de dates</strong> - Pour les rapports ponctuels, spécifiez la période de temps pour les données analytiques</li>
+                  </li>
+                  <li><strong>Récurrent</strong> - Le rapport peut être programmé sur une base quotidienne, hebdomadaire ou mensuelle
+                  <li><strong>Fréquence</strong> - Pour les rapports récurrents
+                    <ul>
+                      <li><strong>Daily</strong> : le rapport couvre une seule journée</li>
+                      <li><strong>Hebdomadaire</strong> - Le rapport couvre une semaine entière, c'est-à-dire du lundi au dimanche</li>
+                      <li><strong>Monthly</strong> : les rapports couvrent un mois entier</li>
+                    </ul>
+                  </li>
+                  <aside class="bcls-aside bcls-aside--information">Les rapports récurrents sont exécutés après le rapprochement analytique, généralement 3 à 5 jours après la fin d'une période de déclaration.</aside>
+                  </li>
+                </ul>
+              </li>
+              <li><strong>Groupes de données</strong> - Les groupes de données déterminent les champs de données inclus dans le rapport
+                <ul>
+                  <li>Les champs de données qui apparaissent sont basés sur les groupes de données que vous sélectionnez</li>
+                  <li>Vous pouvez sélectionner plusieurs groupes de données, mais certaines combinaisons ne sont pas valables</li>
+                  <li>Au moins un groupe de données doit être sélectionné</li>
+                </ul>
+              </li>
+              <li><strong>Champs de données</strong> - Lorsque vous sélectionnez un groupe de données, vous pouvez sélectionner les champs de données qui peuvent être renvoyés
+                <ul>
+                  <li>Les champs grisés ne peuvent pas être renvoyés pour le groupe de données sélectionné</li>
+                </ul>
+              </li>
+            
+              
+              <li>Cliquez sur <span class="button-blue">Enregistrer</span> pour sauvegarder vos modifications</li> 
+            </ul>
+            <p><a href="/analytics/reports/creating-custom-analytics-reports.html" target="_blank">En savoir plus <i data-feather="external-link"></i></a></p>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Ajouter des filtres de rapport</summary>
+          <section class="bcls-section">
+            <p>Les filtres permettent de limiter la quantité de données renvoyées.</p>
+            <ul>
+              <li>Lors de l'utilisation de plusieurs filtres, une opération ET sera utilisée</li>
+              <li>Un filtre ne s'affichera dans votre rapport que si vous avez sélectionné le groupe de données correspondant
+                <ul>
+                  <li>Par exemple, si vous souhaitez filtrer sur la <strong>balise vidéo</strong>, vous devez sélectionner la dimension <strong>vidéo</strong> </li>
+                </ul>
+              </li>
+            </ul>
+            <p>Vous pouvez filtrer sur les éléments suivants :</p>
+            <ul>
+              <li><strong>Video</strong> : un ou plusieurs ID vidéo actifs du compte</li>
+              <li><strong>Tag vidéo</strong> - Une ou plusieurs balises vidéo</li>
+              <li><strong>Champs personnalisés</strong> - Un ou plusieurs champs personnalisés du compte</li>
+              <li><strong>Joueur</strong> - Saisir un ou plusieurs identifiants de joueur, séparés par une virgule</li>
+              <li><strong>Type de source</strong></li>
+              <li><strong>Type d'appareil</strong></li>
+              <li><strong>Système d'exploitation de l'appareil</strong></li>
+              <li><strong>Fabricant de l'appareil</strong></li>
+              <li><strong>Type de navigateur</strong></li>
+              <li><strong>Termes de recherche</strong></li>
+              <li><strong>Pays</strong></li>
+              <li><strong>Domaine de destination</strong></li>
+              <li><strong>Termes de recherche</strong></li>
+            </ul>
+            <p><a href="/analytics/reports/creating-custom-analytics-reports.html#filter" target="_blank">En savoir plus <i data-feather="external-link"></i></a></p>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Rapport de prévisualisation</summary>
+          <section class="bcls-section">
+            <p>Les données affichées dans l'aperçu du rapport sont exemple de données et non les données réelles de votre compte Video Cloud.</p>
+            <ul>
+              <li>La section <strong>Rapport de prévisualisation</strong> montre les colonnes de données sélectionnées, complétées par des exemples de données</li>
+              <li>Cliquez sur <img class="ui-image" alt="Icône de suppression" src="/assets/images/admin/help/delete-icon.png"/> pour supprimer l'élément de données associé</li>
+              <li>L'ordre de tri de l'aperçu n'a aucun effet sur l'ordre de tri du rapport téléchargé</li>
+              <li>Vous pouvez utiliser un tableur pour trier les données téléchargées</li>
+            </ul>
+           
+            <p><a href="/analytics/reports/creating-custom-analytics-reports.html#preview" target="_blank">En savoir plus <i data-feather="external-link"></i></a></p>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Configurer et diffuser le rapport</summary>
+          <section class="bcls-section">
+            <ul>
+              <li><strong>Nom du rapport</strong> - Commencez par donner un nom significatif au rapport</li>
+              <li><strong>Format</strong> 
+                <ul>
+                  <li><strong>CSV</strong> - Valeurs séparées par des virgules </li>
+                  <li><strong>XLSX</strong> - Microsoft Excel</li>
+                </ul>
+              </li>
+              <li><strong>Envoyez-moi un courrier électronique lorsque mon rapport est prêt</strong> - Recevez une notification par courrier électronique lorsque le rapport est terminé</li>
+              <li><strong>Notifier les autres</strong> - Saisir les adresses électroniques séparées par une virgule</li>
+              <li>Dans l'e-mail de Brighcove, le lien pour télécharger le rapport est valable pendant 90 jours</li>
+              
+              <li>Pour les rapports ponctuels, 
+                <ul>
+                  <li>Cliquez sur <span class="button-blue">Demande de rapport</span></li>
+                  <li>Le rapport sera téléchargé lorsqu'il sera complet</li>
+                </ul>
+              </li>
+              <li>Pour les rapports récurrents, 
+                <ul>
+                  <li>Cliquez sur <span class="button-blue">Programmer le rapport</span></li>
+                  <li>Le rapport sera mis en file d'attente et exécuté lorsque les données seront prêtes</li>
+                </ul>
+              </li>
+            </ul>
+            <li>Pour afficher tous les rapports programmés, cliquez sur <span class="button-blue">Rapports programmés</span> dans le menu de gauche</li>
+           
+            <p><a href="/analytics/reports/creating-custom-analytics-reports.html#options" target="_blank">En savoir plus <i data-feather="external-link"></i></a></p>
+          </section>
+        </details> 
+   
+  </section>
+</article>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitehttps-fix.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/setDate.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/prism.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/site.js"></script>
+  <script src="/assets/s-site-assets-scripts/js/details.js"></script>
+  <!-- <script src="/assets/js/expand-dl.js"></script> -->
+
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitetabs.js"></script> -->
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitetoc.js"></script> -->
+  <!-- <script src="/assets/js/sites_nav.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/bcls-utils.js"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitelocal-link-fix.js"></script> -->
+  <!-- <script src="/assets/js/feedback.js"></script> -->
+  <!-- <script src="/assets/js/local.js"></script> -->
+  <script translate="no">
+    feather.replace()
+  </script>
+</body>
+
+</html>
